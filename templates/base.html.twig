@@ -15,6 +15,22 @@
     {% endblock %}
 </head>
 <body>
-{% include 'layout/page-default.html.twig' %}
+<div class="container">
+    <div class="row">
+        <div class="col">{% include 'layout/navigation.html.twig' %}</div>
+    </div>
+    <div class="row">
+        <div>
+            <div class="contain">
+                <div class="row">
+                    <div class="col">{% block body %}{% endblock %}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div>{% include 'layout/footer.html.twig' %}</div>
+    </div>
+</div>
 </body>
 </html>
