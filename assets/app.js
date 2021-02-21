@@ -14,5 +14,5 @@ const $ = require('jquery');
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
 
-// start the Stimulus application
+// symfony: start the Stimulus application
 import './bootstrap';
