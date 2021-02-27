@@ -70,6 +70,10 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     .autoProvidejQuery()
+
+    /** saparot start   */
+    .copyFiles({from: 'assets/img/', to: 'img/[path][name].[ext]'})
+    /** saparot ends   */
 ;
 
 module.exports = Encore.getWebpackConfig();
