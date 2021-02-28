@@ -1,20 +1,9 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello MapOverviewController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Übersichtskarte</h1>
+    <div class="container-fluid" style="min-width: 500px;">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/markusmelber/Projects/Saparot/kgv/src/Controller/GartenArea/MapOverviewController.php'|file_link(0) }}">src/Controller/GartenArea/MapOverviewController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/markusmelber/Projects/Saparot/kgv/templates/garten_area/map_overview/index.html.twig'|file_link(0) }}">templates/garten_area/map_overview/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <img src="{{ asset('build/img/map/map-refined-v1.svg') }}" alt="Übersichtskarte" width="100%">
+    </div>
 {% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>10 Gebote für den Kleingärtner</h1>
+    <div class="container-fluid">
+        {{ include('garden_area/commandments/10commandments.md')|markdown_to_html }}
+    </div>
+
+{% endblock %}

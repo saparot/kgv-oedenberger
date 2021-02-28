@@ -1,9 +1,9 @@
-<footer>
+<footer class="footer">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
-                Über uns
-                <ul>
+                <div class="footer__list-title">Verein</div>
+                <ul class="footer__list-container">
 
                     <li><a href="{{ path('newsList') }}">Ankündigungen</a></li>
                     <li><a href="{{ path('clubExecutives') }}">Vorstand</a></li>
@@ -13,18 +13,21 @@
                 </ul>
             </div>
             <div class="col-md-auto">
-                Die Anlage
-                <ul>
+                <div class="footer__list-title">Die Anlage</div>
+                <ul class="footer__list-container">
                     <li><a href="{{ path('gardenAreaFacts') }}">Die Anlage in Zahlen</a></li>
                     <li><a href="{{ path('gardenAreaMapOverview') }}">Übersichtsplan</a></li>
                     <li><a href="{{ path('gardenAreaPlayground') }}">Spielplatz</a></li>
                     <li><a href="{{ path('gardenAreaRouteDescription') }}">Anfahrt</a></li>
                     <li><a href="{{ path('gardenAreaWalkThrough') }}">Spaziergang durch die Anlage</a></li>
+                    <li><a href="{{ path('gardenAreaCommandments') }}">10 Gebote des Kleingärtners</a></li>
+
+
                 </ul>
             </div>
             <div class="col-md-auto">
-                Essentials
-                <ul>
+                <div class="footer__list-title">Essentials</div>
+                <ul class="footer__list-container">
                     <li><a href="{{ path('contact') }}">Kontakt</a></li>
                     <li><a href="{{ path('imprint') }}">Impressum</a></li>
                 </ul>

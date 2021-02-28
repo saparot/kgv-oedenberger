@@ -1,39 +1,35 @@
 <?php
 
-namespace App\Controller\Club;
+namespace App\Controller\GardenArea;
 
 use App\Helper\BreadCrumbsChain;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HistoryController extends AbstractController {
+class CommandmentsController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
     function getBreadCrumbChain (): BreadCrumbsChain {
-        return $this->addAboutUs(null, $this->generateUrl('clubHistory'));
+        return $this->addGardenArea('10 Gebote des Kleingärtners', null);
     }
 
     function getPageTitle (): ?string {
-        return 'Geschichte';
+        return '10 Gebote des Kleingärtners';
     }
 
     function getTemplate (): string {
-        return 'club/history/index.html.twig';
+        return 'garden_area/commandments/index.html.twig';
     }
 
     /**
-     * @Route("/club/history", name="clubHistory")
-     * @param Request $request
-     *
-     * @return Response
+     * @Route("/gardenArea/commandments", name="gardenAreaCommandments")
      */
-    function index (Request $request): Response {
+    public function index (): Response {
         return $this->renderPageView();
     }
 }
