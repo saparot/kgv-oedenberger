@@ -1,9 +1,9 @@
-<footer class="footer">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-md-auto">
+<footer class="footer bg-dark text-white">
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-6 col-md-6 col-lg-3 column">
                 <div class="footer__list-title">Verein</div>
-                <ul class="footer__list-container">
+                <ul class="footer__list-container list-unstyled">
 
                     <li><a href="{{ path('newsList') }}">Ankündigungen</a></li>
                     <li><a href="{{ path('clubExecutives') }}">Vorstand</a></li>
@@ -12,9 +12,9 @@
                     <li><a href="{{ path('clubHistory') }}">Geschichte</a></li>
                 </ul>
             </div>
-            <div class="col-md-auto">
+            <div class="col-6 col-lg-3 column text-lg-left text-right">
                 <div class="footer__list-title">Die Anlage</div>
-                <ul class="footer__list-container">
+                <ul class="footer__list-container list-unstyled">
                     <li><a href="{{ path('gardenAreaFacts') }}">Die Anlage in Zahlen</a></li>
                     <li><a href="{{ path('gardenAreaMapOverview') }}">Übersichtsplan</a></li>
                     <li><a href="{{ path('gardenAreaPlayground') }}">Spielplatz</a></li>
@@ -25,13 +25,16 @@
 
                 </ul>
             </div>
-            <div class="col-md-auto">
+            <div class="col-6 col-lg-3 column">
                 <div class="footer__list-title">Essentials</div>
-                <ul class="footer__list-container">
+                <ul class="footer__list-container list-unstyled">
                     <li><a href="{{ path('contact') }}">Kontakt</a></li>
                     <li><a href="{{ path('imprint') }}">Impressum</a></li>
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="container pt-5">
+        <p class="small text-right">Made with ♡ by saparot.io, © 2021</p>
     </div>
 </footer>
