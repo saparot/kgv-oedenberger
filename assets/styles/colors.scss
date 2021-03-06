@@ -1,4 +1,29 @@
+$nav-bg: #e9ecef;
+
+$white: #ffffff;
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
 $brown: #57390F;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #528078;
+$secondary: #eed75a;
+$success: #FEC100;
+$info: #63e792;
+$warning: #FFE869;
+$danger: #703b3b;
+$light: #FDFBF7;
+$dark: #555;
+
 $brown-d: darken($brown, 10%);
 $brown-dd: darken($brown, 20%);
 $brown-ddd: darken($brown, 30%);
@@ -7,8 +32,6 @@ $brown-l: lighten($brown, 10%);
 $brown-ll: lighten($brown, 10%);
 $brown-lll: lighten($brown, 10%);
 
-
-$green: #A4C471;
 $green-d: darken($green, 10%);
 $green-dd: darken($green, 20%);
 $green-ddd: darken($green, 30%);
@@ -16,15 +39,3 @@ $green-ddd: darken($green, 30%);
 $green-l: lighten($green, 10%);
 $green-ll: lighten($green, 10%);
 $green-lll: lighten($green, 10%);
-
-
-$black: #1C2122;
-$black-d: darken($black, 10%);
-$black-dd: darken($black, 20%);
-$black-ddd: darken($black, 30%);
-
-$black-l: lighten($black, 10%);
-$black-ll: lighten($black, 10%);
-$black-lll: lighten($black, 10%);
-
-$white: #ffffff;

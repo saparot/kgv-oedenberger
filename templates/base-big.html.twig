@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>{% include 'base/head.html.twig' %}</head>
+<body class="d-flex flex-column min-vh-100">
+<header>{% include 'layout/navigation.html.twig' %}</header>
+<main>
+    {% include 'base/top.html.twig' %}
+    <section class="container">
+        <div class="row">
+            <div>
+                <div class="contain">
+                    <div class="row">
+                        <div class="col">{% block body %}{% endblock %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% include 'layout/footer.html.twig' %}
+</body>
+</html>
