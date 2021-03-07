@@ -1,9 +1,11 @@
 <section class="container-fluid">{% include 'layout/header-teaser.html.twig' %}</section>
 <section class="container-fluid">
+    {% if breadCrumbs is defined %}
     <div class="breadcrumb-container-outer">
         <div class="container">
             {% import 'macros/breadcrumb.html.twig' as breadcrumbs %}
             {{ breadcrumbs.render(breadCrumbs) }}
         </div>
     </div>
+    {% endif %}
 </section>
