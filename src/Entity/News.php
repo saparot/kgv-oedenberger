@@ -25,7 +25,7 @@ class News
     /**
      * @ORM\Column(type="text")
      */
-    private $desription;
+    private $description;
 
     /**
      * @ORM\Column(type="datetime")
@@ -54,14 +54,14 @@ class News
         return $this;
     }
 
-    public function getDesription(): ?string
+    public function getDescription(): ?string
     {
-        return $this->desription;
+        return $this->description;
     }
 
-    public function setDesription(string $desription): self
+    public function setDescription(string $description): self
     {
-        $this->desription = $desription;
+        $this->description = $description;
 
         return $this;
     }
