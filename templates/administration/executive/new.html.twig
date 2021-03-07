@@ -1,0 +1,13 @@
+{% extends 'base-administration.html.twig' %}
+
+{% block title %}Neue Vorstandsposition{% endblock %}
+
+{% block body %}
+    <h1>Neue Vorstandsposition anlegen</h1>
+
+    <div>Bitte beachten: Wenn sich eine Position geändert hat, bitte mit der Bearbeiten Funktion arbeiten!</div>
+
+    {{ include('administration/executive/_form.html.twig') }}
+
+    <a href="{{ path('administrationExecutive') }}">zurück zur Übersicht</a>
+{% endblock %}

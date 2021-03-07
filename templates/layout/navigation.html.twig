@@ -31,8 +31,21 @@
                     <a class="dropdown-item" href="{{ path('gardenAreaPlayground') }}">Spielplatz</a>
                     <a class="dropdown-item" href="{{ path('gardenAreaRouteDescription') }}">Anfahrt</a>
                     <a class="dropdown-item" href="{{ path('gardenAreaWalkThrough') }}">Spaziergang durch die Anlage</a>
-                </div>^
+                </div>
             </li>
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="theArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Administration
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ path('administrationExecutive') }}">Vorstände</a>
+
+                    </div>
+                </li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>
