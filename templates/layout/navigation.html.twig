@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand flex-column flex-md-row bd-navbar sticky-top">
-    <a class="navbar-brand" href="#">Kleingarten Oedenberger Strasse</a>
+    <a class="navbar-brand" href="{{ path('landingPage') }}">
+        <img src="{{ asset('build/img/logo/draf01.svg') }}" alt="Logo KVG Oedenberger Strasse" width="40px">
+        Kleingarten Oedenberger Strasse</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,9 +9,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ path('landingPage') }}">Start <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="aboutUs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Verein
@@ -32,7 +31,7 @@
                     <a class="dropdown-item" href="{{ path('gardenAreaPlayground') }}">Spielplatz</a>
                     <a class="dropdown-item" href="{{ path('gardenAreaRouteDescription') }}">Anfahrt</a>
                     <a class="dropdown-item" href="{{ path('gardenAreaWalkThrough') }}">Spaziergang durch die Anlage</a>
-                </div>
+                </div>^
             </li>
         </ul>
     </div>
