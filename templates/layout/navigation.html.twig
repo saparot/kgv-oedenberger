@@ -1,51 +1,58 @@
-<nav class="navbar navbar-expand flex-column flex-md-row bd-navbar sticky-top">
-    <a class="navbar-brand" href="{{ path('landingPage') }}">
-        <img src="{{ asset('build/img/logo/draf01.svg') }}" alt="Logo KVG Oedenberger Strasse" width="40px">
-        Kleingarten Oedenberger Strasse</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="{{ path('landingPage') }}">KGV Oedenberger Strasse</a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="aboutUs" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Verein
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ path('newsList') }}">Ankündigungen</a>
-                    <a class="dropdown-item" href="{{ path('clubExecutives') }}">Vorstand</a>
-                    <a class="dropdown-item" href="{{ path('clubRules') }}">Satzung</a>
-                    <a class="dropdown-item" href="{{ path('clubGardenRules') }}">Garten Ordnung</a>
-                    <a class="dropdown-item" href="{{ path('clubHistory') }}">Geschichte</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="theArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    die Anlage
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ path('gardenAreaFacts') }}">Die Anlage in Zahlen</a>
-                    <a class="dropdown-item" href="{{ path('gardenAreaMapOverview') }}">Übersichtsplan</a>
-                    <a class="dropdown-item" href="{{ path('gardenAreaPlayground') }}">Spielplatz</a>
-                    <a class="dropdown-item" href="{{ path('gardenAreaRouteDescription') }}">Anfahrt</a>
-                    <a class="dropdown-item" href="{{ path('gardenAreaWalkThrough') }}">Spaziergang durch die Anlage</a>
-                </div>
-            </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            {% if is_granted('ROLE_ADMIN') %}
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+                {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="theArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Administration
+                    <a class="nav-link " href="{{ path('app_login') }}" role="button">
+                        Login
+                    </a>
+                    {% endif %}
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropDownClub" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Verein
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('administrationExecutive') }}">Vorstände</a>
-
+                        <a class="dropdown-item" href="{{ path('newsList') }}">Ankündigungen</a>
+                        <a class="dropdown-item" href="{{ path('clubExecutives') }}">Vorstand</a>
+                        <a class="dropdown-item" href="{{ path('clubRules') }}">Satzung</a>
+                        <a class="dropdown-item" href="{{ path('clubGardenRules') }}">Garten Ordnung</a>
+                        <a class="dropdown-item" href="{{ path('clubHistory') }}">Geschichte</a>
                     </div>
                 </li>
-            {% endif %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropDownArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        die Anlage
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ path('gardenAreaFacts') }}">Die Anlage in Zahlen</a>
+                        <a class="dropdown-item" href="{{ path('gardenAreaMapOverview') }}">Übersichtsplan</a>
+                        <a class="dropdown-item" href="{{ path('gardenAreaPlayground') }}">Spielplatz</a>
+                        <a class="dropdown-item" href="{{ path('gardenAreaRouteDescription') }}">Anfahrt</a>
+                        <a class="dropdown-item" href="{{ path('gardenAreaWalkThrough') }}">Spaziergang durch die Anlage</a>
+                    </div>
+                </li>
 
-        </ul>
-    </div>
-</nav>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropDownAdmin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Administration
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('administrationExecutive') }}">Vorstände</a>
+
+                        </div>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</header>
