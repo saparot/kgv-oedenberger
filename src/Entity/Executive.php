@@ -20,7 +20,7 @@ class Executive
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Name;
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -49,7 +49,7 @@ class Executive
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
     public function setName(?string $Name): self

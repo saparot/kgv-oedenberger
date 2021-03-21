@@ -5,6 +5,7 @@ namespace App\Controller\Administration;
 use App\Entity\Executive;
 use App\Form\ExecutiveType;
 use App\Repository\ExecutiveRepository;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -78,6 +79,7 @@ class ExecutiveController extends AbstractController {
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Änderung erfolgreich gespeichert');
 
             return $this->redirectToRoute('administrationExecutive');
         }
@@ -90,14 +92,20 @@ class ExecutiveController extends AbstractController {
 
     /**
      * @Route("/{id}", name="administrationExecutiveDelete", methods={"DELETE"})
+     * @param Request $request
+     * @param Executive $executive
+     *
+     * @return Response
+     * @throws Exception
      */
     public function delete (Request $request, Executive $executive): Response {
-        if ($this->isCsrfTokenValid('delete' . $executive->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($executive);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('administrationExecutive');
+        throw new Exception("delete is not supported");
+        //if ($this->isCsrfTokenValid('delete' . $executive->getId(), $request->request->get('_token'))) {
+        //    $entityManager = $this->getDoctrine()->getManager();
+        //    $entityManager->remove($executive);
+        //    $entityManager->flush();
+        //}
+        //
+        //return $this->redirectToRoute('administrationExecutive');
     }
 }

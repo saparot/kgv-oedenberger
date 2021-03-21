@@ -5,22 +5,32 @@
 {% block body %}
     <h1>Impressum</h1>
     <div>
+        <h5><i class="fas fa-map-marker-alt"></i> Adresse</h5>
         <p>
             Kleingartenverein Oedenberger Strasse<br>
             Oedenberger Str. 114<br>
             90491 Nürnberg<br>
-            <br>
-            Telefon: +49 157 322 890 49<br>
-            E-Mail: info@kleingartenverein-oedenberger-strasse.de<br>
-            Internet: www.kleingartenverein-oedenberger-strasse.de<br>
-            Vertretungsberechtiger Vorstand:<br>
         </p>
+
+        <h5><i class="fas fa-users"></i> Vertretungsberechtiger Vorstand</h5>
+
         <ul>
-            <li>Heike Ulrich (1. Vorsitzende),</li>
-            <li>Frank Richter (Kassier),</li>
-            <li>Vera Krause (Schriftführerin)</li>
+            {% for execute in executives %}
+                <li>{{ execute.name }} ({{ execute.position }})</li>
+            {% endfor %}
         </ul>
+
+        <h5><i class="fas fa-info-circle"></i> Kontakt</h5>
+
+            <i class="fas fa-mobile-alt"></i> +49 157 322 890 49<br>
+            <i class="far fa-envelope"></i> info@kleingartenverein-oedenberger-strasse.de<br>
+        <i class="fas fa-globe-europe"></i> www.kleingartenverein-oedenberger-strasse.de<br>
+            <br>
+        </p>
+
+        <h5><i class="fas fa-sticky-note"></i> Registereintrag</h5>
         <p>
+            Eingetragen im Vereinsregister <br>
             Registergericht: Amtsgericht Nürnberg<br>
             Registernummer VR 1235<br>
         </p>

@@ -1,28 +1,34 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>Der Vorstand</h1>
-    <div class="container">
-        <h3>Vorstandschaft + Kontaktdaten</h3>
+    <h3>Der Vorstand</h3><br>
+    <div>
+        {% for executive in executives %}
 
-        <ul>
-            {% for executive in executives %}
-                <li>
-                    <ul>
-                        <li><h3>{{ executive.position }}</h3></li>
-                        <li>{{ executive.name }}</li>
-                        {% if executive.phone %}
-                            <li>{{ executive.phone }}</li>
-                        {% endif %}
+            <div>
+                <h5>{{ executive.name }}</h5>
+                <h6>{{ executive.position }}</h6>
 
-                        {% if executive.email %}
-                            <li>{{ executive.email }}</li>
-                        {% endif %}
+                <div>
+                    <i class="fas fa-mobile-alt"></i>
+                    {% if executive.phone %}
+                        <span>{{ executive.phone }}</span>
+                    {% else %}
+                        --
+                    {% endif %}
+                </div>
+
+                <div><i class="far fa-envelope"></i>
+                    {% if executive.email %}
+                        <span>{{ executive.email }}</span>
+                    {% else %}
+                        --
+                    {% endif %}
+                </div>
 
 
-                    </ul>
-                </li>
-            {% endfor %}
-        </ul>
-
+            </div>
+            <hr>
+        {% endfor %}
     </div>
+
 {% endblock %}
