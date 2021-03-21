@@ -1,7 +1,12 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
-@import "theme-but-nav-white-at-all";
-@import "global.scss";
+@import "kgv-oedenberger-bootstrap-theme";
+@import "colors";
+@import "commons";
+@import "general/navigation.scss";
+@import "general/header.scss";
+@import "general/page.scss";
+@import "general/footer.scss";
 
 
 

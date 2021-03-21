@@ -1,18 +1,24 @@
 <!doctype html>
 <html lang="de">
 <head>{% include 'base/head.html.twig' %}</head>
-<body class="d-flex flex-column min-vh-100">
+<body>
 {% include 'layout/navigation.html.twig' %}
 <main>
     {% include 'base/top.html.twig' %}
     <section class="container">
         <div class="row">
-            <div>
-                <div class="contain">
-                    <div class="row">
-                        <div class="col">{% block body %}{% endblock %}</div>
+            <div class="col-10">{% block body %}{% endblock %}</div>
+            <div class="col-2">
+                <div class="card mb-4">
+                    <h5 class="card-header">Admin Menu</h5>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="{{ path('administrationExecutive') }}">Vorstände</a></li>
+                        </ul>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </section>
