@@ -1,4 +1,6 @@
 {
+  "name": "saparot/kgv-oedenberger-strasse",
+  "description": "Homepage kleingarten oedenberger strasse in nuernberg",
   "type": "project",
   "license": "proprietary",
   "minimum-stability": "dev",
