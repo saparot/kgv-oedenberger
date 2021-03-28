@@ -4,6 +4,7 @@ namespace App\Helper;
 
 use Generator;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class UrlContainer {
 
@@ -14,8 +15,14 @@ class UrlContainer {
      */
     private $urlGenerator;
 
-    public function __construct (UrlGeneratorInterface $urlGenerator) {
+    /**
+     * @var Request
+     */
+    private Request $request;
+
+    public function __construct (UrlGeneratorInterface $urlGenerator, Request $request) {
         $this->urlGenerator = $urlGenerator;
+        $this->request = $request;
     }
 
     /**
@@ -28,7 +35,8 @@ class UrlContainer {
     }
 
     function add (string $nameDisplay, string $urlIdentifier, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH): UrlContainer {
-        $this->addUrl(new Url($nameDisplay, $this->urlGenerator->generate($urlIdentifier, $parameters, $referenceType)));
+        $isActive = $this->request->attributes->get('_route') == $urlIdentifier;
+        $this->addUrl(new Url($nameDisplay, $this->urlGenerator->generate($urlIdentifier, $parameters, $referenceType), false, $isActive));
 
         return $this;
     }

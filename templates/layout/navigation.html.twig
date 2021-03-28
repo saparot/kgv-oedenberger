@@ -21,7 +21,7 @@
                             {% if  url.isSeparator %}
                                 <div class="dropdown-divider"></div>
                             {% else %}
-                                <a class="dropdown-item" href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a>
+                                <a class="dropdown-item {% if  url.isActive %} active{% endif %}" href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a>
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -36,7 +36,7 @@
                             {% if  url.isSeparator %}
                                 <div class="dropdown-divider"></div>
                             {% else %}
-                                <a class="dropdown-item" href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a>
+                                <a class="dropdown-item {% if  url.isActive %} active{% endif %}" href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a>
                             {% endif %}
 
                         {% endfor %}

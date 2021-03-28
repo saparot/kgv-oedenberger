@@ -4,25 +4,22 @@ namespace App\Helper;
 
 class Url {
 
-    /**
-     * @var string
-     */
-    private $url;
+    private string $url;
+
+    private string $nameDisplay;
+
+    private bool $isSeparator;
 
     /**
-     * @var string
+     * @var bool
      */
-    private $nameDisplay;
+    private bool $isActive;
 
-    /**
-     * @var false
-     */
-    private $isSeparator;
-
-    function __construct (string $nameDisplay, string $url, bool $isSeparator = false) {
+    function __construct (string $nameDisplay, string $url, bool $isSeparator = false, bool $isActive = false) {
         $this->url = $url;
         $this->nameDisplay = $nameDisplay;
         $this->isSeparator = $isSeparator;
+        $this->isActive = $isActive;
     }
 
     function getUrl (): string {
@@ -35,5 +32,9 @@ class Url {
 
     function isSeparator (): bool {
         return $this->isSeparator;
+    }
+
+    function isActive (): bool {
+        return $this->isActive;
     }
 }
