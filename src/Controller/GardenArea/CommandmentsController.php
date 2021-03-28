@@ -49,8 +49,6 @@ class CommandmentsController extends AbstractController {
      * @return Response
      */
     public function index (Request $request): Response {
-        var_dump($request->getUri());
-        var_dump($request->attributes->get('_route'));
         return $this->renderPageView();
     }
 }
