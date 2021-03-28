@@ -4,6 +4,8 @@ namespace App\Controller\News;
 
 use App\Entity\News;
 use App\Helper\BreadCrumbsChain;
+use App\Helper\Categories;
+use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -22,6 +24,19 @@ class ListController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
+    /**
+     * @var KgvUrls
+     */
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
+
+    function getSidebarCategory (): ?string {
+        return Categories::CATEGORY_CLUB;
+    }
+
     function getBreadCrumbChain (): BreadCrumbsChain {
         return $this->addHome(null, null);
     }
@@ -37,6 +52,7 @@ class ListController extends AbstractController {
     /**
      * @Route("/news", name="newsList")
      * @param Request $request
+     * @param NewsRepository $newsRepository
      *
      * @return Response
      */

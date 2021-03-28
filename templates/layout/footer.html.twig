@@ -4,32 +4,32 @@
             <div class="col-6 col-md-6 col-lg-3 column">
                 <div class="footer__list-title">Verein</div>
                 <ul class="footer__list-container list-unstyled">
-
-                    <li><a href="{{ path('newsList') }}">Ankündigungen</a></li>
-                    <li><a href="{{ path('clubExecutives') }}">Vorstand</a></li>
-                    <li><a href="{{ path('clubRules') }}">Satzung</a></li>
-                    <li><a href="{{ path('clubGardenRules') }}">Garten Ordnung</a></li>
-                    <li><a href="{{ path('clubHistory') }}">Geschichte</a></li>
+                    {% for url in urlList.getClub.iterate %}
+                        {% if not url.isSeparator %}
+                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
             <div class="col-6 col-lg-3 column text-lg-left text-right">
                 <div class="footer__list-title">Die Anlage</div>
                 <ul class="footer__list-container list-unstyled">
-                    <li><a href="{{ path('gardenAreaFacts') }}">Die Anlage in Zahlen</a></li>
-                    <li><a href="{{ path('gardenAreaMapOverview') }}">Übersichtsplan</a></li>
-                    <li><a href="{{ path('gardenAreaPlayground') }}">Spielplatz</a></li>
-                    <li><a href="{{ path('gardenAreaRouteDescription') }}">Anfahrt</a></li>
-                    <li><a href="{{ path('gardenAreaWalkThrough') }}">Spaziergang durch die Anlage</a></li>
-                    <li><a href="{{ path('gardenAreaCommandments') }}">10 Gebote des Kleingärtners</a></li>
-
+                    {% for url in urlList.getArea.iterate %}
+                        {% if not url.isSeparator %}
+                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
+                        {% endif %}
+                    {% endfor %}
 
                 </ul>
             </div>
             <div class="col-6 col-lg-3 column">
                 <div class="footer__list-title">Essentials</div>
                 <ul class="footer__list-container list-unstyled">
-                    <li><a href="{{ path('contact') }}">Kontakt</a></li>
-                    <li><a href="{{ path('imprint') }}">Impressum</a></li>
+                    {% for url in urlList.getEssentials.iterate %}
+                        {% if not url.isSeparator %}
+                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>

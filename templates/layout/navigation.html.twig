@@ -16,11 +16,14 @@
                         Verein
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('newsList') }}">Ankündigungen</a>
-                        <a class="dropdown-item" href="{{ path('clubExecutives') }}">Vorstand</a>
-                        <a class="dropdown-item" href="{{ path('clubRules') }}">Satzung</a>
-                        <a class="dropdown-item" href="{{ path('clubGardenRules') }}">Garten Ordnung</a>
-                        <a class="dropdown-item" href="{{ path('clubHistory') }}">Geschichte</a>
+
+                        {% for url in urlList.getClub.iterate %}
+                            {% if  url.isSeparator %}
+                                <div class="dropdown-divider"></div>
+                            {% else %}
+                                <a class="dropdown-item" href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -28,11 +31,15 @@
                         die Anlage
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('gardenAreaFacts') }}">Die Anlage in Zahlen</a>
-                        <a class="dropdown-item" href="{{ path('gardenAreaMapOverview') }}">Übersichtsplan</a>
-                        <a class="dropdown-item" href="{{ path('gardenAreaPlayground') }}">Spielplatz</a>
-                        <a class="dropdown-item" href="{{ path('gardenAreaRouteDescription') }}">Anfahrt</a>
-                        <a class="dropdown-item" href="{{ path('gardenAreaWalkThrough') }}">Spaziergang durch die Anlage</a>
+
+                        {% for url in urlList.getArea.iterate %}
+                            {% if  url.isSeparator %}
+                                <div class="dropdown-divider"></div>
+                            {% else %}
+                                <a class="dropdown-item" href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a>
+                            {% endif %}
+
+                        {% endfor %}
                     </div>
                 </li>
 

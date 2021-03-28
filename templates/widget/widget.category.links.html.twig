@@ -1,0 +1,19 @@
+{% extends 'widget.base.html.twig' %}
+
+{% block widgetTitle %}
+    Navigation
+{% endblock %}
+
+{% block widgetContent %}
+    {% if sidebarUrlList %}
+        <ul class="list__unstyled">
+            {% for url in sidebarUrlList.iterate %}
+                {% if not url.isSeparator %}
+                    <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
+
+
