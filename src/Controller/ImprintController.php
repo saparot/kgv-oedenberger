@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Helper\BreadCrumbsChain;
+use App\Helper\Categories;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -22,6 +23,10 @@ class ImprintController extends AbstractController {
 
     function getPageTitle (): ?string {
         return 'Impressum';
+    }
+
+    function getCategory (): ?string {
+        return Categories::CATEGORY_ESSENTIALS;
     }
 
     function getTemplate (): string {

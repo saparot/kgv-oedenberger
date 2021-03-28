@@ -3,9 +3,11 @@
 namespace App\Mixin;
 
 use App\Helper\BreadCrumbsChain;
+use App\Helper\Categories;
 use App\Helper\KgvUrls;
 use App\Helper\UrlContainer;
 use Exception;
+use Psr\Log\NullLogger;
 use Symfony\Component\HttpFoundation\Response;
 
 trait PageviewMixin {
@@ -18,7 +20,7 @@ trait PageviewMixin {
 
     abstract function getTemplate (): string;
 
-    function getSidebarCategory (): ?string {
+    function getCategory (): ?string {
         return null;
     }
 
@@ -42,18 +44,32 @@ trait PageviewMixin {
 
     private function getTemplateData (): array {
         $title = $this->getPageTitle();
-        $extended = $title ? ['title' => $title] : [];
-        $extended['breadCrumbs'] = $this->getBreadCrumbChain() ? $this->getBreadCrumbChain()->export() : [];
-
-        $extended['sidebarUrlList'] = $this->generateSidebarUrlList();
+        $extended = [
+            'title' => $title,
+            'breadCrumbs' => $this->getBreadCrumbChain() ? $this->getBreadCrumbChain()->export() : [],
+            'sidebarUrlList' => $this->generateSidebarUrlList(),
+            'teaserVariant' => $this->getTeaserVariant(),
+        ];
 
         return array_merge($this->templateData, $extended);
     }
 
+    private function getTeaserVariant (): string {
+        switch ($this->getCategory()) {
+            case Categories::CATEGORY_AREA:
+                return 'header__teaser--variant2';
+            case Categories::CATEGORY_ESSENTIALS;
+                return 'header__teaser--variant3';
+            case Categories::CATEGORY_CLUB:
+            default:
+                return 'header__teaser--variant1';
+        }
+    }
+
     private function generateSidebarUrlList (): ?UrlContainer {
-        if ($this->getKgvUrls() && $this->getKgvUrls()->exists($this->getSidebarCategory())) {
+        if ($this->getKgvUrls() && $this->getKgvUrls()->exists($this->getCategory())) {
             try {
-                return $this->getKgvUrls()->get($this->getSidebarCategory());
+                return $this->getKgvUrls()->get($this->getCategory());
             } catch (Exception $e) {
                 //todo: add logging
             }

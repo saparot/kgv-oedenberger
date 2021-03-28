@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Helper\BreadCrumbsChain;
+use App\Helper\Categories;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -22,6 +23,11 @@ class ContactController extends AbstractController {
     function getPageTitle (): ?string {
         return 'Kontakt';
     }
+
+    function getCategory (): ?string {
+        return Categories::CATEGORY_ESSENTIALS;
+    }
+
 
     function getTemplate (): string {
         return 'contact/index.html.twig';

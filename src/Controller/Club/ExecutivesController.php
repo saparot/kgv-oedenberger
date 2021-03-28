@@ -27,7 +27,7 @@ class ExecutivesController extends AbstractController {
         $this->kgvUrls = $kgvUrls;
     }
 
-    function getSidebarCategory (): ?string {
+    function getCategory (): ?string {
         return Categories::CATEGORY_CLUB;
     }
 
