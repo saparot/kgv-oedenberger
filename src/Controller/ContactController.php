@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Form\ContactForm;
+use App\Form\ExecutiveType;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\Categories;
 use App\Mixin\BreadCrumbMixin;
@@ -28,7 +30,6 @@ class ContactController extends AbstractController {
         return Categories::CATEGORY_ESSENTIALS;
     }
 
-
     function getTemplate (): string {
         return 'contact/index.html.twig';
     }
@@ -40,6 +41,17 @@ class ContactController extends AbstractController {
      * @return Response
      */
     function index (Request $request): Response {
+        $form = $this->createForm(ContactForm::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success', 'Ihre Anfrage wurde erfolgreich gesendet');
+
+            return $this->redirectToRoute('landingPage');
+        }
+        $this->assign('form', $form->createView());
+
         return $this->renderPageView();
     }
 }

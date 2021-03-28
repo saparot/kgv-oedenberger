@@ -43,9 +43,8 @@ trait PageviewMixin {
     }
 
     private function getTemplateData (): array {
-        $title = $this->getPageTitle();
         $extended = [
-            'title' => $title,
+            'title' =>  $this->getPageTitle(),
             'breadCrumbs' => $this->getBreadCrumbChain() ? $this->getBreadCrumbChain()->export() : [],
             'sidebarUrlList' => $this->generateSidebarUrlList(),
             'teaserVariant' => $this->getTeaserVariant(),

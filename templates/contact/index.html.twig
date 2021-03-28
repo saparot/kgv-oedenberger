@@ -3,10 +3,16 @@
     <h1>Kontakt</h1>
     <div class="container-fluid">
 
-        <form action="">
-            <textarea name="" cols="30" rows="10"></textarea>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary">{{ button_label|default('speichern') }}</button>
+        {{ form_end(form) }}
 
-            <button>Senden</button>
-        </form>
+
+        {# <form action=""> #}
+        {# <textarea name="" cols="30" rows="10"></textarea> #}
+
+        {# <button>Senden</button> #}
+        {# </form> #}
     </div>
 {% endblock %}

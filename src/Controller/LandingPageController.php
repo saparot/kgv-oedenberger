@@ -37,3 +37,12 @@ class LandingPageController extends AbstractController {
         return $this->renderPageView();
     }
 }
+//
+//
+//ewz_recaptcha:
+//#https://packagist.org/packages/excelwebzone/recaptcha-bundle
+//version: 3
+//  public_key: 6Lcz3ZIaAAAAAIFwaqo56KQxP0O-a-k4umjArbsB
+//  private_key: 6Lcz3ZIaAAAAAA0tpdZPQZNG8BRsE1kdMJUJ9LLN
+//  hide_badge: false
+//  score_threshold: 0.5
