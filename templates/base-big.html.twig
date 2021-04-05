@@ -5,7 +5,12 @@
 {% include 'layout/navigation.html.twig' %}
 <main>
     {% include 'base/top.html.twig' %}
-    {% block body %}{% endblock %}
+    <div class="container">
+        {% include 'layout/flashMessages.twig' %}
+
+        {% block body %}{% endblock %}
+    </div>
+
 </main>
 {% include 'layout/footer.html.twig' %}
 </body>
