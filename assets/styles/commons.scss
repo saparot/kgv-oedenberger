@@ -5,3 +5,9 @@
 .line-through {
   text-decoration: line-through;
 }
+
+.formRequired::after {
+  color: $red;
+  content: "*";
+  margin-left: 4px;
+}

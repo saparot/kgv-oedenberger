@@ -3,16 +3,19 @@
     <h1>Kontakt</h1>
     <div class="container-fluid">
 
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button class="btn btn-primary">{{ button_label|default('speichern') }}</button>
-        {{ form_end(form) }}
+        <p>
+            Hier können Sie der Vorstandschaft eine Nachricht zukommen lassen, wenn Sie Fragen oder Anregungen für uns haben.
+            <br><br>
+            Da wir ehrenamtlich arbeiten, kann die Beantwortung manchmal ein paar Tage in Anspruch nehmen. Wir sind aber immer bemüht uns
+            schnellst möglichst um die Bearbeitung Ihres Anliegens zu kümmern.
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">{{ button_label|default('speichern') }}</button>
+            {{ form_end(form) }}
+        <p>
+            <br>
+            (Felder mit <span class="formRequired"></span> müssen ausgefüllt werden.)
+        </p>
 
-
-        {# <form action=""> #}
-        {# <textarea name="" cols="30" rows="10"></textarea> #}
-
-        {# <button>Senden</button> #}
-        {# </form> #}
     </div>
 {% endblock %}
