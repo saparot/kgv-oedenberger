@@ -1,4 +1,6 @@
-
+.env
+.env.test
+.DS_Store
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -24,3 +26,4 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 /resources/garden-svgs
+/resources/logo
