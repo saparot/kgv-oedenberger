@@ -43,9 +43,10 @@ trait PageviewMixin {
     }
 
     private function getTemplateData (): array {
+        $breadCrumbChain = $this->getBreadCrumbChain();
         $extended = [
-            'title' =>  $this->getPageTitle(),
-            'breadCrumbs' => $this->getBreadCrumbChain() ? $this->getBreadCrumbChain()->export() : [],
+            'title' => $this->getPageTitle(),
+            'breadCrumbs' => $breadCrumbChain ? $breadCrumbChain->export() : [],
             'sidebarUrlList' => $this->generateSidebarUrlList(),
             'teaserVariant' => $this->getTeaserVariant(),
         ];
@@ -57,6 +58,8 @@ trait PageviewMixin {
         switch ($this->getCategory()) {
             case Categories::CATEGORY_AREA:
                 return 'header__teaser--variant2';
+            case Categories::CATEGORY_GARDEN;
+                return 'header__teaser--variant4';
             case Categories::CATEGORY_ESSENTIALS;
                 return 'header__teaser--variant3';
             case Categories::CATEGORY_CLUB:

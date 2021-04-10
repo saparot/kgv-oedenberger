@@ -26,6 +26,24 @@
                         {% endfor %}
                     </div>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropDownGarden" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gärten
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        {% for url in urlList.getGarden.iterate %}
+                            {% if  url.isSeparator %}
+                                <div class="dropdown-divider"></div>
+                            {% else %}
+                                <a class="dropdown-item {% if  url.isActive %} active{% endif %}" href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a>
+                            {% endif %}
+
+                        {% endfor %}
+                    </div>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropDownArea" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         die Anlage

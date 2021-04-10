@@ -11,6 +11,19 @@
                     {% endfor %}
                 </ul>
             </div>
+
+            <div class="col-6 col-lg-3 column text-lg-left text-right">
+                <div class="footer__list-title">Gärten</div>
+                <ul class="footer__list-container list-unstyled">
+                    {% for url in urlList.getGarden.iterate %}
+                        {% if not url.isSeparator %}
+                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                </ul>
+            </div>
+
             <div class="col-6 col-lg-3 column text-lg-left text-right">
                 <div class="footer__list-title">Die Anlage</div>
                 <ul class="footer__list-container list-unstyled">
@@ -22,6 +35,7 @@
 
                 </ul>
             </div>
+
             <div class="col-6 col-lg-3 column">
                 <div class="footer__list-title">Essentials</div>
                 <ul class="footer__list-container list-unstyled">

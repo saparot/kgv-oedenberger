@@ -30,6 +30,12 @@ trait BreadCrumbMixin {
         return $text ? $breadChain->add($text, $url) : $breadChain;
     }
 
+    private function addGarden (?string $text, ?string $url): BreadCrumbsChain {
+        $breadChain = $this->getBreadCrumbsChain()->add('Gärten', null);
+
+        return $text ? $breadChain->add($text, $url) : $breadChain;
+    }
+
     private function getBreadCrumbsChain (): BreadCrumbsChain {
         $this->breadCrumbsChain ??= $this->getDefaultBreadCrumbsChain();
 
@@ -37,6 +43,6 @@ trait BreadCrumbMixin {
     }
 
     private function getDefaultBreadCrumbsChain (): BreadCrumbsChain {
-        return (new BreadCrumbsChain())->addBreadCrumb(new BreadCrumb('home', $this->generateUrl('landingPage')));
+        return (new BreadCrumbsChain())->addBreadCrumb(new BreadCrumb('Start', $this->generateUrl('landingPage')));
     }
 }

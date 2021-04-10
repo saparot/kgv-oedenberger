@@ -30,7 +30,20 @@ class KgvUrls {
         }
         $this->container[Categories::CATEGORY_CLUB] = $this->initClub();
         $this->container[Categories::CATEGORY_AREA] = $this->initArea();
+        $this->container[Categories::CATEGORY_GARDEN] = $this->initGarden();
         $this->container[Categories::CATEGORY_ESSENTIALS] = $this->initEssentials();
+    }
+
+    private function initGarden () {
+        $uc = new UrlContainer($this->urlGenerator, $this->request);
+
+        $uc->add('freie Gärten', 'waitingListClosed');
+        $uc->addSeparator();
+        $uc->add('Gartengestaltung', 'gardenGardenDesign');
+        $uc->addSeparator();
+        $uc->add('10 Gebote des Kleingärtners', 'gardenAreaCommandments');
+
+        return $uc;
     }
 
     private function initClub (): UrlContainer {
@@ -57,8 +70,6 @@ class KgvUrls {
         $uc->add('Spielplatz', 'gardenAreaPlayground');
 
         $uc->add('Spaziergang durch die Anlage', 'gardenAreaWalkThrough');
-        $uc->addSeparator();
-        $uc->add('10 Gebote des Kleingärtners', 'gardenAreaCommandments');
 
         return $uc;
     }
@@ -82,6 +93,10 @@ class KgvUrls {
 
     function getClub (): UrlContainer {
         return $this->get(Categories::CATEGORY_CLUB);
+    }
+
+    function getGarden (): UrlContainer {
+        return $this->get(Categories::CATEGORY_GARDEN);
     }
 
     function exists (?string $category): bool {
