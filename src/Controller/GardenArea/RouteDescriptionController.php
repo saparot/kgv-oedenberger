@@ -42,6 +42,15 @@ class RouteDescriptionController extends AbstractController {
         return 'garden_area/route_description/index.html.twig';
     }
 
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Lage & Anfahrt',
+            'icon' => 'watercan-colored',
+            'text' => "Die Kleingartenanlage befindet sich im Nord-Osten von Nürnberg und ist direkter Nachbar des Stadtverbandes. Wir haben Google Maps für Sie hier eingebunden, damit Sie ihre Route zu uns direkt planen können. ",
+        ];
+    }
+
+
     /**
      * @Route("/gardenArea/route-description", name="gardenAreaRouteDescription")
      * @param Request $request

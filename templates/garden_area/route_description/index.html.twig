@@ -1,10 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RouteDescriptionController!{% endblock %}
-
 {% block body %}
-    <div class="container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d20740.554936892557!2d11.112408698098344!3d49.47375097982284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sKleingartenverein%20Oedenberger%20Strasse%20Oedenberger%20Str.%20114%2090491%20N%C3%BCrnberg!5e0!3m2!1sde!2sde!4v1614023883888!5m2!1sde!2sde"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h3 class="kgv-headline--3">Google Map</h3>
+            <div class="kgv-google-maps">
+
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d41484.17092356498!2d11.08024242970196!3d49.47013641408115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13
+            .1!4m8!3e6!4m0!4m5!1s0x479f57f1101cbe53%3A0x77203f0b66271f05!2sOedenberger%20Str.%20114%2C%20N%C3%BCrnberg!3m2!1d49.4701417!2d11
+            .1152616!5e0!3m2!1sde!2sde!4v1618133892919!5m2!1sde!2sde" style="border:0;" allowfullscreen="1" loading="lazy"></iframe>
+                {# <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d20740.554936892557!2d11.112408698098344!3d49.47375097982284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sKleingartenverein%20Oedenberger%20Strasse%20Oedenberger%20Str.%20114%2090491%20N%C3%BCrnberg!5e0!3m2!1sde!2sde!4v1614023883888!5m2!1sde!2sde" #}
+                {# width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> #}
+            </div>
+        </div>
     </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <h3 class="kgv-headline--3">Adresse</h3>
+            <p>Unsere Adresse lautet: </p>
+            <p>Kleingartenverein Oedenberger Strasse<br>
+                Oedenberger Str. 114<br>
+                90491 Nürnberg<br>
+            </p>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <h3 class="kgv-headline--3">Parken</h3>
+            <p>Es gibt 5 Tore und mehrere Eingänge in die Kleingartenanlage. Parkplätze sind vor allem in der Oedenberger Straße zu finden. Abhängig davon zu welcher
+                Gartennummer Sie möchten, bietet sich ggf. das Parken in der Oedenberger Strasse oder in der Bad Bernecker Straße /
+                Steinplattenweg an. Ausweichparkplätze sind auch meistens in der Mommsenstraße / Teutoburger Straße zu finden.</p>
+            <p>Kleingartenverein Oedenberger Strasse<br>
+                Oedenberger Str. 114<br>
+                90491 Nürnberg<br>
+            </p>
+        </div>
+    </div>
+
 {% endblock %}
