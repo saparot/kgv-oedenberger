@@ -1,0 +1,11 @@
+{% macro render(data, additionalIconClass) %}
+    <div class="kgv-intro">
+        {% if data.icon is defined %}
+            <div class="kgv-intro__icon">{% include 'layout/icons/garden.twig' with {iconName: data.icon, additionalIconClass: additionalIconClass} %}</div>
+        {% endif %}
+        <h1 class="kgv-headline--1">{{ data.title }}</h1>
+        {% if data.text is defined %}
+            <div>{{ data.text |raw }}</div>
+        {% endif %}
+    </div>
+{% endmacro %}

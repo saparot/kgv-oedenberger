@@ -1,0 +1,5 @@
+{# {% if introData is defined %} #}
+{% if ( introData is defined ) and  ( introData is not null ) %}
+    {% import 'macros/kgv-intro.twig' as kgvIntro %}
+    {{ kgvIntro.render(introData, 'kgv-icon-page-' ~ pageIdent) }}
+{% endif %}
