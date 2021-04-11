@@ -73,6 +73,7 @@ Encore
 
     /** saparot start   */
     .copyFiles({from: 'assets/img/', to: 'img/[path][name].[ext]'})
+.copyFiles({from: 'assets/icons/', to: 'icons/[path][name].[ext]'})
     /** saparot ends   */
 
     /** saparot ckedidtor start  */
