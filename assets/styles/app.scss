@@ -3,11 +3,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import "colors";
 @import "kgv-oedenberger-bootstrap-theme";
+@import "general/index";
+
 @import "commons";
-@import "general/navigation.scss";
-@import "general/header.scss";
-@import "general/page.scss";
-@import "general/footer.scss";
+@import "news/index";
 
 
 
