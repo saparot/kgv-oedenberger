@@ -1,0 +1,6 @@
+<svg class="kgv-icon kgv-garden-icon-{{ iconName }} {{ additionalIconClass is defined ? additionalIconClass }}">
+    {% if iconTitle is defined %}
+        <title>{{ iconTitle }}</title>
+    {% endif %}
+    <use xlink:href="/build/icons/gardenicons.svg#{{ iconName }}"></use>
+</svg>
