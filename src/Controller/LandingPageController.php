@@ -20,7 +20,7 @@ class LandingPageController extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return null;
+        return 'Willkommen!';
     }
 
     function getTemplate (): string {
