@@ -1,34 +1,32 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h3>Der Vorstand</h3><br>
-    <div>
-        {% for executive in executives %}
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    {% for executive in executives %}
+
+        <div>
+            <h5>{{ executive.name }}</h5>
+            <h6>{{ executive.position }}</h6>
 
             <div>
-                <h5>{{ executive.name }}</h5>
-                <h6>{{ executive.position }}</h6>
-
-                <div>
-                    <i class="fas fa-mobile-alt"></i>
-                    {% if executive.phone %}
-                        <span>{{ executive.phone }}</span>
-                    {% else %}
-                        --
-                    {% endif %}
-                </div>
-
-                <div><i class="far fa-envelope"></i>
-                    {% if executive.email %}
-                        <span>{{ executive.email }}</span>
-                    {% else %}
-                        --
-                    {% endif %}
-                </div>
-
-
+                <i class="fas fa-mobile-alt"></i>
+                {% if executive.phone %}
+                    <span>{{ executive.phone }}</span>
+                {% else %}
+                    --
+                {% endif %}
             </div>
-            <hr>
-        {% endfor %}
-    </div>
+
+            <div><i class="far fa-envelope"></i>
+                {% if executive.email %}
+                    <span>{{ executive.email }}</span>
+                {% else %}
+                    --
+                {% endif %}
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+
 
 {% endblock %}

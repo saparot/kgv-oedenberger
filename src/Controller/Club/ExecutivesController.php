@@ -36,7 +36,7 @@ class ExecutivesController extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Vorstand';
+        return 'Der Vorstand';
     }
 
     function getTemplate (): string {
@@ -54,6 +54,14 @@ class ExecutivesController extends AbstractController {
         $this->prepareTemplateData($executiveRepository);
 
         return $this->renderPageView();
+    }
+
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Der Vorstand',
+            'icon' => 'watercan',
+            'text' => 'Damit unser Verein funktioniert, brauchen wir natürlich einen Vorstand. Dieser wird ordentlich einmal im Jahr auf unser Mitgliederversammlung gewählt.  Unser  Vorstand übernimmt auch of gutwillig Aufgaben, die die Vereinsarbeit so mit sich bringt, zum Beispiel die Organisation von Veranstaltungen, den Einkauf von Wasseruhren für günstige Preise und viele andere Kleinigkeiten.',
+        ];
     }
 
     private function prepareTemplateData (ExecutiveRepository $executiveRepository) {

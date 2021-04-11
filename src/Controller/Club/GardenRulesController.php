@@ -35,7 +35,15 @@ class GardenRulesController extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Vorstand';
+        return 'Gartenordnung';
+    }
+
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Gartenordnung',
+            'icon' => 'plant-pot',
+            'text' => 'Die hier abgebildete Garten Ordnung ist eine Abschrift des Stadtverbandes der Kleingärten in Nürnberg e.V. Bitte beachten Sie, dass immer nur die aktuelle Ordnung verbindlich ist. <a target="_svnbggo" href="https://kleingaertner-nuernberg.de/wp-content/uploads/2021/02/2021_104_Gartenordnung_Notar.pdf">Die aktuelle Garten Ordnung ist hier</a>, auf der Seite des <a target="_svnbg" href="https://kleingaertner-nuernberg.de/">Stadtvebandes</a> zu finden. Wir sind stets bemüht die Version auf dieser Seite für Sie aktuell zu halten.',
+        ];
     }
 
     function getTemplate (): string {

@@ -42,6 +42,14 @@ class RulesController extends AbstractController {
         return 'club/rules/index.html.twig';
     }
 
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Satzung',
+            'icon' => 'shovel',
+            'text' => 'Jeder Verein braucht eine Satzung. In dieser wird festgelegt und beschrieben wie unser Verein aufgestellt ist und wie er funktioniert. Die nicht allzu lange ist dem interessierten Leser empfohlen.'
+        ];
+    }
+
     /**
      * @Route("/club/rules", name="clubRules")
      * @param Request $request

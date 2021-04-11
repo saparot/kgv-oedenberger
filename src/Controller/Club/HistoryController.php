@@ -35,11 +35,19 @@ class HistoryController extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Geschichte';
+        return 'Vereinsgeschichte';
     }
 
     function getTemplate (): string {
         return 'club/history/index.html.twig';
+    }
+
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Vereinsgeschichte',
+            'icon' => 'carrot',
+            'text' => 'Auf dieser Seite finden Sie die aktuellen Ankündigungen rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!'
+        ];
     }
 
     /**

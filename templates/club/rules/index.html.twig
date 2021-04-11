@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RulesController!{% endblock %}
-
 {% block body %}
-    <div class="container">
+
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    <div class="kgv-markdown">
         {{ include('club/rules/rules.md')|markdown_to_html }}
     </div>
+
 {% endblock %}
