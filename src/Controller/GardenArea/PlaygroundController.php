@@ -42,6 +42,14 @@ class PlaygroundController extends AbstractController {
         return 'garden_area/playground/index.html.twig';
     }
 
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Spielplatz',
+            'icon' => 'bug',
+            'text' => "Der kleine Spielplatz der Kleingartenkolonie befindet sich direkt neben dem Vereinsheim. Verfehlen können Sie diesen nicht, wenn Sie den Hauptweg zur Gaststätte hinaufgehen und direkt an der Gaststätte links abbiegen. Der Spielplatz existiert bereits seit den 70ern Jahren. Hier können sich Ihre Kinder an Schaukeln und Wippgeräten austoben oder im Sandkasten ihrer Fantasie freien Lauf lassen.",
+        ];
+    }
+
     /**
      * @Route("/gardenArea/playground", name="gardenAreaPlayground")
      * @param Request $request
