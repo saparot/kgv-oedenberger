@@ -12,12 +12,19 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method News[]    findAll()
  * @method News[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class NewsRepository extends ServiceEntityRepository
-{
-    public function __construct(ManagerRegistry $registry)
-    {
+class NewsRepository extends ServiceEntityRepository {
+
+    public function __construct (ManagerRegistry $registry) {
         parent::__construct($registry, News::class);
     }
+
+    /**
+     * @return News[] Returns an array of News objects
+     */
+    function findForNewsPage (): ?array {
+        return $this->createQueryBuilder('news')->orderBy('news.timePublish', 'DESC')->orderBy('news.id', 'DESC')->setMaxResults(10)->getQuery()->getResult();
+    }
+
 
     // /**
     //  * @return News[] Returns an array of News objects

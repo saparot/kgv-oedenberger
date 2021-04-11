@@ -8,8 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=NewsRepository::class)
  */
-class News
-{
+class News {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -37,55 +37,76 @@ class News
      */
     private $timeUpdated;
 
-    public function getId(): ?int
-    {
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $timePublish;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPublished;
+
+    function getId (): ?int {
         return $this->id;
     }
 
-    public function getTitle(): ?string
-    {
+    function getTitle (): ?string {
         return $this->title;
     }
 
-    public function setTitle(string $title): self
-    {
+    function setTitle (string $title): self {
         $this->title = $title;
 
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
+    function getDescription (): ?string {
         return $this->description;
     }
 
-    public function setDescription(string $description): self
-    {
+    function setDescription (string $description): self {
         $this->description = $description;
 
         return $this;
     }
 
-    public function getTimeCreated(): ?\DateTimeInterface
-    {
+    function getTimeCreated (): ?\DateTimeInterface {
         return $this->timeCreated;
     }
 
-    public function setTimeCreated(\DateTimeInterface $timeCreated): self
-    {
+    function setTimeCreated (\DateTimeInterface $timeCreated): self {
         $this->timeCreated = $timeCreated;
 
         return $this;
     }
 
-    public function getTimeUpdated(): ?\DateTimeInterface
-    {
+    function getTimeUpdated (): ?\DateTimeInterface {
         return $this->timeUpdated;
     }
 
-    public function setTimeUpdated(\DateTimeInterface $timeUpdated): self
-    {
+    function setTimeUpdated (\DateTimeInterface $timeUpdated): self {
         $this->timeUpdated = $timeUpdated;
+
+        return $this;
+    }
+
+    function getTimePublish (): ?\DateTimeInterface {
+        return $this->timePublish;
+    }
+
+    function setTimePublish (\DateTimeInterface $timePublish): self {
+        $this->timePublish = $timePublish;
+
+        return $this;
+    }
+
+    function getIsPublished (): ?bool {
+        return $this->isPublished;
+    }
+
+    function setIsPublished (bool $isPublished): self {
+        $this->isPublished = $isPublished;
 
         return $this;
     }

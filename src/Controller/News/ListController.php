@@ -69,8 +69,16 @@ class ListController extends AbstractController {
         return $this->assign('newsForm', $newsForm->createView())->renderPageView();
     }
 
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Ankündigungen',
+            'icon' => 'fence',
+            'text' => 'Auf dieser Seite finden Sie die aktuellen Ankündigungen rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!',
+        ];
+    }
+
     private function addNewsList (NewsRepository $newsRepository) {
-        $this->assign('newsList', $newsRepository->findAll());
+        $this->assign('newsList', $newsRepository->findForNewsPage());
     }
 
     private function getNewsForm (): FormInterface {
