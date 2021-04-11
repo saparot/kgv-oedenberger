@@ -1,0 +1,33 @@
+### 2006
+
+2006 beim Bundeswettbewerb bekamen wir eine Bronzeplakette. Nach vielen Jahren wurden wieder Gartenfeste gefeiert und Vereinsausflüge veranstaltet.Höhepunkt war 2009 die
+90jahrfeier unserer Anlage. Es wurde eine Vereinshomepage erstellt. Um bei Veranstaltungen eine Powerpoint-Präsentation zu ermöglichen wurde ein Beamer angeschafft.
+
+### 2005
+
+Unter dem Vorstand Horst Colombier hat unsere Anlage 2005 am Landeswettbewerb mit einer Auszeichnung in Gold teilgenommen.
+
+### 80er
+
+Unter dem Vorstand Hermann Preiß bekamen die Gärten Nr. 60 - 165 eine neue Wasserleitung. In den Wegen wurden neue wartungsfreie Informationschaukästen aufgestellt. Dank der guten
+Kantinenbewirtschaftung konnten die Bauschulden bei der Brauerei zügig zurückbezahlt werden. Anschließend konnte der jährliche Vereinsbeitrag von 36 DM auf 6DM gesenkt werden. Die
+Rabatten vor den Gärten wurden neu bepflanzt. Nachdem die Rosen oft an Sternrußtau erkrankten und bei Platzregen das Erdreich abgeschwemmt wurde, sind die Beete mit Stauden
+bepflanzt worden. Jeder Weg in einem anderen Farbton. Die Pflanzung wurde von der Landschaftsarchitektin Christine Orel geplant.
+
+### 70er Jahre
+
+In den 70er Jahren wurden die ehemaligen Kolonien 14, 19 und 23 zusammengeschlossen, es wurde der "Kleingartenverein Oedenberger Str. e. V." gegründet. Von den Kleingärtnern wurde
+ein *Spielplatz* gebaut, dort befindet sich auch ein Gerätehaus des Vereins.
+
+### 60er Jahre
+
+Anfang 1960 wurde in der Anlage das „Haus der Kleingärtner“ gebaut, die Geschäftsstelle des Stadtverbandes Nürnberg.
+
+### 50er Jahre
+
+In den 50er Jahren wurden solche Anlagen zu begehrten Bauland. Dem Einsatz des damaligen Vorstandes Karl Streibl und dem Weitblick des Stadtrates unter Oberbürgermeister Dr.
+Andreas Urschlechter ist es zu verdanken, das hier eine gesicherte Dauerkleingartenanlage entstanden ist.
+
+### Gründung
+
+Die schön im Nordosten der Stadt gelegene Anlage wurde im Jahr 1919 gegründet. Die 165 Gärten mit einer durchschnittlichen Größe von 300 qm sind bei Familien mit Kindern ebenso beliebt wie bei älteren Mitgliedern.
