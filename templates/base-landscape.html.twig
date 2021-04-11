@@ -3,7 +3,7 @@
 <head>{% include 'base/head.html.twig' %}</head>
 <body>
 {% include 'layout/navigation.html.twig' %}
-<main>
+<main class="{{ pageIdentifierClasses }}">
     {% block body %}{% endblock %}
 </main>
 {% include 'layout/footer.html.twig' %}

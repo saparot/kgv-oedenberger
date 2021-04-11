@@ -5,7 +5,7 @@
 {% include 'layout/navigation.html.twig' %}
 <main>
     {% include 'base/top.html.twig' %}
-    <div class="container">
+    <div class="container {{ pageIdentifierClasses }}">
         {% include 'layout/flashMessages.twig' %}
 
         {% block body %}{% endblock %}
