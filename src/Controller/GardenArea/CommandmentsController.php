@@ -42,6 +42,14 @@ class CommandmentsController extends AbstractController {
         return 'garden_area/commandments/index.html.twig';
     }
 
+    private function getIntroData (): ?array {
+        return [
+            'title' => '10 Gebote des Kleingärtners',
+            'icon' => 'sun-colored',
+            'text' => 'Nicht alles ist in Gesetzen und Regeln festgeschrieben, was für ein harmonisches und friedliches Miteinander wichtig ist. So sind unseren Vereinsmitgliedern und deren Gästen die 10 Gebote des Kleingärtners des <a target="_svnbg" href="https://kleingaertner-nuernberg.de/">Stadtveband Nürnberg</a> ans Herz gelegt. ',
+        ];
+    }
+
     /**
      * @Route("/gardenArea/commandments", name="gardenAreaCommandments")
      * @param Request $request
