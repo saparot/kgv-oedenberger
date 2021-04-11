@@ -1,51 +1,10 @@
 <footer class="footer bg-dark text-white mt-5">
     <div class="container pt-3">
         <div class="row">
-            <div class="col-6 col-md-6 col-lg-3 column">
-                <div class="footer__list-title">Verein</div>
-                <ul class="footer__list-container list-unstyled">
-                    {% for url in urlList.getClub.iterate %}
-                        {% if not url.isSeparator %}
-                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="col-6 col-lg-3 column text-lg-left text-right">
-                <div class="footer__list-title">Gärten</div>
-                <ul class="footer__list-container list-unstyled">
-                    {% for url in urlList.getGarden.iterate %}
-                        {% if not url.isSeparator %}
-                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-
-                </ul>
-            </div>
-
-            <div class="col-6 col-lg-3 column text-lg-left text-right">
-                <div class="footer__list-title">Die Anlage</div>
-                <ul class="footer__list-container list-unstyled">
-                    {% for url in urlList.getArea.iterate %}
-                        {% if not url.isSeparator %}
-                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-
-                </ul>
-            </div>
-
-            <div class="col-6 col-lg-3 column">
-                <div class="footer__list-title">Essentials</div>
-                <ul class="footer__list-container list-unstyled">
-                    {% for url in urlList.getEssentials.iterate %}
-                        {% if not url.isSeparator %}
-                            <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </div>
+            {% include 'layout/footer/footerBlock.twig' with {iconName: 'fence', urlList:urlList.getClub.iterate, blockName:'Verein'} %}
+            {% include 'layout/footer/footerBlock.twig' with {iconName: 'fence', urlList:urlList.getGarden.iterate, blockName:'Gärten'} %}
+            {% include 'layout/footer/footerBlock.twig' with {iconName: 'fence', urlList:urlList.getArea.iterate, blockName:'Die Anlage'} %}
+            {% include 'layout/footer/footerBlock.twig' with {iconName: 'fence', urlList:urlList.getEssentials.iterate, blockName:'Essentials'} %}
         </div>
     </div>
     <div class="container pt-5">

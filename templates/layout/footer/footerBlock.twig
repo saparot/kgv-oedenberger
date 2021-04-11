@@ -1,0 +1,10 @@
+<div class="col-6 col-md-6 col-lg-3 column">
+    <div class="footer-list-title">{% include 'layout/icons/garden.twig' with {iconName: iconName} %} {{ blockName }}</div>
+    <ul class="container list-unstyled">
+        {% for url in urlList %}
+            {% if not url.isSeparator %}
+                <li><a href="{{ url.getUrl }}">{{ url.getNameDisplay }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
