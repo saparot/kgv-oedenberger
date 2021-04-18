@@ -58,15 +58,9 @@ class ListController extends AbstractController {
      */
     function index (Request $request, NewsRepository $newsRepository): Response {
         ;
-        $newsForm = $this->getNewsForm();
-        $newsForm->handleRequest($request);
-
-        if ($newsForm->isSubmitted()) {
-            return $this->save($newsForm);
-        }
         $this->addNewsList($newsRepository);
 
-        return $this->assign('newsForm', $newsForm->createView())->renderPageView();
+        return $this->renderPageView();
     }
 
     private function getIntroData (): ?array {
@@ -79,24 +73,5 @@ class ListController extends AbstractController {
 
     private function addNewsList (NewsRepository $newsRepository) {
         $this->assign('newsList', $newsRepository->findForNewsPage());
-    }
-
-    private function getNewsForm (): FormInterface {
-        return $this->createFormBuilder()->add('title', TextType::class, ['label' => 'Überschrift', 'required' => false,])->add('news', CKEditorType::class, [
-            'config' => ['toolbar' => 'full'],
-            'label' => 'die Neuigkeit',
-            'required' => true,
-        ])->add('speichern', SubmitType::class)->getForm();
-    }
-
-    private function save (FormInterface $newsForm) {
-        $data = $newsForm->getData();
-
-        $news = (new News())->setTitle($data['title'])->setDescription($data['news'])->setTimeCreated(new DateTime())->setTimeUpdated(new DateTime());
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($news);
-        $em->flush();
-
-        return $this->redirectToRoute('newsList');
     }
 }
