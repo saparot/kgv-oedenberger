@@ -12,6 +12,12 @@ trait BreadCrumbMixin {
 
     abstract function generateUrl (string $route, array $parameters = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH): string;
 
+    private function addMembers (?string $text, ?string $url): BreadCrumbsChain {
+        $breadChain = $this->getBreadCrumbsChain()->add('Vereinsmitglieder', null);
+
+        return $text ? $breadChain->add($text, $url) : $breadChain;
+    }
+
     private function addHome (?string $text, ?string $url): BreadCrumbsChain {
         $breadChain = $this->getBreadCrumbsChain();
 
