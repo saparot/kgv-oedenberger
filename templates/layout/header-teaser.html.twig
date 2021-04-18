@@ -1,4 +1,6 @@
-<div class="header__teaser {{ teaserVariant }}">
-    <div class="container">
+{% if teaserVariant is defined %}
+    <div class="header__teaser {{ teaserVariant }}">
+        <div class="container">
+        </div>
     </div>
-</div>
+{% endif %}
