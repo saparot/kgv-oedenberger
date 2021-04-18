@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:200,300,400,700);
+
+* {
+    background-color: #e9ecef;
+}
+
+.news-content-box {
+    font-family: Muli, serif;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    color: #fff;
+    background-color: #606c38;
+    border: 1px solid #283618;
+}

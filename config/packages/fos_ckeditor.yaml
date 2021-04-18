@@ -1,5 +1,17 @@
 # Read the documentation: https://symfony.com/doc/current/bundles/FOSCKEditorBundle/index.html
 fos_ck_editor:
+  default_config: kgvConfig
+  configs:
+    kgvConfig:
+      stylesSet: "kgvStyle"
+      toolbar: full
+      removeButtons: 'Subscript,Superscript'
+      contentsCss: '/build/ckeditor-customize/custom.css'
+  styles:
+    kgvStyle:
+      - { name: "Überschrift", element: "h4", attributes: { class: "kgv-headline--4" } }
+      - { name: "Highlight-Box", element: "span", attributes: { class: "news-content-box" } }
+
   base_path: "build/ckeditor"
   js_path: "build/ckeditor/ckeditor.js"
 twig:

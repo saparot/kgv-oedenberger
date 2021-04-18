@@ -15,10 +15,9 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Id</th>
+            <th>Auflistung Reihenfolge</th>
             <th>Name</th>
             <th>Position</th>
-            <th>Auflistung Reihenfolge</th>
             <th>E-Mail</th>
             <th>Telefon</th>
             <th>Aktionen</th>
@@ -27,14 +26,12 @@
         <tbody>
         {% for executive in executives %}
             <tr>
-                <td>{{ executive.id }}</td>
+                <td>{{ executive.sort }}</td>
                 <td>{{ executive.Name }}</td>
                 <td>{{ executive.position }}</td>
-                <td>{{ executive.sort }}</td>
                 <td>{{ executive.email }}</td>
                 <td>{{ executive.phone }}</td>
                 <td>
-                    <a href="{{ path('administrationExecutiveShow', {'id': executive.id}) }}">anzeigen</a>
                     <a href="{{ path('administrationExecutiveEdit', {'id': executive.id}) }}">bearbeiten</a>
                 </td>
             </tr>

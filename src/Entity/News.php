@@ -15,37 +15,37 @@ class News {
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private ?string $title;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $timeCreated;
+    private ?\DateTimeInterface $timeCreated;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $timeUpdated;
+    private ?\DateTimeInterface $timeUpdated;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $timePublish;
+    private ?\DateTimeInterface $timePublish;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isPublished;
+    private ?bool $isPublished;
 
     function getId (): ?int {
         return $this->id;

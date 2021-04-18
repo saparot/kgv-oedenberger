@@ -73,7 +73,8 @@ Encore
 
     /** saparot start   */
     .copyFiles({from: 'assets/img/', to: 'img/[path][name].[ext]'})
-.copyFiles({from: 'assets/icons/', to: 'icons/[path][name].[ext]'})
+    .copyFiles({from: 'assets/icons/', to: 'icons/[path][name].[ext]'})
+    .copyFiles({from: 'assets/ckeditor-customize/', to: 'ckeditor-customize/[path][name].[ext]'})
     /** saparot ends   */
 
     /** saparot ckedidtor start  */

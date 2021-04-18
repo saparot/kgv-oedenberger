@@ -1,0 +1,27 @@
+{% extends 'base-administration.html.twig' %}
+{% block body %}
+    <div class="administration-news-list">
+
+        {% include 'layout/partials/kgv-intro.twig' %}
+
+
+        {% for news in news %}
+            <div class="administration-news-entry">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">Erstellt: <span class="badge badge-light">{{ news.timeCreated ? news.timeCreated|date('d.m.Y') }}</span></li>
+                    <li class="list-group-item">Geändert: <span class="badge badge-light">{{ news.timeUpdated ? news.timeUpdated|date('d.m.Y') }}</span></li>
+                    <li class="list-group-item">Sichtbar ab:<span class="badge badge-light">{{ news.timePublish ? news.timePublish|date('d.m.Y') }}</span></li>
+                    <li class="list-group-item">Status: <span class="badge badge-light">{{ news.isPublished ? 'Veröffentlicht' : 'Nicht sichtbar' }}</span></li>
+                    <li class="list-group-item"><a class="btn btn-primary" href="{{ path('administration_news_edit', {'id': news.id}) }}">bearbeiten</a></li>
+                </ul>
+
+                <ul class="list-group">
+                    <li class="list-group-item kgv-headline--2">{{ news.title }}</li>
+                    <li class="list-group-item ">{{ news.description|raw }}</li>
+                </ul>
+            </div>
+        {% else %}
+            <div>keine Ankündigungen</div>gefunden
+        {% endfor %}
+    </div>
+{% endblock %}

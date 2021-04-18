@@ -69,7 +69,7 @@
 
             <ul class="navbar-nav ml-auto">
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown dropleft">
                         <a class="nav-link dropdown-toggle" href="#" id="dropDownAdmin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ app.user.username }} <i class="fas fa-cog" alt="User Menü"></i>
                         </a>

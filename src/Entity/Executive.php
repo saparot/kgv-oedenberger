@@ -8,100 +8,89 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=ExecutiveRepository::class)
  */
-class Executive
-{
+class Executive {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $name;
+    private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $position;
+    private ?string $position;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $sort;
+    private ?int $sort;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $email;
+    private ?string $email;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $phone;
+    private ?string $phone;
 
-    public function getId(): ?int
-    {
+    function getId (): ?int {
         return $this->id;
     }
 
-    public function getName(): ?string
-    {
+    function getName (): ?string {
         return $this->name;
     }
 
-    public function setName(?string $Name): self
-    {
-        $this->Name = $Name;
+    function setName (?string $name): self {
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getPosition(): ?string
-    {
+    function getPosition (): ?string {
         return $this->position;
     }
 
-    public function setPosition(string $position): self
-    {
+    function setPosition (string $position): self {
         $this->position = $position;
 
         return $this;
     }
 
-    public function getSort(): ?int
-    {
+    function getSort (): ?int {
         return $this->sort;
     }
 
-    public function setSort(int $sort): self
-    {
+    function setSort (int $sort): self {
         $this->sort = $sort;
 
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
+    function getEmail (): ?string {
         return $this->email;
     }
 
-    public function setEmail(?string $email): self
-    {
+    function setEmail (?string $email): self {
         $this->email = $email;
 
         return $this;
     }
 
-    public function getPhone(): ?string
-    {
+    function getPhone (): ?string {
         return $this->phone;
     }
 
-    public function setPhone(?string $phone): self
-    {
+    function setPhone (?string $phone): self {
         $this->phone = $phone;
 
         return $this;

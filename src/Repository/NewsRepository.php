@@ -25,6 +25,13 @@ class NewsRepository extends ServiceEntityRepository {
         return $this->createQueryBuilder('news')->orderBy('news.timePublish', 'DESC')->orderBy('news.id', 'DESC')->setMaxResults(10)->getQuery()->getResult();
     }
 
+    /**
+     * @return News[] Returns an array of News objects
+     */
+    function findForAdminPage (): ?array {
+        return $this->createQueryBuilder('news')->orderBy('news.timePublish', 'DESC')->orderBy('news.id', 'DESC')->setMaxResults(50)->getQuery()->getResult();
+    }
+
 
     // /**
     //  * @return News[] Returns an array of News objects

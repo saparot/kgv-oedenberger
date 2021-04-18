@@ -4,8 +4,11 @@ namespace App\Controller\Administration;
 
 use App\Entity\Executive;
 use App\Form\ExecutiveType;
+use App\Helper\BreadCrumbsChain;
+use App\Mixin\BreadCrumbMixin;
+use App\Mixin\LinkListMixin;
+use App\Mixin\PageviewMixin;
 use App\Repository\ExecutiveRepository;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,42 +19,38 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ExecutiveController extends AbstractController {
 
+    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+
+    function getBreadCrumbChain (): ?BreadCrumbsChain {
+        return $this->addAdministration(null, null)->add('Vorstand', $this->generateUrl('administrationExecutive'));
+    }
+
+    function getPageTitle (): ?string {
+        return 'Administration Vorstand';
+    }
+
+    function getTemplate (): string {
+        return 'administration/executive/index.html.twig';
+    }
+
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Administration Vorstand',
+            'icon' => 'flower-with-pot-colored',
+            'text' => 'Hier können die Namen der Vorstände und anderer Funktionäre bearbeitet werden. Neue Positionen können aktuell nicht hinzugefügt werden. ',
+        ];
+    }
+
     /**
      * @Route("/", name="administrationExecutive", methods={"GET"})
      * @param ExecutiveRepository $executiveRepository
      *
      * @return Response
      */
-    public function index (ExecutiveRepository $executiveRepository): Response {
-        return $this->render('administration/executive/index.html.twig', [
-            'executives' => $executiveRepository->findAll(),
-        ]);
-    }
+    function index (ExecutiveRepository $executiveRepository): Response {
+        $this->assign('executives', $executiveRepository->findAll());
 
-    /**
-     * @Route("/new", name="administrationExecutiveNew", methods={"GET","POST"})
-     * @param Request $request
-     *
-     * @return Response
-     */
-    public function new (Request $request): Response {
-        return $this->redirectToRoute('administrationExecutive');
-        //$executive = new Executive();
-        //$form = $this->createForm(ExecutiveType::class, $executive);
-        //$form->handleRequest($request);
-        //
-        //if ($form->isSubmitted() && $form->isValid()) {
-        //    $entityManager = $this->getDoctrine()->getManager();
-        //    $entityManager->persist($executive);
-        //    $entityManager->flush();
-        //
-        //    return $this->redirectToRoute('administrationExecutive');
-        //}
-        //
-        //return $this->render('administration/executive/new.html.twig', [
-        //    'executive' => $executive,
-        //    'form' => $form->createView(),
-        //]);
+        return $this->renderPageView();
     }
 
     /**
@@ -60,7 +59,7 @@ class ExecutiveController extends AbstractController {
      *
      * @return Response
      */
-    public function show (Executive $executive): Response {
+    function show (Executive $executive): Response {
         return $this->render('administration/executive/show.html.twig', [
             'executive' => $executive,
         ]);
@@ -73,7 +72,7 @@ class ExecutiveController extends AbstractController {
      *
      * @return Response
      */
-    public function edit (Request $request, Executive $executive): Response {
+    function edit (Request $request, Executive $executive): Response {
         $form = $this->createForm(ExecutiveType::class, $executive);
         $form->handleRequest($request);
 
@@ -88,24 +87,5 @@ class ExecutiveController extends AbstractController {
             'executive' => $executive,
             'form' => $form->createView(),
         ]);
-    }
-
-    /**
-     * @Route("/{id}", name="administrationExecutiveDelete", methods={"DELETE"})
-     * @param Request $request
-     * @param Executive $executive
-     *
-     * @return Response
-     * @throws Exception
-     */
-    public function delete (Request $request, Executive $executive): Response {
-        throw new Exception("delete is not supported");
-        //if ($this->isCsrfTokenValid('delete' . $executive->getId(), $request->request->get('_token'))) {
-        //    $entityManager = $this->getDoctrine()->getManager();
-        //    $entityManager->remove($executive);
-        //    $entityManager->flush();
-        //}
-        //
-        //return $this->redirectToRoute('administrationExecutive');
     }
 }
