@@ -45,7 +45,7 @@ class RulesController extends AbstractController {
     private function getIntroData (): ?array {
         return [
             'title' => 'Satzung',
-            'icon' => 'shovel',
+            'icon' => 'shovel-colored',
             'text' => 'Jeder Verein braucht eine Satzung. In dieser wird festgelegt und beschrieben wie unser Verein aufgestellt ist und wie er funktioniert. Die nicht allzu lange ist dem interessierten Leser empfohlen.'
         ];
     }
