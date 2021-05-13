@@ -1,0 +1,15 @@
+@import "./colors";
+
+.kgv-carousel {
+  &--landscape {
+    background-color: $gray-dark;
+  }
+}
+
+.kgv-carousel-item {
+  &__image {
+    margin: 2px auto 0 auto;
+    height: calc(100vh - 60px);
+    align-self: center;
+  }
+}

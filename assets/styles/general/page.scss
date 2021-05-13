@@ -1,5 +1,11 @@
-@import "../colors";
+@import "./colors";
 
 ul {
   list-style: none;
+}
+
+.kgv-bg {
+  &--landscape {
+    background-color: $gray-dark;
+  }
 }
