@@ -4,43 +4,20 @@
         {
             'path': '/build/img/galleries/playground/alexander-schimmeck-_1-qebBtWxo-unsplash.jpg',
             'title': 'title',
-            'text' : 'text',
+            'description' : 'text',
         },
         {
             'path': '/build/img/galleries/playground/hatice-yardim-gm99s9v-zpQ-unsplash.jpg',
             'title': 'title',
-            'text' : 'text',
+            'description' : 'text',
         },
         {
             'path': '/build/img/galleries/playground/johnny-cohen-xro1l0c72VY-unsplash.jpg',
             'title': 'title',
-            'text' : 'text',
+            'description' : 'text',
         },
     ] %}
 
-    <div class="kgv-carousel--landscape">
-        <div id="kgv-carousel-walkthrough" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                {% for image in imageList %}
-                    <div class="carousel-item kgv-carousel-item {{ loop.first ? 'active' : '' }}">
-                        <img class="d-block kgv-carousel-item__image" src="{{ image.path }}" alt="{{ image.title }}">
-                        <div class="carousel-caption d-none d-md-block">
-                            <div class="kgv-carousel-item__image">{{ image.title }}</div>
-                            <p class="kgv-carousel-item__image">{{ image.text }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
+    {% include 'layout/carousel/carouselLandscape.twig' with { carouselId:'kvg-walkthrough-landscape', imageList:imageList} %}
 
-            <a class="carousel-control-prev" href="#kgv-carousel-walkthrough" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Vorheriges</span>
-            </a>
-
-            <a class="carousel-control-next" href="#kgv-carousel-walkthrough" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Nächstes</span>
-            </a>
-        </div>
-    </div>
 {% endblock %}
