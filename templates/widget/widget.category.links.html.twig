@@ -6,7 +6,7 @@
 
 {% block widgetContent %}
     {% if sidebarUrlList %}
-        <ul class="list__unstyled">
+        <ul class="list-unstyled">
             {% for url in sidebarUrlList.iterate %}
                 {% if not url.isSeparator %}
                     <li><a class="{% if  url.isActive %} active{% endif %}" href="{{ url.getUrl }}">{% if  url.isActive %} ⇛{% endif %}{{ url.getNameDisplay }}</a></li>

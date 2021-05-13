@@ -85,6 +85,11 @@ class NewsController extends AbstractController {
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $news->setTimeUpdated(new DateTime());
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($news);
+            $entityManager->flush();
+
             $this->addFlash('success', 'Änderung erfolgreich gespeichert');
 
             return $this->redirectToRoute('administrationNews');

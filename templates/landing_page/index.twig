@@ -1,0 +1,18 @@
+{% extends 'base-big.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+
+        {% if newsEntityLatest %}
+            {% include 'news/list/newsEntity.twig' with {news: newsEntityLatest} %}
+        {% endif %}
+
+        <div class="col-sm-5">
+
+
+        </div>
+
+    </div>
+
+{% endblock %}

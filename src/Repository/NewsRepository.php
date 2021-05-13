@@ -18,6 +18,12 @@ class NewsRepository extends ServiceEntityRepository {
         parent::__construct($registry, News::class);
     }
 
+    function findForLandingPage (): ?News {
+        $latest = $this->createQueryBuilder('news')->orderBy('news.timePublish', 'DESC')->orderBy('news.id', 'DESC')->setMaxResults(1)->getQuery()->getResult();
+
+        return $latest[0] ?? null;
+    }
+
     /**
      * @return News[] Returns an array of News objects
      */
