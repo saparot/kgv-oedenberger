@@ -4,14 +4,6 @@
 
     {% include 'layout/partials/kgv-intro.twig' %}
 
-    {# <div class="kgv-intro"> #}
-    {# <img class="kgv-intro__image" src="{{ asset('build/img/garden/fence.svg') }}" alt=""> #}
-    {# <h1 class="kgv-headline--1">Ankündigungen</h1> #}
-    {# <div>Auf dieser Seite finden Sie die aktuellen Ankündigungen rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. #}
-    {# Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!</div> #}
-    {# </div> #}
-
-
     {% for news in newsList %}
         {% include 'news/list/newsEntity.twig' %}
     {% endfor %}

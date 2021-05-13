@@ -1,6 +1,7 @@
-    <div class="jumbotron kgv-news-entity">
-        <h2 class="display-6 kgv-headline--2">{{ news.title }}</h2>
-        <p class="lead kgv-news-entity__published">{{ news.timePublish|format_date( 'full', locale='de') }}</p>
-        <hr class="my-4">
-        <p>{{ news.description|raw }}</p>
+<div class="kgv-news-entity">
+    <div class="kgv-news-entity__head">
+        <h2 class="display-6 kgv-news-entity__title">{{ news.title }}</h2>
+        <p class="kgv-news-entity__published">{{ news.timePublish|format_date( 'full', locale='de') }}</p>
     </div>
+    <div class="kgv-news-entity__description">{{ news.description|raw }}</div>
+</div>

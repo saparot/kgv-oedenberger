@@ -4,8 +4,8 @@
             {% for image in imageList %}
                 <div class="carousel-item kgv-carousel-item {{ loop.first ? 'active' : '' }}">
                     <img class="d-block kgv-carousel-item__image" src="{{ image.path }}" alt="{{ image.title }}">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="kgv-carousel-item__title">{{ image.title }}</h5>
+                    <div class="carousel-caption d-none d-md-block kgv-carousel-item__caption">
+                        <div class="kgv-carousel-item__title">{{ image.title }}</div>
                         <p class="kgv-carousel-item__description">{{ image.description }}</p>
                     </div>
                 </div>

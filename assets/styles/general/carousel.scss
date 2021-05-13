@@ -1,4 +1,5 @@
-@import "./colors";
+@import "./variables";
+
 
 .kgv-carousel {
   &--landscape {
@@ -7,9 +8,31 @@
 }
 
 .kgv-carousel-item {
+
   &__image {
+    //margin: 2px auto 0 auto;
+    //height: calc(100vh - 60px);
+    //align-self: center;
+
     margin: 2px auto 0 auto;
-    height: calc(100vh - 60px);
+    max-height: calc(100vh - 60px);
     align-self: center;
+    max-width: 100%;
+  }
+
+  &__caption {
+    background-color: $primary;
+    opacity: .8;
+    overflow: hidden;
+  }
+
+  &__title {
+    color: $secondary;
+    font-size: $h2-font-size;
+    text-shadow: 15px $white;
+  }
+
+  &__text {
+
   }
 }

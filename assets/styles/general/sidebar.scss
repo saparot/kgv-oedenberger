@@ -1,9 +1,40 @@
-@import "./colors";
-@import "./breakpoints-mixin";
+@import "./variables";
+
+
+.kgv-corona-distance {
+  &__image {
+    width: 200px;
+    height: auto;
+  }
+
+  @include screenSize(medium) {
+    &__image {
+      width: 320px;
+    }
+  }
+
+  @include screenSize(large) {
+    &__image {
+      width: 200px;
+    }
+    &__image:hover {
+      transform: scale(1.4);
+    }
+  }
+
+  @include screenSize(landscape) {
+    &__image {
+      width: 250px;
+    }
+
+    &__image:hover {
+      transform: scale(1.4);
+    }
+  }
+}
 
 .kgv-navigation-bar {
-  //background-color: $gray-dark;
-  border-right: 1px solid $primary;
+  border-right: 1px solid $gray-200;
 
   .kgv-sidebar-widget {
     &__title {
@@ -21,22 +52,4 @@
 .navbar {
   text-transform: uppercase;
   box-shadow: 0 8px 6px -6px #999;
-
-}
-
-
-.card {
-  border: none;
-  border-left: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.card-header {
-  color: $secondary;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.25rem .25rem;
 }

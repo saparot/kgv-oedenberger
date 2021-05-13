@@ -1,25 +1,44 @@
-@import "./newsEnitity";
-@import "../general/colors";
-
+@import '../general/variables';
 .kgv-news-entity {
+  background: $white linear-gradient(150deg, #f4f3f0 20%, $white 50%);
 
-  box-shadow: 0 8px 6px -6px #999;
-  border: 2px solid $secondary;
-  padding: 1rem 2rem;
+  border: 1px solid $gray-500;
+  border-radius: 0.3rem;
+  padding: 0;
   margin-bottom: 2rem;
+  border: 1px solid #cccccc;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
 
-  &__text {
+  &__head {
+    margin: 2rem 1rem;
+  }
 
-    color: pink;
+  &__title {
+    color: $secondary;
+    font-weight: 600;
 
-    &--important {
-      color: $red;
-    }
   }
 
   &__published {
     text-align: right;
+    font-size: $h5-font-size;
+    font-weight: $font-weight-bolder;
+    color: $primary;
   }
+
+  &__description {
+    border-top: 1px $gray-500 solid;
+    padding: 1rem;
+    margin: 0;
+  }
+
+  &__text {
+    &--important {
+      color: $red;
+      font-weight: bold;
+    }
+  }
+
 
   &__highlight, .news-content-box {
     display: inline-block;
@@ -30,10 +49,10 @@
     background-color: #606c38;
     border: 1px solid #283618;
   }
+}
 
-  .kgv-headline--2 {
-    font-weight: 600;
-  }
+.kgv-news-entity:first-child {
+  margin-top: 5rem;
 }
 
 .kgv-news-entity:last-child {

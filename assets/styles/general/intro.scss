@@ -1,16 +1,18 @@
+@import './variables';
+
 .kgv-intro {
   margin-bottom: 2rem;
 
   &__icon {
     float: right;
     margin-left: 30px;
-    width: calc-px-from-rem($headline-size--1, 2);
-    height: calc-px-from-rem($headline-size--1, 2);
+    width: $h1-font-size;
+    height: $h1-font-size;
     color: $brown;
 
     svg {
-      width: calc-px-from-rem($headline-size--1, 2);
-      height: calc-px-from-rem($headline-size--1, 2);
+      width: $h1-font-size;
+      height: $h1-font-size;
     }
   }
 }

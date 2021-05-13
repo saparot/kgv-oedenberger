@@ -1,8 +1,10 @@
 // the ~ allows you to reference things in node_modules
 //icons from https://fontawesome.com/icons/cog?style=solid
-@import "~bootstrap/scss/bootstrap";
-@import "./kgv-oedenberger-bootstrap-theme";
+@import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import "./general/index";
+@import "~bootstrap/scss/bootstrap";
+
 @import "./administration/index";
 @import "./news/index";
 
