@@ -1,11 +1,11 @@
 /* Created with Themestr.app */
 /*! `Custom` Bootstrap 4 theme */
 @import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);
-@import url(https://fonts.googleapis.com/css?family=Muli:200,300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,400,700);
+//@import url(https://fonts.googleapis.com/css?family=Muli:200,300,400,700);
+//@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,400,700);
 
-@import url(https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap);
-
+//@import url(https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -60,7 +60,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: Muli, serif;
+  font-family: Poppins, serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -3262,7 +3262,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem
+  padding: 1.25rem .25rem
 }
 
 .card-title {

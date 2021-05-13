@@ -1,3 +1,9 @@
+
+$breakpoint--small: 576px;
+$breakpoint--medium: 768px;
+$breakpoint--large: 992px;
+$breakpoint--extraLarge: 1200px;
+
 $oneRemPixel: 16;
 
 @function calc-px-from-rem($factor, $modifier:0) {

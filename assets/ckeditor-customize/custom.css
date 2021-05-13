@@ -4,7 +4,7 @@
     background-color: #e9ecef;
 }
 
-.news-content-box {
+.kgv-news-entity__highlight {
     font-family: Muli, serif;
     font-size: 2rem;
     font-weight: bold;
@@ -12,4 +12,12 @@
     color: #fff;
     background-color: #606c38;
     border: 1px solid #283618;
+}
+
+.kgv-news-entity__text.kgv-news-entity__text--important {
+    font-family: Muli, serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    color: #dc3545;
 }
