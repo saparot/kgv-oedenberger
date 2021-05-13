@@ -10,7 +10,8 @@ fos_ck_editor:
   styles:
     kgvStyle:
       - { name: "Überschrift", element: "h4", attributes: { class: "kgv-headline--4" } }
-      - { name: "Highlight-Box", element: "span", attributes: { class: "news-content-box" } }
+      - { name: "Highlight-Box", element: "span", attributes: { class: "kgv-news-entity__highlight" } }
+      - { name: "Important", element: "span", attributes: { class: "kgv-news-entity__text kgv-news-entity__text--important" } }
 
   base_path: "build/ckeditor"
   js_path: "build/ckeditor/ckeditor.js"
