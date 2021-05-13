@@ -1,0 +1,34 @@
+{% extends 'base-administration.html.twig' %}
+
+{% block title %}DownloadFile{% endblock %}
+
+{% block body %}
+    <h1>DownloadFile</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ download_file.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ download_file.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ download_file.description }}</td>
+            </tr>
+            <tr>
+                <th>FileName</th>
+                <td>{{ download_file.fileName }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('download_file_index') }}">back to list</a>
+
+    <a href="{{ path('download_file_edit', {'id': download_file.id}) }}">edit</a>
+
+    {{ include('administration/download_file/_delete_form.html.twig') }}
+{% endblock %}

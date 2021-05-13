@@ -1,0 +1,39 @@
+{% extends 'base-administration.html.twig' %}
+
+{% block title %}DownloadFile index{% endblock %}
+
+{% block body %}
+    <h1>DownloadFile index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>FileName</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for download_file in download_files %}
+            <tr>
+                <td>{{ download_file.id }}</td>
+                <td>{{ download_file.name }}</td>
+                <td>{{ download_file.description }}</td>
+                <td>{{ download_file.fileName }}</td>
+                <td>
+                    <a href="{{ path('download_file_show', {'id': download_file.id}) }}">show</a>
+                    <a href="{{ path('download_file_edit', {'id': download_file.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('download_file_new') }}">Create new</a>
+{% endblock %}
