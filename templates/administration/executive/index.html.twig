@@ -10,7 +10,7 @@
         </div>
     {% endfor %}
 
-    <h1>Übersicht Vorstände</h1>
+    <h3>Übersicht Vorstände</h3>
 
     <table class="table table-striped">
         <thead>
@@ -18,21 +18,21 @@
             <th>Auflistung Reihenfolge</th>
             <th>Name</th>
             <th>Position</th>
-            <th>E-Mail</th>
-            <th>Telefon</th>
-            <th>Aktionen</th>
+            <th><i class="fas fa-mail"></i></th>
+            <th><i class="fas fa-phone"></i></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
         {% for executive in executives %}
             <tr>
                 <td>{{ executive.sort }}</td>
-                <td>{{ executive.Name }}</td>
+                <td class="text-nowrap">{{ executive.Name }}</td>
                 <td>{{ executive.position }}</td>
                 <td>{{ executive.email }}</td>
-                <td>{{ executive.phone }}</td>
-                <td>
-                    <a href="{{ path('administrationExecutiveEdit', {'id': executive.id}) }}">bearbeiten</a>
+                <td class="text-nowrap">{{ executive.phone }}</td>
+                <td class="kgv-admin-list-action-items">
+                    <a href="{{ path('administrationExecutiveEdit', {'id': executive.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>
             </tr>
         {% else %}
