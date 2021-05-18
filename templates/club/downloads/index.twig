@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    {% if downloads %}
+        <ul class="kgv-downloads">
+            {% for downloadFile in downloads %}
+                <li class="kgv-download-item">
+                    <h4 class="kgv-download-item__name">{{ downloadFile.name }}</h4>
+                    <div class="kgv-download-item__description">{{ downloadFile.description }}</div>
+                    <div class="kgv-download-item__symbol"><a href="{{ path('clubDownloadFile', {id:downloadFile.id}) }}"><i class="fas fa-arrow-circle-down"></i></a></div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="kgv-no-downloads">
+            <h3>ups.</h3>
+            <div class="kvg-no-downloads__description">
+                Entweder ist etwas schief gelaufen oder wir laden gerade fleißig alle wichtigen PDFs und Dateien für Sie hoch. Schauen Sie doch einfach hier in Kürze nochmal
+                vorbei oder schreiben Sie uns. (Hier sollten wirklich Dateien zum Download zu finden sein).
+            </div>
+        </div>
+    {% endif %}
+
+
+{% endblock %}

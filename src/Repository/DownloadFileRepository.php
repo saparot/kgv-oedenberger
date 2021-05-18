@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\DownloadFile;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use \Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -12,39 +13,19 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method DownloadFile[]    findAll()
  * @method DownloadFile[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DownloadFileRepository extends ServiceEntityRepository
-{
-    public function __construct(ManagerRegistry $registry)
-    {
+class DownloadFileRepository extends ServiceEntityRepository {
+
+    function __construct (ManagerRegistry $registry) {
         parent::__construct($registry, DownloadFile::class);
     }
 
-    // /**
-    //  * @return DownloadFile[] Returns an array of DownloadFile objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+    /**
+     * @param int $id
+     *
+     * @return DownloadFile|null
+     * @throws NonUniqueResultException
+     */
+    function findForDownload (int $id): ?DownloadFile {
+        return $this->createQueryBuilder('d')->andWhere('d.id = :val')->setParameter('val', $id)->getQuery()->getOneOrNullResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?DownloadFile
-    {
-        return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

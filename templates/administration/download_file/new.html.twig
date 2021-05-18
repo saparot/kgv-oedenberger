@@ -1,11 +1,9 @@
 {% extends 'base-administration.html.twig' %}
 
-{% block title %}New DownloadFile{% endblock %}
-
 {% block body %}
-    <h1>Create new DownloadFile</h1>
+    <h3>Neue Datei zum Download anbieten</h3>
 
     {{ include('administration/download_file/_form.html.twig') }}
 
-    <a href="{{ path('download_file_index') }}">back to list</a>
+    <a href="{{ path('administrationDownloads') }}">back to list</a>
 {% endblock %}

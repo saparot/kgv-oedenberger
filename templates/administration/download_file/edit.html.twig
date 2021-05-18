@@ -1,13 +1,10 @@
 {% extends 'base-administration.html.twig' %}
 
-{% block title %}Edit DownloadFile{% endblock %}
-
 {% block body %}
-    <h1>Edit DownloadFile</h1>
+    <h3>Eintrag für Download Datei bearbeiten</h3>
 
-    {{ include('download_file/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('administration/download_file/_form.html.twig', {'button_label': 'Speichern'}) }}
 
-    <a href="{{ path('download_file_index') }}">back to list</a>
+    <a href="{{ path('administrationDownloads') }}">zurück zur Übersicht</a>
 
-    {{ include('administration/download_file/_delete_form.html.twig') }}
 {% endblock %}

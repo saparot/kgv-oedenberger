@@ -1,39 +1,42 @@
 {% extends 'base-administration.html.twig' %}
 
-{% block title %}DownloadFile index{% endblock %}
-
 {% block body %}
-    <h1>DownloadFile index</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <h3>Download Dateien Übersicht</h3>
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>FileName</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Name</th>
+            <th>Beschreibung</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
-        {% for download_file in download_files %}
+        {% for downloadFile in downloadFiles %}
             <tr>
-                <td>{{ download_file.id }}</td>
-                <td>{{ download_file.name }}</td>
-                <td>{{ download_file.description }}</td>
-                <td>{{ download_file.fileName }}</td>
-                <td>
-                    <a href="{{ path('download_file_show', {'id': download_file.id}) }}">show</a>
-                    <a href="{{ path('download_file_edit', {'id': download_file.id}) }}">edit</a>
+                <td>{{ downloadFile.name }}</td>
+                <td>{{ downloadFile.description }}</td>
+                <td class="kgv-admin-list-action-items">
+                    <span class="kgv-admin-list-action-item"><a href="{{ path('download_file_edit', {'id': downloadFile.id}) }}"><i class="fas fa-edit"></i></a></span>
+                    <span class="kgv-admin-list-action-item"><a href="{{ path('download_file_delete', {'id': downloadFile.id}) }}" onclick="return
+                    confirm('Soll diese Datei entgültig gelöscht werden?');"><i class="fas fas fa-trash-alt"></i></a></span>
+
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">keine Dateien zum Download gefunden</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('download_file_new') }}">Create new</a>
+    <a class="btn btn-primary" href="{{ path('download_file_new') }}">neue Datei hochladen</a>
 {% endblock %}

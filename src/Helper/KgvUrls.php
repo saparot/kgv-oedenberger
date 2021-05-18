@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 
 class KgvUrls {
 
-    private $container = [];
+    private array $container = [];
 
     private UrlGeneratorInterface $urlGenerator;
 
@@ -55,6 +55,7 @@ class KgvUrls {
         $uc->add('Satzung', 'clubRules');
         $uc->add('Garten Ordnung', 'clubGardenRules');
         $uc->add('Geschichte', 'clubHistory');
+        $uc->add('Formulare + Downloads', 'clubDownloads');
 
         return $uc;
     }

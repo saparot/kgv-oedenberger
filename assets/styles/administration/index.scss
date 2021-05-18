@@ -6,3 +6,16 @@
     margin-bottom: 2rem;
   }
 }
+
+.kgv-admin-list-action-items {
+  white-space: nowrap;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+}
+
+.kgv-admin-list-action-item {
+  display: inline-block;
+
+}
