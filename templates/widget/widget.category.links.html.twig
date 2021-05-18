@@ -9,7 +9,8 @@
         <ul class="list-unstyled">
             {% for url in sidebarUrlList.iterate %}
                 {% if not url.isSeparator %}
-                    <li><a class="{% if  url.isActive %} active{% endif %}" href="{{ url.getUrl }}">{% if  url.isActive %} ⇛{% endif %}{{ url.getNameDisplay }}</a></li>
+                    <li class="p-2"><a class="{% if  url.isActive %} active{% endif %}" href="{{ url.getUrl }}">{% if  url.isActive %} ⇛{% endif %}{{ url.getNameDisplay
+                            }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>

@@ -5,7 +5,7 @@
 {% include 'layout/navigation.html.twig' %}
 <main>
     {% include 'layout/top.html.twig' %}
-    <section class="container">
+    <section class="container kgv-container-landscape">
         {% include 'layout/flashMessages.twig' %}
         <div class="row">
 
@@ -17,16 +17,20 @@
                             <ul>
                                 <li><a href="{{ path('administrationNews') }}">Ankündigungen</a></li>
                                 <li><a href="{{ path('administrationExecutive') }}">Vorstände</a></li>
+                                <li><a href="{{ path('administrationDownloads') }}">Downloads</a></li>
                             </ul>
                         </div>
                         <div class="mt-5">
-                            <a class="btn btn-primary" href="{{ path('administration_news_new') }}">Ankündigung erstellen</a>
+                            <a class="btn btn-outline-primary" href="{{ path('administration_news_new') }}">Ankündigung erstellen</a>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-9">{% block body %}{% endblock %}</div>
+            <div class="col-sm-12 col-md-12 col-lg-9">
+                {% include 'layout/partials/kgv-intro.twig' %}
+                {% block body %}{% endblock %}
+            </div>
         </div>
     </section>
 </main>

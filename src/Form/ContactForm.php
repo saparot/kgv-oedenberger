@@ -18,6 +18,7 @@ class ContactForm extends AbstractType {
 
     public function buildForm (FormBuilderInterface $builder, array $options) {
         $builder->add('name', TextType::class, [
+            'label_format' => 'Ihr Name',
             'label_attr' => ['class' => 'formRequired'],
             'constraints' => [
                 new NotBlank(),

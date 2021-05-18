@@ -42,6 +42,14 @@ class FactsController extends AbstractController {
         return 'garden_area/facts/index.html.twig';
     }
 
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Die Anlage in Zahlen',
+            'icon' => 'flower-with-pot-colored',
+            'text' => "Für Statistiker und solche die es genau wissen wollen, gibt es auch ein paar Zahlen rund um unseren Kleingartenverein und die Anlage :)",
+        ];
+    }
+
     /**
      * @Route("/gardenArea/facts", name="gardenAreaFacts")
      * @param Request $request
@@ -49,6 +57,25 @@ class FactsController extends AbstractController {
      * @return Response
      */
     function index (Request $request): Response {
+        $this->assign('facts', $this->getFacts());
+
         return $this->renderPageView();
+    }
+
+    private function getFacts (): array {
+        return [
+            [
+                'fact' => '164 Gärten',
+                'text' => '..sind in unserem Kleingartenverein beheimatet',
+            ],
+            [
+                'fact' => '57.018 m²',
+                'text' => '..Fläche beansprucht unsere Anlage',
+            ],
+            [
+                'fact' => '0,03 %',
+                'text' => 'ist der Prozentuale Flächenanteil an Nürnberg (<a href="https://de.wikipedia.org/wiki/N%C3%BCrnberg" target="_new">Stand 05/2021</a>) die vielleicht schönsten 0,03% von Nürnberg ;)',
+            ],
+        ];
     }
 }

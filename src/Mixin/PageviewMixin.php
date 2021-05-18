@@ -53,7 +53,7 @@ trait PageviewMixin {
             'introData' => $this->getIntroData(),
         ];
 
-        return array_merge($this->templateData, $extended);
+        return $this->templateData + $extended;
     }
 
     private function getPageIdentifier (): string {
