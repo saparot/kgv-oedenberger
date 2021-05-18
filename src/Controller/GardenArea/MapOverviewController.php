@@ -35,7 +35,15 @@ class MapOverviewController extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Übersichtskarte';
+        return 'Anlagenplan';
+    }
+
+    private function getIntroData (): ?array {
+        return [
+            'title' => 'Anlagenplan',
+            'icon' => 'flower-with-pot-colored',
+            'text' => "Für eine schnelle Orientierung hilft unser Anlagenplan. Die 5 Hauptzugänge sind alle über die Leipziger Straße erreichbar. ",
+        ];
     }
 
     function getTemplate (): string {
