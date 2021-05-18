@@ -3,12 +3,15 @@
 {% block title %}Hello FactsController!{% endblock %}
 
 {% block body %}
-<h1>Fakten & Zahlen</h1>
-    <div class="container-fluid">
 
 
-        1 Anlage (Karte) mit 164 Gärten, 57.018 m² Gesamtfläche
-        Vereinsdaten:                KGV Oedenberger Straße e.V.
-        Oedenberger Str. 114, 90491 Nürnberg
+    {% include 'layout/partials/kgv-intro.twig' %}
+    <div class="kgv-garden-area-facts">
+        {% for fact in facts %}
+            <div class="kgv-garden-area-facts__container">
+                <div class="kgv-garden-area-facts__fact">{{ fact.fact }}</div>
+                <div class="kgv-garden-area-facts__additional">{{ fact.text|raw }}</div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
