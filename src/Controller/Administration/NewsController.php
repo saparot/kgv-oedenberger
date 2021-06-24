@@ -23,11 +23,11 @@ class NewsController extends AbstractController {
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
     function getBreadCrumbChain (): ?BreadCrumbsChain {
-        return $this->addAdministration(null, null)->add('Ankündigungen', $this->generateUrl('administrationNews'));
+        return $this->addAdministration(null, null)->add('Neuigkeiten', $this->generateUrl('administrationNews'));
     }
 
     function getPageTitle (): ?string {
-        return 'Administration Ankündigungen';
+        return 'Administration Neuigkeiten';
     }
 
     function getTemplate (): string {
@@ -36,9 +36,9 @@ class NewsController extends AbstractController {
 
     private function getIntroData (): ?array {
         return [
-            'title' => 'Administration Ankündigungen',
+            'title' => 'Administration Neuigkeiten',
             'icon' => 'flower-with-pot-colored',
-            'text' => 'Hier können Ankündigungen anlegt, bearbeitet und gelöscht werden. Alle Ankündigungen erscheinen ohne den eigenen Klarnamen, so mit immer im Namen des Vorstandes. Es werden nur die letzten 20 Ankündigungen angezeigt, ältere aktuell noch nicht.',
+            'text' => 'Hier können Neuigkeiten anlegt, bearbeitet und gelöscht werden. Alle Neuigkeiten erscheinen ohne den eigenen Klarnamen, somit immer im Namen des Vorstandes. Es werden nur die letzten 20 Neuigkeiten angezeigt, ältere aktuell noch nicht.',
         ];
     }
 
