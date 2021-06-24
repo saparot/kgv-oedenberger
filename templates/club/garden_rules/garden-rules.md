@@ -57,8 +57,7 @@ Aus dem Pachtgrundstück dürfen weder Sand, Erde sowie andere Bodenbestandteile
 ###§10 Pflanzenschutzmaßnahmen
 Die eigenmächtige Anwendung von Pflanzenschutzmitteln ist verboten. Eine Anwendung von Pflanzenschutzmitteln ist nur in begründeten Ausnahmefällen nach Genehmigung durch den Fachberater des Stadtverbandes möglich. In den dem Generalpachtvertrag unterliegenden Flächen dürfen nur Pflanzenstärkungsmittel verwendet werden.
 
-###§11
-Verbrennen von Gartenabfällen und Geruchsbelästigungen
+###§11 Verbrennen von Gartenabfällen und Geruchsbelästigungen
 In Kleingartenanlagen ist das Verbrennen von Gartenabfällen verboten (Amtsblatt Nr. 15 der Stadt Nürnberg vom 27.07.11). Nicht kompostierbare Gartenabfälle müssen zu den Gartenabfallsammelstellen oder Wertstoffhöfen gebracht werden.
 Rauchentwicklung und übermäßige Geruchsbelästigung insbesondere durch Grillen ist zu unterlassen. Außerdem ist das Ausbringen von geruchsbelästigenden Düngestoffen und Pflanzenstärkungsmittel, auch selbst hergestellte, an Sonn- und
 
