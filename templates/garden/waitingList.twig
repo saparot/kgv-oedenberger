@@ -1,10 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+
     <div class="jumbotron">
         <h1 class="display-4">Warteliste Kleingarten.</h1>
         <p class="lead">2020/2021</p>
         <hr class="my-4">
+        <div class="alert alert-danger">
+            <i class="fas fa-info-circle"></i>Warteliste vorübergehend geschlossen!
+        </div>
+
         <p>Liebe zukünftige Kleingärtner,</p>
         <p>Verstärkt durch Corona haben sich viele Menschen für einen Kleingarten interessiert. <br>
             Da unsere Warteliste bereits 2019
