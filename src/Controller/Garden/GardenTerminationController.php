@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\GardenArea;
+namespace App\Controller\Garden;
 
 use App\Helper\BreadCrumbsChain;
 use App\Helper\Categories;
@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CommandmentsController extends AbstractController {
+class GardenTerminationController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
@@ -27,31 +27,31 @@ class CommandmentsController extends AbstractController {
     }
 
     function getCategory (): ?string {
-        return Categories::CATEGORY_AREA;
+        return Categories::CATEGORY_GARDEN;
     }
 
     function getBreadCrumbChain (): BreadCrumbsChain {
-        return $this->addGardenArea('10 Gebote des Kleingärtners', null);
+        return $this->addGardenArea('Gartenauflösung', null);
     }
 
     function getPageTitle (): ?string {
-        return '10 Gebote des Kleingärtners';
+        return 'Gartenauflösung';
     }
 
     function getTemplate (): string {
-        return 'garden_area/commandments/index.html.twig';
+        return 'garden/gardenTermination/index.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
-            'title' => '10 Gebote des Kleingärtners',
-            'icon' => 'sun-colored',
-            'text' => 'Nicht alles ist in Gesetzen und Regeln festgeschrieben, was für ein harmonisches und friedliches Miteinander wichtig ist. So sind unseren Vereinsmitgliedern und deren Gästen die 10 Gebote des Kleingärtners des <a target="_svnbg" href="https://kleingaertner-nuernberg.de/">Stadtveband Nürnberg</a> ans Herz gelegt. ',
+            'title' => 'Gartenauflösung',
+            'icon' => 'wheel-barrow-colored',
+            'text' => 'Dem einen fällt es schwer, dem anderen leicht. Wenn der Zeitpunkt gekommen ist, an dem man seinen Garten aufgeben möchte oder muss, gibt es natürlich auch einige Dinge zu beachten. ',
         ];
     }
 
     /**
-     * @Route("/gardenArea/commandments", name="gardenAreaCommandments")
+     * @Route("/mein-garten/aufloesung", name="gardenTermination")
      * @param Request $request
      *
      * @return Response

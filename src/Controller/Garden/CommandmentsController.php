@@ -9,10 +9,11 @@ use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class GardenDesignController extends AbstractController {
+class CommandmentsController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
@@ -30,30 +31,32 @@ class GardenDesignController extends AbstractController {
     }
 
     function getBreadCrumbChain (): BreadCrumbsChain {
-        return $this->addGarden('Garten Gestaltung', $this->generateUrl('gardenGardenDesign'));
+        return $this->addGardenArea('10 Gebote des Kleingärtners', null);
     }
 
     function getPageTitle (): ?string {
-        return 'Garten Gestaltung';
+        return '10 Gebote des Kleingärtners';
     }
 
     function getTemplate (): string {
-        return 'garden/design/index.twig';
+        return 'garden/commandments/index.twig';
     }
 
     protected function getIntroData (): ?array {
         return [
-            'title' => 'Gartengestaltung',
-            'icon' => 'tree-colored',
-            'text' => 'Jeder Gartenbesitzer kann seinen Garten nach eigenem Wunsch Vorstellung gestalten und bewirtschaften. <p>Natürlich müssen die Vorgaben des <a href="https://www.gesetze-im-internet.de/bkleingg/BJNR002100983.html" target="_new"><i class="fas fa-external-link-alt"></i>Bundeskleingartengesetzes</a>
-            eingehalten werden. </p>',
+            'title' => '10 Gebote des Kleingärtners',
+            'icon' => 'moving-machine-colored',
+            'text' => 'Nicht alles ist in Gesetzen und Regeln festgeschrieben, was für ein harmonisches und friedliches Miteinander wichtig ist. <p>So sind unseren Vereinsmitgliedern und deren Gästen die 10 Gebote des Kleingärtners des <a target="_svnbg" href="https://kleingaertner-nuernberg.de/"><i class="fas fa-external-link-alt"></i> Stadtveband Nürnberg der Kleingärten e.V.</a> ans Herz gelegt.</p>',
         ];
     }
 
     /**
-     * @Route("/mein-garten/garten-gestaltung", name="gardenGardenDesign")
+     * @Route("/mein-garten/10-gebote", name="gardenCommandments")
+     * @param Request $request
+     *
+     * @return Response
      */
-    public function index (): Response {
+    public function index (Request $request): Response {
         return $this->renderPageView();
     }
 }
