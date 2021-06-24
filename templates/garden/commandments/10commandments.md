@@ -4,9 +4,18 @@
 von Musikinstrumenten jeder Art. Dein Nachbar wird es Dir danken!
 
 **3**. Sägen, hacken, hämmern, klopfen und Rasenmähen ist nur in den von der Stadt
-Nürnberg genehmigten Zeiten erlaubt. Diese sind: Montag – Freitag 8 – 12 Uhr und
-15 – 19 Uhr, samstags von 8 – 12 Uhr und 14 – 16 Uhr. An Sonn- und Feiertagen
-sind solche ruhestörenden Tätigkeiten ganz untersagt. Bitte richte Dich danach.
+Nürnberg genehmigten Zeiten erlaubt. Diese sind: 
+
+Tag | Zeit
+------------- | -------------
+Montag – Freitag  | 8 – 12 Uhr
+Montag – Freitag  | 15-19 Uhr
+Samstags  |  8 – 12 Uhr
+Samstags  | 14 – 16 Uhr
+Sonntag /Feiertag  | ---
+
+**Bitte richte Dich danach.**
+
 **4**. Nehme keinerlei Um- und Anbauten vor, ohne eine eventuelle Genehmigung bei der
 Vorstandschaft eingeholt zu haben. Dies gilt auch für das Aufstellen von Behältern
 jeglicher Art sowie für Rankgerüste.
