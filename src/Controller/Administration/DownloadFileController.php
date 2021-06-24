@@ -33,7 +33,7 @@ class DownloadFileController extends AbstractController {
         return 'administration/download_file/index.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Administration Downloads',
             'icon' => 'flower-with-pot-colored',

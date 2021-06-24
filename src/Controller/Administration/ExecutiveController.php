@@ -33,7 +33,7 @@ class ExecutiveController extends AbstractController {
         return 'administration/executive/index.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Administration Vorstand',
             'icon' => 'flower-with-pot-colored',

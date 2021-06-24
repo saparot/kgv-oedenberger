@@ -34,7 +34,7 @@ class NewsController extends AbstractController {
         return 'administration/news/index.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Administration Neuigkeiten',
             'icon' => 'flower-with-pot-colored',
