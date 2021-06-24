@@ -4,15 +4,36 @@
 
     <div class="row">
 
-        {% if newsEntityLatest %}
-            {% include 'news/list/newsEntity.twig' with {news: newsEntityLatest} %}
-        {% endif %}
+        <div class="col-12">
+            <h1>Willkommen,</h1>
+            <p>auf dem Internetauftritt unseres Kleingartenvereines Oedenberger Straße e.V Nürnberg.</p>
+            <p>hier finden Sie alle Informationen rund um unseren Verein, nützliche Informationen für Kleingärtner als auch Formulare, wie z.B. Antrag für eine Solaranlage in
+                der Gartenparzelle.</p>
+        </div>
+    </div>
+    <div class="row">
 
-        <div class="col-sm-5">
-
-
+        <div class="col">
+            <div class="card h-100 kgv-intro-card">
+                <img src="/build/img/galleries/walkthrough/IMG_2876.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Neuigkeiten & Ankündigungen</h5>
+                    <p class="card-text">Von der Wasserfreigabe übers Sommerfest und andere wichtige Ereignisse im Gartenjahr</p>
+                    <a href="{{ path('newsList') }}" class="btn btn-primary">zu den Neuigkeiten</a>
+                </div>
+            </div>
         </div>
 
+        <div class="col">
+            <div class="card h-100 kgv-intro-card">
+                <img src="/build/img/galleries/walkthrough/IMG_2829.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">Formulare & Anträge</h5>
+                    <p class="card-text">Ob Aufnahmeantrag, Antrag für die Solaranlage, oder brauchen Sie gar eine Baugenehmigung?</p>
+                    <a href="{{ path('clubDownloads') }}" class="btn btn-primary">zu den Formularen</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
