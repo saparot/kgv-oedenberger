@@ -1,0 +1,10 @@
+@import './variables';
+
+.kgv-intro-card {
+  min-width: 320px;
+  max-width: 360px;
+
+  .card-body {
+    @include hyphenate();
+  }
+}
