@@ -41,7 +41,7 @@ class DownloadsController extends AbstractController {
         return 'Gartenordnung';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Downloads',
             'icon' => 'plant-pot',

@@ -56,7 +56,7 @@ class ExecutivesController extends AbstractController {
         return $this->renderPageView();
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Der Vorstand',
             'icon' => 'watercan',

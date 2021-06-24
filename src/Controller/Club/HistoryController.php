@@ -42,7 +42,7 @@ class HistoryController extends AbstractController {
         return 'club/history/index.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Vereinsgeschichte',
             'icon' => 'fruit-tree',

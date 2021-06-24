@@ -38,7 +38,7 @@ class GardenRulesController extends AbstractController {
         return 'Gartenordnung';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Gartenordnung',
             'icon' => 'plant-pot',

@@ -42,7 +42,7 @@ class RulesController extends AbstractController {
         return 'club/rules/index.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Satzung',
             'icon' => 'shovel-colored',
