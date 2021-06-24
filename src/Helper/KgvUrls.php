@@ -36,12 +36,13 @@ class KgvUrls {
 
     private function initGarden () {
         $uc = new UrlContainer($this->urlGenerator, $this->request);
-
-        $uc->add('freie Gärten', 'waitingListClosed');
-        $uc->addSeparator();
         $uc->add('Gartengestaltung', 'gardenGardenDesign');
         $uc->addSeparator();
-        $uc->add('10 Gebote des Kleingärtners', 'gardenAreaCommandments');
+        $uc->add('Was nicht in den Garten darf', 'gardenGardenDesign', ['_fragment' => 'forbidden']);
+        $uc->addSeparator();
+        $uc->add('10 Gebote des Kleingärtners', 'gardenCommandments');
+        $uc->addSeparator();
+        $uc->add('Gartenauflösung', 'gardenTermination');
 
         return $uc;
     }
@@ -61,18 +62,14 @@ class KgvUrls {
     }
 
     private function initArea (): UrlContainer {
-        $uc = new UrlContainer($this->urlGenerator, $this->request);
-
-        $uc->add('Die Anlage in Zahlen', 'gardenAreaFacts');
-        $uc->addSeparator();
-        $uc->add('Übersichtsplan', 'gardenAreaMapOverview');
-        $uc->add('Anfahrt', 'gardenAreaRouteDescription');
-        $uc->addSeparator();
-        $uc->add('Spielplatz', 'gardenAreaPlayground');
-
-        $uc->add('Spaziergang durch die Anlage', 'gardenAreaWalkThrough');
-
-        return $uc;
+        return (new UrlContainer($this->urlGenerator, $this->request))->add('Übersicht + Geländeplan', 'gardenAreaOverview')
+            ->addSeparator()
+            ->add('freie Gärten', 'gardenAreaFreeGarden')
+            ->addSeparator()
+            ->add('Anfahrt', 'gardenAreaRouteDescription')
+            ->addSeparator()
+            ->add('Spielplatz', 'gardenAreaPlayground')
+            ->add('Spaziergang durch die Anlage', 'gardenAreaWalkThrough');
     }
 
     private function initEssentials (): UrlContainer {
