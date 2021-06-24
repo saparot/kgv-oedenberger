@@ -28,6 +28,11 @@ class LandingPageController extends AbstractController {
         return 'landing_page/index.twig';
     }
 
+    function getIntroData (): ?array {
+        return null;
+    }
+
+
     /**
      * @Route("/", name="landingPage")
      * @param NewsRepository $newsRepository

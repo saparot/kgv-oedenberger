@@ -7,6 +7,7 @@ use App\Helper\Categories;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
+use LogicException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,10 +33,10 @@ class SecurityController extends AbstractController {
         return 'security/login.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Vereinsmitglieder Login',
-            'icon' => 'wheel-barrow-color',
+            'icon' => 'wheel-barrow-colored',
             'text' => 'Aktuell ist ein Login nur für den Vorstand möglich. Wir arbeiten daran hier für interessierte Vereinsmitglieder eine Möglichkeit für digitialen Datenaustausch zur Verfügung zu stellen, wie z.B. das Melden von Wasseruhrständen und Ähnlichem.',
         ];
     }
@@ -58,6 +59,6 @@ class SecurityController extends AbstractController {
      * @Route("/logout", name="app_logout")
      */
     public function logout () {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        throw new LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }

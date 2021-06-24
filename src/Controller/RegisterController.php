@@ -34,6 +34,10 @@ class RegisterController extends AbstractController {
         return 'register/index.html.twig';
     }
 
+    function getIntroData (): ?array {
+        return null;
+    }
+
     /**
      * @Route("/register", name="register")
      */
