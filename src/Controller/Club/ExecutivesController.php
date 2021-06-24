@@ -44,7 +44,7 @@ class ExecutivesController extends AbstractController {
     }
 
     /**
-     * @Route("/club/executives", name="clubExecutives")
+     * @Route("/verein/vorstand", name="clubExecutives")
      * @param Request $request
      * @param ExecutiveRepository $executiveRepository
      *

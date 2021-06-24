@@ -51,7 +51,7 @@ class RulesController extends AbstractController {
     }
 
     /**
-     * @Route("/club/rules", name="clubRules")
+     * @Route("/verein/satzung", name="clubRules")
      * @param Request $request
      *
      * @return Response

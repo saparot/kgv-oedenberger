@@ -54,7 +54,7 @@ class DownloadsController extends AbstractController {
     }
 
     /**
-     * @Route("/club/downloads", name="clubDownloads")
+     * @Route("/verein/downloads", name="clubDownloads")
      * @param Request $request
      * @param \App\Repository\DownloadFileRepository $downloadFileRepository
      * @param \Vich\UploaderBundle\Handler\DownloadHandler $downloadHandler
@@ -69,7 +69,7 @@ class DownloadsController extends AbstractController {
     }
 
     /**
-     * @Route("/club/download/file/{id}", name="clubDownloadFile")
+     * @Route("/verein/download/file/{id}", name="clubDownloadFile")
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param \App\Repository\DownloadFileRepository $downloadFileRepository
      * @param \Vich\UploaderBundle\Handler\DownloadHandler $downloadHandler

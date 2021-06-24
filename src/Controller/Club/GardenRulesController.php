@@ -51,7 +51,7 @@ class GardenRulesController extends AbstractController {
     }
 
     /**
-     * @Route("/club/garden/rules", name="clubGardenRules")
+     * @Route("/verein/gartenordnung", name="clubGardenRules")
      * @param Request $request
      *
      * @return Response

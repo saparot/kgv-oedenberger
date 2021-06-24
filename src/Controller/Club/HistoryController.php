@@ -45,13 +45,13 @@ class HistoryController extends AbstractController {
     private function getIntroData (): ?array {
         return [
             'title' => 'Vereinsgeschichte',
-            'icon' => 'carrot',
-            'text' => 'Auf dieser Seite finden Sie die aktuellen Ankündigungen rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!'
+            'icon' => 'fruit-tree',
+            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!'
         ];
     }
 
     /**
-     * @Route("/club/history", name="clubHistory")
+     * @Route("/verein/geschichte", name="clubHistory")
      * @param Request $request
      *
      * @return Response
