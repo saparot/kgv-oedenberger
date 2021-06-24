@@ -1,0 +1,35 @@
+{% set hostPlantList = [
+    {
+        'problem' : 'Feuerbrand',
+        'plants' : ['Feuerdorn (Pyracantha coccinea)', 'Felsenbirne- Pralinenbaum ( amalanchier levis)', 'Rotdorn (Crataegus laevigata)', 'Weißdorn (Crataegus monogyna)',
+        'Zwergmispel (Cotoneaster horizontales) '],
+        'information' : 'Feuerbrand. Durch das Bakterium Erwinia amylovora verursachte Gehölzerkrankung; ernstzunehmende Gefahr für Kernobst und anfällige Ziergehölzarten',
+        'reportRequired' : true,
+    },
+    {
+        'problem' : 'Birnengitterrost',
+        'plants' : ['Wacholder'],
+        'information' : 'Birnengitterrost. Birnengitterrost wird von einem Pilz namens Gymnosporangium sabinae verursacht, der ab Mai/Juni gut sichtbare Spuren in Form von
+            unregelmäßigen orangeroten Flecken auf den Blättern von Birnbäumen hinterlässt. Der Pilz sorgt auf dauer dafür, das befallene Bäume absterben und gefällt werden
+            müssen.',
+        'reportRequired' : false,
+    },
+] %}
+
+
+<h3>Wirtspflanzen für Krankeiten und besondere Schädlinge</h3>
+
+{% for entry in hostPlantList %}
+    <dl class="row">
+        <dt class="col-12 col-sm-4">Krankheit:</dt>
+        <dd class="col-12 col-sm-8">{{ entry.problem }}</dd>
+        <dt class="col-12 col-sm-4">Hintergrund:</dt>
+        <dd class="col-12 col-sm-8">{{ entry.information }}</dd>
+        <dt class="col-12 col-sm-4">betroffene Pflanzen:</dt>
+        <dd class="col-12 col-sm-8">
+            {% for plant in entry.plants %}
+                {{ plant }}{% if not loop.last %},{% endif %}
+            {% endfor %}
+        </dd>
+    </dl>
+{% endfor %}

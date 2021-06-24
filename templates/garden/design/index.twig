@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    <div class="kgv-content-block">
+        <h2>Gartenaufteilung</h2>
+        <p>In unserer Gartenordnung haben wir festgelegt, dass der Garten eine gewisse Aufteilung in die folgenden Bereiche haben soll</p>
+        <dl class="row">
+            <dt class="col-12 col-sm-4">1/3 Vegetationsfläche</dt>
+            <dd class="col-12 col-sm-8">Hier ist Platz für Blumen, Sträucher, Pflanzen die nicht in die Kategorien Gemüse oder Obst fallen</dd>
+            <dt class="col-12 col-sm-4">1/3 Nutzgarten</dt>
+            <dd class="col-12 col-sm-8">Diese Fläche ist zum Anbau von Obst, Gemüse und anderen Früchten zu nutzen</dd>
+        </dl>
+        <div class="alert alert-primary" role="alert"><i class="fas fa-info-circle"></i> Die Bewirtschaftung soll hinsichtlich der heimischen Artenvielfalt im Sinne der
+            BIO-Diversität sowie unter Einhaltung der bundes- und landesrechtlichen Umweltgesetze erfolgen.
+        </div>
+    </div>
+
+    <div class="kgv-content-block">
+        <h2>Was nicht in den Garten darf</h2>
+        <p>Unsere Kleingärten bilden eine Gemeinschaft, und eine Gemeinschaft benötigt Regeln (und auch Gesetze) um zu funkionieren, und die Sicherheit zu gewährleisten. Darum
+            gibt es auch Pflanzen, die nicht in den Garten gesetzt werden dürfen, oder (bei Altbestand) spätestens bei Abgabe des Gartens entfernt werden müssen.</p>
+
+
+        <div class="kgv-content-block">
+            {% include 'garden/design/plantsForbidden.twig' %}
+        </div>
+        <div class="kgv-content-block">
+            {% include 'garden/design/plantsForbiddenHosts.twig' %}
+        </div>
+    </div>
+{% endblock %}
