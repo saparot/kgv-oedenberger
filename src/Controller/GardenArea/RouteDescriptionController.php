@@ -42,7 +42,7 @@ class RouteDescriptionController extends AbstractController {
         return 'garden_area/route_description/index.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Lage & Anfahrt',
             'icon' => 'moving-machine-colored',
@@ -52,7 +52,7 @@ class RouteDescriptionController extends AbstractController {
 
 
     /**
-     * @Route("/gardenArea/route-description", name="gardenAreaRouteDescription")
+     * @Route("/area/route-description", name="gardenAreaRouteDescription")
      * @param Request $request
      *
      * @return Response

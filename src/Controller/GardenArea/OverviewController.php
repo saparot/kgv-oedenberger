@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class FactsController extends AbstractController {
+class OverviewController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
@@ -31,7 +31,7 @@ class FactsController extends AbstractController {
     }
 
     function getBreadCrumbChain (): BreadCrumbsChain {
-        return $this->addGardenArea(null, $this->generateUrl('gardenAreaFacts'));
+        return $this->addGardenArea(null, $this->generateUrl('gardenAreaOverview'));
     }
 
     function getPageTitle (): ?string {
@@ -39,10 +39,10 @@ class FactsController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'garden_area/facts/index.html.twig';
+        return 'garden_area/overview/index.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Die Anlage in Zahlen',
             'icon' => 'flower-with-pot-colored',
@@ -51,7 +51,7 @@ class FactsController extends AbstractController {
     }
 
     /**
-     * @Route("/gardenArea/facts", name="gardenAreaFacts")
+     * @Route("/anlage/uebersicht", name="gardenAreaOverview")
      * @param Request $request
      *
      * @return Response

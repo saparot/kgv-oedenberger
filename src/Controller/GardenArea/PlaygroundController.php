@@ -42,7 +42,7 @@ class PlaygroundController extends AbstractController {
         return 'garden_area/playground/index.html.twig';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Spielplatz',
             'icon' => 'flower-with-pot-colored',
@@ -51,7 +51,7 @@ class PlaygroundController extends AbstractController {
     }
 
     /**
-     * @Route("/gardenArea/playground", name="gardenAreaPlayground")
+     * @Route("/area/playground", name="gardenAreaPlayground")
      * @param Request $request
      *
      * @return Response

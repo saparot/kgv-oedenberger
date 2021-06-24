@@ -42,13 +42,17 @@ class WalkThroughController extends AbstractController {
         return 'garden_area/walk_through/index.html.twig';
     }
 
+    function getIntroData (): ?array {
+        return null;
+    }
+
     /**
-     * @Route("/gardenArea/walk-through", name="gardenAreaWalkThrough")
+     * @Route("/area/walk-through", name="gardenAreaWalkThrough")
      * @param Request $request
      *
      * @return Response
      */
-    function index (Request $request): Response {
+    function index (): Response {
         return $this->renderPageView();
     }
 }

@@ -38,7 +38,7 @@ class MapOverviewController extends AbstractController {
         return 'Anlagenplan';
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
             'title' => 'Anlagenplan',
             'icon' => 'flower-with-pot-colored',
@@ -51,7 +51,7 @@ class MapOverviewController extends AbstractController {
     }
 
     /**
-     * @Route("/gardenArea/map-overview", name="gardenAreaMapOverview")
+     * @Route("/area/map-overview", name="gardenAreaMapOverview")
      * @param Request $request
      *
      * @return Response
