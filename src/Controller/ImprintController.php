@@ -33,17 +33,21 @@ class ImprintController extends AbstractController {
         return 'imprint/index.html.twig';
     }
 
+    function getIntroData (): ?array {
+        return null;
+    }
+
     /**
-     * @Route("/imprint", name="imprint")
+     * @Route("/impressum", name="imprint")
      * @param Request $request
      * @param ExecutiveRepository $executiveRepository
      *
      * @return Response
      */
     function index (Request $request, ExecutiveRepository $executiveRepository): Response {
-
         $executives = $executiveRepository->findForImprint();
         $this->assign('executives', $executives);
+
         return $this->renderPageView();
     }
 }

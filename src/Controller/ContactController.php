@@ -37,6 +37,10 @@ class ContactController extends AbstractController {
         return 'contact/index.html.twig';
     }
 
+    function getIntroData (): ?array {
+        return null;
+    }
+
     /**
      * @Route("/contact", name="contact")
      * @param Request $request

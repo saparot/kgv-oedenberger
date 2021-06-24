@@ -10,12 +10,7 @@ use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use App\Repository\NewsRepository;
-use DateTime;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -42,7 +37,7 @@ class ListController extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Ankündigungen';
+        return 'Neuigkeiten';
     }
 
     function getTemplate (): string {
@@ -63,11 +58,11 @@ class ListController extends AbstractController {
         return $this->renderPageView();
     }
 
-    private function getIntroData (): ?array {
+    protected function getIntroData (): ?array {
         return [
-            'title' => 'Ankündigungen',
+            'title' => 'News & Ankündigungen',
             'icon' => 'fence',
-            'text' => 'Auf dieser Seite finden Sie die aktuellen Ankündigungen rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!',
+            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Neuigkeit zu verpassen!',
         ];
     }
 
