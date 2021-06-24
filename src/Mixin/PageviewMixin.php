@@ -13,6 +13,8 @@ trait PageviewMixin {
 
     private array $templateData = [];
 
+    abstract protected function getIntroData (): ?array;
+
     abstract function getBreadCrumbChain (): ?BreadCrumbsChain;
 
     abstract function getPageTitle (): ?string;
@@ -94,10 +96,6 @@ trait PageviewMixin {
             }
         }
 
-        return null;
-    }
-
-    private function getIntroData (): ?array {
         return null;
     }
 }
