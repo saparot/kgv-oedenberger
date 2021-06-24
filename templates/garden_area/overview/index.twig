@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FactsController!{% endblock %}
+
+{% block body %}
+
+
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    <div class="kgv-content-block">
+        <h2>ein paar Zahlen..</h2>
+        <p>Für Statistiker und solche die es genau wissen wollen, gibt es auch ein paar Zahlen rund um unseren Kleingartenverein und die Anlage :)</p>
+        <dl class="row">
+            {% for fact in facts %}
+                <dt class="col-12 col-sm-4">{{ fact.fact }}...</dt>
+                <dd class="col-12 col-sm-8">{{ fact.text|raw }}</dd>
+            {% endfor %}
+        </dl>
+    </div>
+
+    <div class="kgv-content-block">
+        <h2>Übersichtsplan Gelände</h2>
+        <p>Für eine schnelle Orientierung hilft unser Anlagenplan. Die 5 Hauptzugänge sind alle über die Leipziger Straße erreichbar.</p>
+        {# <img src="{{ asset('build/img/map/map-refined-v1.svg') }}" alt="Übersichtskarte" width="100%"> #}
+        <img src="{{ asset('build/img/map/map-kleingartenverein-oedenberger-strasse.png') }}" alt="Übersichtskarte" width="100%">
+    </div>
+
+    <div class="kgv-content-block">
+        <h2>unsere Gärten von oben</h2>
+        <p>we are ready to take off... :) Unser Mitglied Matthias hat sich die Mühe gemacht, und unsere Anlage per Drohnenflug gefilmt. Genießen Sie die Aussicht!</p>
+        <video width="100%" height="auto" controls>
+            <source src="/build/video/drohnenflug-kleingarten-oedenberger-ev.mp4" type="video/mp4">
+            Ihr Browser unterstützt leider keine Videos
+        </video>
+        <video src=""></video>
+    </div>
+{% endblock %}
