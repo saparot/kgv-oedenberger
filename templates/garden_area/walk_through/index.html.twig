@@ -1,34 +1,43 @@
 {% extends 'base-landscape.twig' %}
 {% block body %}
-
-    {# { #}
-    {# 'path': '/build/img/galleries/playground/hatice-yardim-gm99s9v-zpQ-unsplash.jpg', #}
-    {# 'title': 'Spielplatz Schaukeln', #}
-    {# 'description' : 'Der Spielplatz bietet Schaukeln, Wip-tiere und einen großen Sandkasten zum Tunnel bauen, Sandburg errichten und alles was man noch so im Sandkasten #}
-    {# anstellen kann', #}
-    {# }, #}
-    {# { #}
-    {# 'path': '/build/img/galleries/playground/johnny-cohen-xro1l0c72VY-unsplash.jpg', #}
-    {# 'title': '3 title', #}
-    {# 'description' : 'text', #}
-    {# }, #}
     {% set imageList = [
         {
-            'path': '/build/img/galleries/playground/alexander-schimmeck-_1-qebBtWxo-unsplash.jpg',
-            'title': 'Spielplatz',
+            'path': '/build/img/galleries/walkthrough/IMG_2821.jpg',
+            'title': '1',
             'description' : 'Unser Spielplatz liegt in der Mitte der Anlage, direkt am Vereinshaus.',
         },
         {
-            'path': '/build/img/galleries/playground/hatice-yardim-gm99s9v-zpQ-unsplash.jpg',
+            'path': '/build/img/galleries/walkthrough/IMG_2827.jpg',
             'title': 'Spielplatz Schaukeln',
             'description' : 'Der Spielplatz bietet Schaukeln, Wip-tiere und einen großen Sandkasten zum Tunnel bauen, Sandburg errichten und alles was man noch so im Sandkasten
             anstellen kann',
         },
         {
-            'path': '/build/img/galleries/playground/johnny-cohen-xro1l0c72VY-unsplash.jpg',
+            'path': '/build/img/galleries/walkthrough/IMG_2829.jpg',
             'title': '3 title',
             'description' : 'text',
         },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2838.jpg',
+            'title': '3 title',
+            'description' : 'text',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2876.jpg',
+            'title': '3 title',
+            'description' : 'text',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2919.jpg',
+            'title': '3 title',
+            'description' : 'text',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2921.jpg',
+            'title': '3 title',
+            'description' : 'text',
+        },
+
     ] %}
 
     {% include 'layout/carousel/carouselLandscape.twig' with { carouselId:'kvg-walkthrough-landscape', imageList:imageList} %}
