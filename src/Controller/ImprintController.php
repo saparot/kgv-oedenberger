@@ -30,7 +30,7 @@ class ImprintController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'imprint/index.html.twig';
+        return 'imprint/index.twig';
     }
 
     function getIntroData (): ?array {

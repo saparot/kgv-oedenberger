@@ -39,7 +39,7 @@ class RulesController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'club/rules/index.html.twig';
+        return 'club/rules/index.twig';
     }
 
     protected function getIntroData (): ?array {

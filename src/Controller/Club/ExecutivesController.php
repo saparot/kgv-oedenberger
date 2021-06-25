@@ -10,7 +10,6 @@ use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use App\Repository\ExecutiveRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -40,17 +39,16 @@ class ExecutivesController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'club/executives/index.html.twig';
+        return 'club/executives/index.twig';
     }
 
     /**
      * @Route("/verein/vorstand", name="clubExecutives")
-     * @param Request $request
      * @param ExecutiveRepository $executiveRepository
      *
      * @return Response
      */
-    function index (Request $request, ExecutiveRepository $executiveRepository): Response {
+    function index (ExecutiveRepository $executiveRepository): Response {
         $this->prepareTemplateData($executiveRepository);
 
         return $this->renderPageView();

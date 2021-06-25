@@ -39,7 +39,7 @@ class RouteDescriptionController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'garden_area/route_description/index.html.twig';
+        return 'garden_area/route_description/index.twig';
     }
 
     protected function getIntroData (): ?array {

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    <div class="kgv-page-executives">
+        {% for executive in executives %}
+
+            <div class="kgv-executive">
+                <h3>{{ executive.name }}, {{ executive.position }}</h3>
+                <div>
+                    <i class="kgv-executive__icon fas fa-mobile-alt"></i>
+                    {% if executive.phone %}
+                        <span>{{ executive.phone }}</span>
+                    {% else %}
+                        --
+                    {% endif %}
+                </div>
+
+                <div><i class="far fa-envelope"></i>
+                    {% if executive.email %}
+                        <span>{{ executive.email }}</span>
+                    {% else %}
+                        --
+                    {% endif %}
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+
+{% endblock %}

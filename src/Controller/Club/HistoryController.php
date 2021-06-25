@@ -39,7 +39,7 @@ class HistoryController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'club/history/index.html.twig';
+        return 'club/history/index.twig';
     }
 
     protected function getIntroData (): ?array {

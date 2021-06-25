@@ -1,0 +1,21 @@
+@import "variables";
+
+.kgv-markdown {
+
+
+  table {
+    width: 100%;
+    margin-bottom: 32px;
+
+    tr {
+      width: 100%;
+      border-bottom: 1px solid $gray-300;
+    }
+
+    td {
+      padding: 16px 2px;
+      width: 33%;
+      @include hyphenate();
+    }
+  }
+}

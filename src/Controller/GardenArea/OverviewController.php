@@ -65,7 +65,7 @@ class OverviewController extends AbstractController {
     private function getFacts (): array {
         return [
             [
-                'fact' => '164 Gärten',
+                'fact' => '165 Gärten',
                 'text' => '..sind in unserem Kleingartenverein beheimatet',
             ],
             [

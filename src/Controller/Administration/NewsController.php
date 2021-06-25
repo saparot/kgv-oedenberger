@@ -31,7 +31,7 @@ class NewsController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'administration/news/index.html.twig';
+        return 'administration/news/index.twig';
     }
 
     protected function getIntroData (): ?array {

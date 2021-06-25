@@ -30,7 +30,7 @@ class ExecutiveController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'administration/executive/index.html.twig';
+        return 'administration/executive/index.twig';
     }
 
     protected function getIntroData (): ?array {
