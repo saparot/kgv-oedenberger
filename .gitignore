@@ -2,6 +2,7 @@
 .env.test
 .DS_Store
 composer.phar
+public/.htaccess
 
 ###> symfony/framework-bundle ###
 /.env.local
