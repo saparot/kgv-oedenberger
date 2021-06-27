@@ -47,7 +47,7 @@ class MapOverviewController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'garden_area/map_overview/index.html.twig';
+        return 'garden_area/map_overview/index.twig';
     }
 
     /**

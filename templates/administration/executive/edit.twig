@@ -1,11 +1,11 @@
-{% extends 'base-administration.html.twig' %}
+{% extends 'base-administration.twig' %}
 
 {% block title %}Edit Executive{% endblock %}
 
 {% block body %}
     <h3>Vorstand bearbeiten</h3>
 
-    {{ include('administration/executive/_form.html.twig', {'button_label': 'Speichern'}) }}
+    {{ include('administration/executive/_form.twig', {'button_label': 'Speichern'}) }}
 
     <a href="{{ path('administrationExecutive') }}">zurück zur Übersicht</a>
 

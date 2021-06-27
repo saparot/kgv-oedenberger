@@ -47,7 +47,7 @@ class GardenRulesController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'club/garden_rules/index.html.twig';
+        return 'club/garden_rules/index.twig';
     }
 
     /**

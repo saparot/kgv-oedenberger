@@ -1,9 +1,11 @@
 <div class="kgv-sidebar-widget mb-4">
-    <h5 class="kgv-headline--5 kgv-sidebar-widget__title ">{% block widgetTitle %}
+    <h4 class="kgv-headline--5 kgv-sidebar-widget__title ">
+        {% block widgetTitle %}
             {% if widgetTitle %}
                 {{ widgetTitle }}
             {% endif %}
-        {% endblock %}</h5>
+        {% endblock %}
+    </h4>
     <div class="kgv-sidebar-widget__body">
         {% block widgetContent %}{% endblock %}
     </div>

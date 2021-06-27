@@ -41,7 +41,7 @@ class ListController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'news/list/index.html.twig';
+        return 'news/list/index.twig';
     }
 
     /**

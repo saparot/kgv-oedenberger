@@ -39,7 +39,7 @@ class PlaygroundController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'garden_area/playground/index.html.twig';
+        return 'garden_area/playground/index.twig';
     }
 
     protected function getIntroData (): ?array {

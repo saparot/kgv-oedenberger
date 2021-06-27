@@ -39,7 +39,7 @@ class WalkThroughController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'garden_area/walk_through/index.html.twig';
+        return 'garden_area/walk_through/index.twig';
     }
 
     function getIntroData (): ?array {

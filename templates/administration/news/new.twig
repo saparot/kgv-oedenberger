@@ -1,11 +1,11 @@
-{% extends 'base-administration.html.twig' %}
+{% extends 'base-administration.twig' %}
 
 {% block title %}New News{% endblock %}
 
 {% block body %}
     <h3>Neuigkeit erstellen</h3>
 
-    {{ include('administration/news/_form.html.twig') }}
+    {{ include('administration/news/_form.twig') }}
 
     <a href="{{ path('administrationNews') }}">zurück zur Übersicht</a>
 {% endblock %}

@@ -60,7 +60,7 @@ class ExecutiveController extends AbstractController {
      * @return Response
      */
     function show (Executive $executive): Response {
-        return $this->render('administration/executive/show.html.twig', [
+        return $this->render('administration/executive/show.twig', [
             'executive' => $executive,
         ]);
     }
@@ -83,7 +83,7 @@ class ExecutiveController extends AbstractController {
             return $this->redirectToRoute('administrationExecutive');
         }
 
-        return $this->render('administration/executive/edit.html.twig', [
+        return $this->render('administration/executive/edit.twig', [
             'executive' => $executive,
             'form' => $form->createView(),
         ]);
