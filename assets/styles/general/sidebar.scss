@@ -39,14 +39,13 @@
   .kgv-sidebar-widget {
     &__title {
       color: $primary;
+      text-decoration: underline;
     }
 
     &__body {
 
     }
-
   }
-
 }
 
 .navbar {

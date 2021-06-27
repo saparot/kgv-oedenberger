@@ -1,6 +1,8 @@
 @import '../general/variables';
+
 .kgv-news-entity {
-  background: $white linear-gradient(150deg, #f4f3f0 20%, $white 50%);
+  background: rgba(82, 90, 45, 0.1);
+  //background: $white linear-gradient(150deg, #f4f3f0 20%, $white 50%);
 
   border: 1px solid $gray-500;
   border-radius: 0.3rem;
