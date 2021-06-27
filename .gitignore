@@ -1,6 +1,8 @@
 .env
 .env.test
 .DS_Store
+composer.phar
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -27,3 +29,5 @@ yarn-error.log
 
 /resources/garden-svgs
 /resources/logo
+
+
