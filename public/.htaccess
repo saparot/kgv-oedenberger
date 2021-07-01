@@ -1,3 +1,8 @@
+AuthType Basic
+AuthName "KGV Oedenberger Strasse"
+AuthUserFile /kunden/607231_90491/sites/kgv.htpasswd
+require valid-user
+
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
 # mod_rewrite). Additionally, this reduces the matching process for the
