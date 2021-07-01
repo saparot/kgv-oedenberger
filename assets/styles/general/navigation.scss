@@ -13,3 +13,33 @@
     padding: 0.75rem 1.5rem;
   }
 }
+
+.category-navigation {
+  display: flex;
+  flex-direction: column;
+
+
+  &__element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &__element--active {
+    font-weight: bold;
+  }
+
+  &__text {
+    margin-right: 10px;
+  }
+
+  &__symbol {
+    width: 32px;
+    height: 32px;
+  }
+}

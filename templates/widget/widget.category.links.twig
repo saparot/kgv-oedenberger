@@ -6,14 +6,20 @@
 
 {% block widgetContent %}
     {% if sidebarUrlList %}
-        <ul class="list-unstyled">
+        <div class="category-navigation">
             {% for url in sidebarUrlList.iterate %}
                 {% if not url.isSeparator %}
-                    <li class="p-2"><a class="{% if  url.isActive %} active{% endif %}" href="{{ url.getUrl }}">{% if  url.isActive %} ⇛{% endif %}{{ url.getNameDisplay
-                            }}</a></li>
+                        <a class="p-2 category-navigation__element {% if url.isActive %}category-navigation__element--active{% endif %}" href="{{ url.getUrl }}">
+                            <div class="category-navigation__text">{{ url.getNameDisplay }}</div>
+                            {% if  url.isActive %}
+                                <div class="category-navigation__symbol-container">{% include 'layout/icons/garden.twig' with {iconName: 'tree-colored', additionalIconClass:
+                                        'category-navigation__symbol'} %}</div>
+                            {% endif %}
+
+                        </a>
                 {% endif %}
             {% endfor %}
-        </ul>
+        </div>
     {% endif %}
 {% endblock %}
 

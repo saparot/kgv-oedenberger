@@ -1,0 +1,26 @@
+{% extends 'base.twig' %}
+{% block body %}
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    <div class="kgv-content-block">
+        <h2>Was nicht in den Garten darf</h2>
+        <p>Warum soviel Vorschriften und Regeln?</p>
+        <p>Unsere Kleingärten bilden eine Gemeinschaft, und eine Gemeinschaft benötigt Regeln (Gesetze) um gut funktionieren zu können, sowie um die Sicherheit zu
+            gewährleisten. Darum gibt es auch Pflanzen, die nicht in den Garten gesetzt werden dürfen, oder (bei Altbestand) spätestens bei Abgabe des Gartens entfernt werden
+            müssen.
+        </p>
+        <p>
+            Euer Garten ist ein gepachtetes Stück Land der Stadt Nürnberg. So wie man sich auch als Mieter einer
+            Wohnung oder eines Haus an gewisse Vorgaben (z.B. den Mietvertrag) halten muss, gelten eben auch solche Vorschriften/Regeln und auch Gesetze für den Schrebergarten.
+        </p>
+
+    </div>
+
+    <div class="kgv-content-block">
+        {% include 'garden/designNotAllowed/plantsForbidden.twig' %}
+    </div>
+    <div class="kgv-content-block">
+        {% include 'garden/designNotAllowed/plantsForbiddenHosts.twig' %}
+    </div>
+    </div>
+{% endblock %}

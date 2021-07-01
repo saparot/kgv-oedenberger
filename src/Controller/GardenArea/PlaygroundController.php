@@ -46,7 +46,7 @@ class PlaygroundController extends AbstractController {
         return [
             'title' => 'Spielplatz',
             'icon' => 'flower-with-pot-colored',
-            'text' => "Der kleine Spielplatz der Kleingartenkolonie befindet sich direkt neben dem Vereinsheim. Verfehlen können Sie diesen nicht, wenn Sie den Hauptweg zur Gaststätte hinaufgehen und direkt an der Gaststätte links abbiegen. Der Spielplatz existiert bereits seit den 70ern Jahren. Hier können sich Ihre Kinder an Schaukeln und Wippgeräten austoben oder im Sandkasten ihrer Fantasie freien Lauf lassen.",
+            'text' => "<p>Der kleine Spielplatz der Kleingartenkolonie befindet sich direkt neben dem Vereinsheim.</p> <p>Verfehlen können Sie diesen nicht, wenn Sie den Hauptweg zur Gaststätte hinaufgehen und direkt an der Gaststätte links abbiegen.</p> <p>Der Spielplatz existiert bereits seit den 70ern Jahren. Hier können sich Ihre Kinder an Schaukeln und Wippgeräten austoben oder im Sandkasten ihrer Fantasie freien Lauf lassen.</p>",
         ];
     }
 

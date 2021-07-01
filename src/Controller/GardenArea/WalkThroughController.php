@@ -48,7 +48,6 @@ class WalkThroughController extends AbstractController {
 
     /**
      * @Route("/area/walk-through", name="gardenAreaWalkThrough")
-     * @param Request $request
      *
      * @return Response
      */

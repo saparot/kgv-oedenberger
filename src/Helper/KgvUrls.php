@@ -38,7 +38,7 @@ class KgvUrls {
         $uc = new UrlContainer($this->urlGenerator, $this->request);
         $uc->add('Gartengestaltung', 'gardenGardenDesign');
         $uc->addSeparator();
-        $uc->add('Was nicht in den Garten darf', 'gardenGardenDesign', ['_fragment' => 'forbidden']);
+        $uc->add('Was nicht in den Garten darf', 'gardenGardenDesignNotAllowed');
         $uc->addSeparator();
         $uc->add('10 Gebote des Kleingärtners', 'gardenCommandments');
         $uc->addSeparator();

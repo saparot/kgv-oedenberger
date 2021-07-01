@@ -86,7 +86,7 @@ $grid-breakpoints: (
 
 
 $mediaQueries: (
-        'medium' : "screen and (min-width: " + $breakpoint--medium + ")",
+        'medium' : "screen and (min-width: " + $breakpoint--small + ")",
         'large' : "screen and (min-width: " + $breakpoint--large + ")",
         'landscape' : "screen and (min-width: " + $breakpoint--landscape + ")",
 );

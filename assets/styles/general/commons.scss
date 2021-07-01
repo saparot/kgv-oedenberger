@@ -21,6 +21,19 @@
   height: 450px;
 }
 
+.kgv-content {
+  @include screenSize(medium) {
+    flex-direction: column-reverse;
+  }
+  @include screenSize(large) {
+    flex-direction: row;
+  }
+
+  @include screenSize(landscape) {
+    flex-direction: row;
+  }
+}
+
 .kgv-content-block {
   margin-bottom: 3rem;
 }

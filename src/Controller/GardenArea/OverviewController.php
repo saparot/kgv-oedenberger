@@ -52,11 +52,10 @@ class OverviewController extends AbstractController {
 
     /**
      * @Route("/anlage/uebersicht", name="gardenAreaOverview")
-     * @param Request $request
      *
      * @return Response
      */
-    function index (Request $request): Response {
+    function index (): Response {
         $this->assign('facts', $this->getFacts());
 
         return $this->renderPageView();

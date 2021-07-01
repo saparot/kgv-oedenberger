@@ -45,7 +45,7 @@ class GardenDesignController extends AbstractController {
         return [
             'title' => 'Gartengestaltung',
             'icon' => 'tree-colored',
-            'text' => 'Jeder Gartenbesitzer kann seinen Garten nach eigenem Wunsch Vorstellung gestalten und bewirtschaften. <p>Natürlich müssen die Vorgaben des <a href="https://www.gesetze-im-internet.de/bkleingg/BJNR002100983.html" target="_new"><i class="fas fa-external-link-alt"></i>Bundeskleingartengesetzes</a>
+            'text' => '<p>Jeder Gartenbesitzer kann seinen Garten nach eigenem Wunsch und Vorstellung gestalten und bewirtschaften.</p> <p>Natürlich müssen die Vorgaben des <a href="https://www.gesetze-im-internet.de/bkleingg/BJNR002100983.html" target="_new"><i class="fas fa-external-link-alt"></i>Bundeskleingartengesetzes</a>
             eingehalten werden. </p>',
         ];
     }

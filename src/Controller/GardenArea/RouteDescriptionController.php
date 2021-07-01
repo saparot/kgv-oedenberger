@@ -50,11 +50,8 @@ class RouteDescriptionController extends AbstractController {
         ];
     }
 
-
     /**
-     * @Route("/area/route-description", name="gardenAreaRouteDescription")
-     * @param Request $request
-     *
+     * @Route("/anlage/anfahrt", name="gardenAreaRouteDescription")
      * @return Response
      */
     function index (): Response {

@@ -4,6 +4,7 @@ namespace App\Controller\GardenArea;
 
 use App\Helper\BreadCrumbsChain;
 use App\Helper\Categories;
+use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -14,6 +15,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class FreeGarden extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+
+    /**
+     * @var KgvUrls
+     */
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
 
     /**
      * @Route("/anlage/freie-gaerten", name="gardenAreaFreeGarden")
@@ -27,7 +37,7 @@ class FreeGarden extends AbstractController {
     }
 
     function getCategory (): ?string {
-        return Categories::CATEGORY_GARDEN;
+        return Categories::CATEGORY_AREA;
     }
 
     function getPageTitle (): ?string {
