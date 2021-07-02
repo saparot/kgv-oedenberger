@@ -95,7 +95,7 @@ class NewsController extends AbstractController {
             return $this->redirectToRoute('administrationNews');
         }
 
-        return $this->render('administration/news/edit.html.twig', [
+        return $this->render('administration/news/edit.twig', [
             'news' => $news,
             'form' => $form->createView(),
         ]);
