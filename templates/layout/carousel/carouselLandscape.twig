@@ -1,9 +1,13 @@
 <div class="kgv-carousel--landscape {{ additionalClassNames is defined ?  additionalClassNames }}">
-    <div id="{{ carouselId }}" class="carousel slide" data-ride="carousel">
+    <div id="{{ carouselId }}" class="carousel slide lazy" data-ride="carousel">
         <div class="carousel-inner">
             {% for image in imageList %}
                 <div class="carousel-item kgv-carousel-item {{ loop.first ? 'active' : '' }}">
-                    <img class="d-block kgv-carousel-item__image" src="{{ image.path }}" alt="{{ image.title }}">
+                    {% if loop.first %}
+                        <img class="d-block kgv-carousel-item__image" src="{{ image.path }}" alt="{{ image.title }}">
+                    {% else %}
+                        <img class="d-block kgv-carousel-item__image" data-src="{{ image.path }}" alt="{{ image.title }}">
+                    {% endif %}
                     <div class="carousel-caption d-none d-md-block kgv-carousel-item__caption">
                         <div class="kgv-carousel-item__title">{{ image.title }}</div>
                         <p class="kgv-carousel-item__description">{{ image.description }}</p>

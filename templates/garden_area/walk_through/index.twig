@@ -1,10 +1,201 @@
 {% extends 'base-landscape.twig' %}
 {% block body %}
+    <div {{ stimulus_controller('walk_through') }}></div>
     {% set imageList = [
         {
+            'path': '/build/img/galleries/walkthrough/IMG_2529.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2531.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2533.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2534.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2535.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2536.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2537.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2539.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2542.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2543.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2544.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2545.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2546.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2547.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2548.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2549.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2550.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2551.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2552.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2553.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2554.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2555.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2556.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2557.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2558.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2559.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2560.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2561.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2562.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2563.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2564.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2565.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2566.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2567.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2569.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2570.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2575.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
+            'path': '/build/img/galleries/walkthrough/IMG_2577.jpeg',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
+        },
+        {
             'path': '/build/img/galleries/walkthrough/IMG_2821.jpg',
-            'title': '1',
-            'description' : 'Unser Spielplatz liegt in der Mitte der Anlage, direkt am Vereinshaus.',
+            'title': 'text kommt noch...',
+            'description' : 'text kommt noch...',
         },
         {
             'path': '/build/img/galleries/walkthrough/IMG_2827.jpg',
@@ -36,7 +227,6 @@
             'title': 'text kommt noch...',
             'description' : 'text kommt noch...',
         },
-
     ] %}
 
     {% include 'layout/carousel/carouselLandscape.twig' with { carouselId:'kvg-walkthrough-landscape', imageList:imageList} %}
