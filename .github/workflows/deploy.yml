@@ -12,34 +12,47 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      - name: Install dependencies
+        env:
+          APP_ENV: ${{ secrets.APP_ENV }}
+          APP_DEBUG: ${{ secrets.APP_DEBUG }}
+          APP_SECRET: ${{ secrets.APP_SECRET }}
+          VAR_DUMPER_FORMAT: ${{ secrets.VAR_DUMPER_FORMAT }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          GOOGLE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+          GOOGLE_RECAPTCHA_SECRET: ${{ secrets.GOOGLE_RECAPTCHA_SECRET }}
+          EWZ_RECAPTCHA_SITE_KEY: ${{ secrets.EWZ_RECAPTCHA_SITE_KEY }}
+          EWZ_RECAPTCHA_SECRET: ${{ secrets.EWZ_RECAPTCHA_SECRET }}
+          MAILER_DSN: ${{ secrets.MAILER_DSN }}
+          CONTACT_FORM_TO: ${{ secrets.CONTACT_FORM_TO }}
+          CONTACT_FORM_FROM: ${{ secrets.CONTACT_FORM_FROM }}
+        run: composer install --prefer-dist --no-progress
 
-    - name: run phpstan checks
-      run: ./vendor/bin/phpstan analyse src --level 3
+      - name: run phpstan checks
+        run: ./vendor/bin/phpstan analyse src --level 3
 
-#    - name: cache warmup
-#      run: ./bin/console cache:clear
+      #    - name: cache warmup
+      #      run: ./bin/console cache:clear
 
-    - name: install npm packages
-      run: npm ci
+      - name: install npm packages
+        run: npm ci
 
-    - name: build assets with encore
-      run: ./node_modules/.bin/encore production
+      - name: build assets with encore
+        run: ./node_modules/.bin/encore production
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
