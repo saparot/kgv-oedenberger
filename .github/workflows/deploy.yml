@@ -32,8 +32,8 @@ jobs:
     - name: run phpstan checks
       run: ./vendor/bin/phpstan analyse src --level 3
 
-    - name: cache warmup
-      run: ./bin/console cache:clear
+#    - name: cache warmup
+#      run: ./bin/console cache:clear
 
     - name: install npm packages
       run: npm ci
