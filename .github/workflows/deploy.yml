@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Validate composer.json and composer.lock
+        id: composer-validation
         run: composer validate --strict
 
       - name: Cache Composer packages
@@ -27,6 +28,7 @@ jobs:
             ${{ runner.os }}-php-
 
       - name: Install dependencies
+        id: composer-install
         env:
           APP_ENV: ${{ secrets.APP_ENV }}
           APP_DEBUG: ${{ secrets.APP_DEBUG }}
@@ -43,12 +45,14 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: run phpstan checks
+        id: phpstan-checks
         run: ./vendor/bin/phpstan analyse src --level 3
 
       #    - name: cache warmup
       #      run: ./bin/console cache:clear
 
       - name: install npm packages
+        id: npm-clean-install
         run: npm ci
 
       - name: build assets with encore
