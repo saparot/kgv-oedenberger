@@ -30,7 +30,7 @@ class DownloadFileController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'administration/download_file/index.html.twig';
+        return 'administration/download_file/index.twig';
     }
 
     protected function getIntroData (): ?array {

@@ -34,7 +34,7 @@ class ContactController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'contact/index.html.twig';
+        return 'contact/index.twig';
     }
 
     function getIntroData (): ?array {
