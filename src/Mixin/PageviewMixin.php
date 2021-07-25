@@ -21,12 +21,10 @@ trait PageviewMixin {
 
     abstract function getTemplate (): string;
 
+    abstract function getKgvUrls (): ?KgvUrls;
+
     function getCategory (): ?string {
         return null;
-    }
-
-    function getKgvUrls (): ?KgvUrls {
-        return $this->kgvUrls ?? null;
     }
 
     abstract function render (string $view, array $parameters = [], Response $response = null): Response;

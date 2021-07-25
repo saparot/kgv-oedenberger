@@ -17,13 +17,14 @@ class WalkThroughController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
-    /**
-     * @var KgvUrls
-     */
     private KgvUrls $kgvUrls;
 
     function __construct (KgvUrls $kgvUrls) {
         $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
     }
 
     function getCategory (): ?string {
@@ -48,7 +49,6 @@ class WalkThroughController extends AbstractController {
 
     /**
      * @Route("/area/walk-through", name="gardenAreaWalkThrough")
-     *
      * @return Response
      */
     function index (): Response {

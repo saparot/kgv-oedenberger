@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\ContactForm;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\Categories;
+use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -20,6 +21,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
+    }
 
     function getBreadCrumbChain (): BreadCrumbsChain {
         return $this->addHome('Kontakt', null);
@@ -68,11 +79,7 @@ class ContactController extends AbstractController {
     }
 
     private function generateEmail (FormInterface $form): Email {
-        return (new Email())->from($this->getFrom())
-            ->to($this->getTo())
-            ->subject($this->getSubject($form))
-            ->text($this->getBody($form))
-            ->addReplyTo($this->getEmail($form));
+        return (new Email())->from($this->getFrom())->to($this->getTo())->subject($this->getSubject($form))->text($this->getBody($form))->addReplyTo($this->getEmail($form));
     }
 
     /**

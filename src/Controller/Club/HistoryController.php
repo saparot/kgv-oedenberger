@@ -17,13 +17,14 @@ class HistoryController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
-    /**
-     * @var KgvUrls
-     */
     private KgvUrls $kgvUrls;
 
     function __construct (KgvUrls $kgvUrls) {
         $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
     }
 
     function getCategory (): ?string {
@@ -46,7 +47,7 @@ class HistoryController extends AbstractController {
         return [
             'title' => 'Vereinsgeschichte',
             'icon' => 'fruit-tree',
-            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!'
+            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!',
         ];
     }
 

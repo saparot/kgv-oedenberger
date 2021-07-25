@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Helper\BreadCrumbsChain;
+use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -21,6 +22,16 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class RegisterController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
+    }
 
     function getBreadCrumbChain (): BreadCrumbsChain {
         return $this->addHome('Impressum', null);

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Helper\BreadCrumbsChain;
 use App\Helper\Categories;
+use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -16,6 +17,16 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
+    }
 
     function getCategory (): ?string {
         return Categories::CATEGORY_MEMBERS;

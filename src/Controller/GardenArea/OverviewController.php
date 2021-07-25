@@ -17,13 +17,14 @@ class OverviewController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
-    /**
-     * @var KgvUrls
-     */
     private KgvUrls $kgvUrls;
 
     function __construct (KgvUrls $kgvUrls) {
         $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
     }
 
     function getCategory (): ?string {
@@ -52,7 +53,6 @@ class OverviewController extends AbstractController {
 
     /**
      * @Route("/anlage/uebersicht", name="gardenAreaOverview")
-     *
      * @return Response
      */
     function index (): Response {

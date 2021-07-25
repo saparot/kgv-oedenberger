@@ -17,13 +17,14 @@ class GardenRulesController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
-    /**
-     * @var KgvUrls
-     */
     private KgvUrls $kgvUrls;
 
     function __construct (KgvUrls $kgvUrls) {
         $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
     }
 
     function getCategory (): ?string {

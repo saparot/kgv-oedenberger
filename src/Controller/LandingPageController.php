@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Helper\BreadCrumbsChain;
+use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -15,6 +16,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class LandingPageController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
+    }
 
     function getBreadCrumbChain (): BreadCrumbsChain {
         return $this->addHome(null, null);
@@ -31,7 +42,6 @@ class LandingPageController extends AbstractController {
     function getIntroData (): ?array {
         return null;
     }
-
 
     /**
      * @Route("/", name="landingPage")

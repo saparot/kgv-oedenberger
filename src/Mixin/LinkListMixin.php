@@ -13,11 +13,6 @@ trait LinkListMixin {
         return $this->filterRoutes($controller);
     }
 
-    /**
-     * @param string $currentController
-     *
-     * @return Route[]
-     */
     private function filterRoutes (string $currentController): array {
         $routes = [];
         foreach ($this->getRoutes() as $route) {

@@ -5,6 +5,7 @@ namespace App\Controller\Administration;
 use App\Entity\DownloadFile;
 use App\Form\DownloadFileUploadFormType;
 use App\Helper\BreadCrumbsChain;
+use App\Helper\KgvUrls;
 use App\Mixin\LinkListMixin;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\PageviewMixin;
@@ -23,6 +24,16 @@ class DownloadFileController extends AbstractController {
 
     function getBreadCrumbChain (): ?BreadCrumbsChain {
         return $this->addAdministration(null, null)->add('Downloads', $this->generateUrl('administrationDownloads'));
+    }
+
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
     }
 
     function getPageTitle (): ?string {

@@ -17,13 +17,14 @@ class RulesController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
 
-    /**
-     * @var KgvUrls
-     */
     private KgvUrls $kgvUrls;
 
     function __construct (KgvUrls $kgvUrls) {
         $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
     }
 
     function getCategory (): ?string {
@@ -46,7 +47,7 @@ class RulesController extends AbstractController {
         return [
             'title' => 'Satzung',
             'icon' => 'shovel-colored',
-            'text' => 'Jeder Verein braucht eine Satzung. In dieser wird festgelegt und beschrieben wie unser Verein aufgestellt ist und wie er funktioniert. Die nicht allzu lange ist dem interessierten Leser empfohlen.'
+            'text' => 'Jeder Verein braucht eine Satzung. In dieser wird festgelegt und beschrieben wie unser Verein aufgestellt ist und wie er funktioniert. Die nicht allzu lange ist dem interessierten Leser empfohlen.',
         ];
     }
 

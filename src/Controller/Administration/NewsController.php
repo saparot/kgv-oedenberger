@@ -5,6 +5,7 @@ namespace App\Controller\Administration;
 use App\Entity\News;
 use App\Form\NewsType;
 use App\Helper\BreadCrumbsChain;
+use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
@@ -21,6 +22,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class NewsController extends AbstractController {
 
     use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+
+    private KgvUrls $kgvUrls;
+
+    function __construct (KgvUrls $kgvUrls) {
+        $this->kgvUrls = $kgvUrls;
+    }
+
+    function getKgvUrls (): ?KgvUrls {
+        return null;
+    }
 
     function getBreadCrumbChain (): ?BreadCrumbsChain {
         return $this->addAdministration(null, null)->add('Neuigkeiten', $this->generateUrl('administrationNews'));
