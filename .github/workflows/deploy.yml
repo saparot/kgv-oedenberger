@@ -29,6 +29,18 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    - name: run phpstan checks
+      run: ./vendor/bin/phpstan analyse src --level 3
+
+    - name: cache warmup
+      run: ./bin/console cache:clear
+
+    - name: install npm packages
+      run: npm ci
+
+    - name: build assets with encore
+      run: ./node_modules/.bin/encore production
+
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
