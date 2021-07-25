@@ -58,6 +58,9 @@ jobs:
       - name: build assets with encore
         run: ./node_modules/.bin/encore production
 
+      -name: push to production
+      - run: rsync -chavzP -e 'ssh -p 2244'  --stats . webdniw8j_rwin7m@webdniw8j.wh.hosting.zone:/home/webdniw8j/v2
+
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
