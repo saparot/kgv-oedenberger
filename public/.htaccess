@@ -1,6 +1,6 @@
 AuthType Basic
 AuthName "KGV Oedenberger Strasse"
-AuthUserFile /kunden/607231_90491/sites/kgv/.htpasswd
+AuthUserFile /home/webdniw8j/html/v2/.htpasswd
 require valid-user
 
 # Use the front controller as index file. It serves as a fallback solution when
