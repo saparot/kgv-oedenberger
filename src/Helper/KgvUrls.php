@@ -48,17 +48,17 @@ class KgvUrls {
     }
 
     private function initClub (): UrlContainer {
-        $uc = new UrlContainer($this->urlGenerator, $this->request);
-
-        $uc->add('Ankündigungen', 'newsList');
-        $uc->addSeparator();
-        $uc->add('Vorstand', 'clubExecutives');
-        $uc->add('Satzung', 'clubRules');
-        $uc->add('Garten Ordnung', 'clubGardenRules');
-        $uc->add('Geschichte', 'clubHistory');
-        $uc->add('Formulare + Downloads', 'clubDownloads');
-
-        return $uc;
+        return (new UrlContainer($this->urlGenerator, $this->request))->add('Ankündigungen', 'newsList')
+            ->addSeparator()
+            ->add('Vorstand', 'clubExecutives')
+            ->addSeparator()
+            ->add('Satzung', 'clubRules')
+            ->addSeparator()
+            ->add('Garten Ordnung', 'clubGardenRules')
+            ->addSeparator()
+            ->add('Geschichte', 'clubHistory')
+            ->addSeparator()
+            ->add('Formulare + Downloads', 'clubDownloads');
     }
 
     private function initArea (): UrlContainer {
@@ -69,6 +69,9 @@ class KgvUrls {
             ->add('Anfahrt', 'gardenAreaRouteDescription')
             ->addSeparator()
             ->add('Spielplatz', 'gardenAreaPlayground')
+            ->addSeparator()
+            ->add('Schulgarten', 'gardenAreaSchoolGarden')
+            ->addSeparator()
             ->add('Spaziergang durch die Anlage', 'gardenAreaWalkThrough');
     }
 
