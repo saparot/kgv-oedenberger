@@ -35,6 +35,15 @@
 
 .kgv-navigation-bar {
   border-right: 1px solid $gray-200;
+  margin-top: 0;
+
+  @include screenSize(medium) {
+    margin-top: 40px;
+  }
+
+  @include screenSize(large) {
+    margin-top: 0;
+  }
 
   .kgv-sidebar-widget {
     &__title {

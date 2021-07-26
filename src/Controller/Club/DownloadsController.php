@@ -39,7 +39,7 @@ class DownloadsController extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Gartenordnung';
+        return 'Downloads';
     }
 
     protected function getIntroData (): ?array {
