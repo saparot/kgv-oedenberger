@@ -41,7 +41,7 @@ class SecurityController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'security/login.html.twig';
+        return 'security/login.twig';
     }
 
     protected function getIntroData (): ?array {
