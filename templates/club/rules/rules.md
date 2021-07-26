@@ -1,5 +1,5 @@
 ###SATZUNG Stand: März 2019
-einschließlich aller Satzungsänderungen entsprechend den Beschlüssen in den Mitgliederversammlungen bis einschließlich. 22.03.2019
+Einschließlich aller Satzungsänderungen entsprechend den Beschlüssen in den Mitgliederversammlungen bis einschließlich 22.03.2019
 
 ####§1 
 1. Der Verein führt den Namen „Kleingartenverein Oedenbergerstraße“ und hat seinen Sitz in Nürnberg.
@@ -65,9 +65,9 @@ Organe des Vereins sind:
     - Schriftführer 
     - Fachberater
 
-2. Der Vorstand vertritt den Kleingartenverein gerichtlich und außergerichtlich (####§26 BGB). Jedes Vorstandsmitglied hat Einzelvertretungsbefugnis.
+2. Der Vorstand vertritt den Kleingartenverein gerichtlich und außergerichtlich (§26 BGB). Jedes Vorstandsmitglied hat Einzelvertretungsbefugnis.
 
-3. Der Vorstand des Kleingartenvereins wird von der Mitglieder- versammlung auf 4 Jahre gewählt. Jedes Vorstandsmitglied bleibt so lange im Amt, bis eine Neuwahl
+3. Der Vorstand des Kleingartenvereins wird von der Mitgliederversammlung auf 4 Jahre gewählt. Jedes Vorstandsmitglied bleibt so lange im Amt, bis eine Neuwahl
  stattgefunden hat. Die Amtszeit beginnt mit der Annahme der Wahl. Scheidet ein Vorstandsmitglied eines Kleingartenvereins innerhalb der Wahlperiode aus, so ergänzt sich der
   Vorstand für den Rest der Wahlperiode durch Zuwahl in der folgenden Mitgliederversammlung.
 

@@ -59,7 +59,7 @@ class ExecutivesController extends AbstractController {
         return [
             'title' => 'Der Vorstand',
             'icon' => 'watercan',
-            'text' => 'Damit unser Verein funktioniert, brauchen wir natürlich einen Vorstand. Dieser wird ordentlich einmal im Jahr auf unser Mitgliederversammlung gewählt.  Unser  Vorstand übernimmt auch of gutwillig Aufgaben, die die Vereinsarbeit so mit sich bringt, zum Beispiel die Organisation von Veranstaltungen, den Einkauf von Wasseruhren für günstige Preise und viele andere Kleinigkeiten.',
+            'text' => 'Damit unser Verein funktioniert, brauchen wir natürlich einen Vorstand. Dieser wird ordentlich einmal im Jahr auf unser Mitgliederversammlung gewählt.  Unser  Vorstand übernimmt auch oft gutwillig Aufgaben, die die Vereinsarbeit so mit sich bringt, zum Beispiel die Organisation von Veranstaltungen, den Einkauf von Wasseruhren für günstige Preise und viele andere Kleinigkeiten.',
         ];
     }
 
