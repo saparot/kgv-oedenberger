@@ -19,7 +19,6 @@
             <th>Name</th>
             <th>Position</th>
             <th><i class="fas fa-mail"></i></th>
-            <th><i class="fas fa-phone"></i></th>
             <th></th>
         </tr>
         </thead>
@@ -30,7 +29,6 @@
                 <td class="text-nowrap">{{ executive.Name }}</td>
                 <td>{{ executive.position }}</td>
                 <td>{{ executive.email }}</td>
-                <td class="text-nowrap">{{ executive.phone }}</td>
                 <td class="kgv-admin-list-action-items">
                     <a href="{{ path('administrationExecutiveEdit', {'id': executive.id}) }}"><i class="fas fa-edit"></i></a>
                 </td>

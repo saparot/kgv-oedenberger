@@ -3,7 +3,7 @@
 {% block body %}
     <h3>Eintrag für Download Datei bearbeiten</h3>
 
-    {{ include('administration/download_file/_form.html.twig', {'button_label': 'Speichern'}) }}
+    {{ include('administration/download_file/_form.twig', {'button_label': 'Speichern'}) }}
 
     <a href="{{ path('administrationDownloads') }}">zurück zur Übersicht</a>
 

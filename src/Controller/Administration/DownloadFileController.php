@@ -115,9 +115,9 @@ class DownloadFileController extends AbstractController {
      * @Route("/{id}/delete", name="download_file_delete", methods={"GET","POST"})
      */
     public function delete (Request $request, DownloadFile $downloadFile): Response {
-        //$entityManager = $this->getDoctrine()->getManager();
-        //$entityManager->remove($downloadFile);
-        //$entityManager->flush();
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($downloadFile);
+        $entityManager->flush();
 
         return $this->redirectToRoute('administrationDownloads');
     }

@@ -2,6 +2,14 @@
 
 {% block body %}
 
+    <script>
+        function deleteDownloadFile (url) {
+            if (confirm('Soll diese Datei wirklich gelöscht werden?')) {
+                window.location = url;
+            }
+        }
+    </script>
+
     {% for message in app.flashes('success') %}
         <div class="alert alert-success" role="alert">
             {{ message }}
@@ -25,14 +33,20 @@
                 <td>{{ downloadFile.description }}</td>
                 <td class="kgv-admin-list-action-items">
                     <span class="kgv-admin-list-action-item"><a href="{{ path('download_file_edit', {'id': downloadFile.id}) }}"><i class="fas fa-edit"></i></a></span>
-                    <span class="kgv-admin-list-action-item"><a href="{{ path('download_file_delete', {'id': downloadFile.id}) }}" onclick="return
-                    confirm('Soll diese Datei entgültig gelöscht werden?');"><i class="fas fas fa-trash-alt"></i></a></span>
+                    <span class="kgv-admin-list-action-item">
+                        <i class="fas fas fa-trash-alt" onclick="deleteDownloadFile('{{ path('download_file_delete', {'id': downloadFile.id}) }}')">
 
+                        </i>
+                    </span>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">keine Dateien zum Download gefunden</td>
+                <td colspan="5">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-info-circle"></i> keine Dateien zum Download gefunden
+                    </div>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

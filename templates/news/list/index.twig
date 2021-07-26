@@ -4,7 +4,14 @@
 
     {% include 'layout/partials/kgv-intro.twig' %}
 
-    {% for news in newsList %}
-        {% include 'news/list/newsEntity.twig' %}
-    {% endfor %}
+    {% if newsList %}
+        {% for news in newsList %}
+            {% include 'news/list/newsEntity.twig' %}
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-warning">
+            <i class="fas fa-info-circle"></i> aktuell gibt es keine Neuigkeiten, schauen Sie einfach demnächst wieder vorbei!
+        </div>
+    {% endif %}
+
 {% endblock %}

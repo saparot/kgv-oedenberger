@@ -17,5 +17,20 @@
 
 .kgv-admin-list-action-item {
   display: inline-block;
+  cursor: pointer;
+  color: $primary;
 
+  &:hover {
+    color: $secondary;
+  }
+
+  i {
+    color: $primary;
+    cursor: pointer;
+
+    &:hover {
+      color: $secondary;
+    }
+
+  }
 }

@@ -10,7 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class ExecutiveType extends AbstractType {
 
     public function buildForm (FormBuilderInterface $builder, array $options) {
-        $builder->add('Name')->add('position')->add('sort')->add('email')->add('phone');
+        $builder->add('Name')->add('position')->add('sort')->add('email');
     }
 
     public function configureOptions (OptionsResolver $resolver) {
