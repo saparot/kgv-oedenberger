@@ -48,9 +48,6 @@ jobs:
         id: phpstan-checks
         run: ./vendor/bin/phpstan analyse src --level 3
 
-      - name: cache warmup
-        run: ./bin/console cache:clear
-
       - name: install npm packages
         id: npm-clean-install
         run: npm ci
