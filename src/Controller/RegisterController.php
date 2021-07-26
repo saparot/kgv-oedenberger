@@ -42,7 +42,7 @@ class RegisterController extends AbstractController {
     }
 
     function getTemplate (): string {
-        return 'register/index.html.twig';
+        return 'register/index.twig';
     }
 
     function getIntroData (): ?array {
@@ -53,6 +53,9 @@ class RegisterController extends AbstractController {
      * @Route("/register", name="register")
      */
     function index (Request $request, UserPasswordEncoderInterface $userPasswordEncoder): Response {
+
+        return $this->redirectToRoute('landingPage'); //disallow registration
+
         $registerForm = $this->createFormBuilder()->add('userName', TextType::class, ['label' => 'Benutzername', 'required' => true,])->add('eMail', EmailType::class, [
             'label' => 'E-Mail-Adresse',
             'required' => true,
