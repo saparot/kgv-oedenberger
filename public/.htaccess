@@ -1,7 +1,7 @@
-AuthType Basic
-AuthName "KGV Oedenberger Strasse"
-AuthUserFile /home/webdniw8j/html/v2/.htpasswd
-require valid-user
+#AuthType Basic
+#AuthName "KGV Oedenberger Strasse"
+#AuthUserFile /home/webdniw8j/html/v2/.htpasswd
+#require valid-user
 
 # Use the front controller as index file. It serves as a fallback solution when
 # every other rewrite/redirect fails (e.g. in an aliased environment without
