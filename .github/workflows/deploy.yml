@@ -73,7 +73,6 @@ jobs:
           rsync
           -chavzP
           -e 'ssh -p ${{ secrets.SSH_HOST_PORT }}'
-          --exclude=assets
           --exclude=bin
           --exclude=resources
           --exclude=tests
