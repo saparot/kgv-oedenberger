@@ -69,7 +69,23 @@ jobs:
         run: ssh-keyscan -H -p ${{ secrets.SSH_HOST_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: push to production
-        run: rsync -chavzP -e 'ssh -p ${{ secrets.SSH_HOST_PORT }}'  --stats . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/webdniw8j/v2
+        run: >
+          rsync
+          -chavzP
+          -e 'ssh -p ${{ secrets.SSH_HOST_PORT }}'
+          --exclude=assets
+          --exclude=bin
+          --exclude=resources
+          --exclude=tests
+          --exclude=node_modules
+          --exclude=package.json
+          --exclude=package-lock.json
+          --exclude=.idea
+          --exclude=.idea
+          --exclude=.git
+          --exclude=.github
+          --delete
+          . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/webdniw8j/v2
 
       # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
