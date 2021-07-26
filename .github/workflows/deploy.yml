@@ -43,6 +43,7 @@ jobs:
           CONTACT_FORM_TO: ${{ secrets.CONTACT_FORM_TO }}
           CONTACT_FORM_FROM: ${{ secrets.CONTACT_FORM_FROM }}
         run: |
+          ./createEnvFile.php
           composer install --prefer-dist --no-progress
           composer dump-env prod
 
