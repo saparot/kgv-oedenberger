@@ -3,8 +3,7 @@
 **2**. Hast Du Verlangen nach Musik, beachte, dass die Lautstärke der Unterhaltungsgeräte so abzustimmen ist, dass niemand belästigt wird. Gleiches gilt für das Spielen
 von Musikinstrumenten jeder Art. Dein Nachbar wird es Dir danken!
 
-**3**. Sägen, hacken, hämmern, klopfen und Rasenmähen ist nur in den von der Stadt
-Nürnberg genehmigten Zeiten erlaubt. Diese sind: 
+**3**. Sägen, hacken, hämmern, klopfen und Rasenmähen sollte nur an Werktagen erfolgen, und auch übliche Ruhezeiten berücksichtigen.
 
 Tag | Zeit
 ------------- | -------------
