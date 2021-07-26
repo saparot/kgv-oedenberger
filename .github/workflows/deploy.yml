@@ -42,7 +42,9 @@ jobs:
           MAILER_DSN: ${{ secrets.MAILER_DSN }}
           CONTACT_FORM_TO: ${{ secrets.CONTACT_FORM_TO }}
           CONTACT_FORM_FROM: ${{ secrets.CONTACT_FORM_FROM }}
-        run: composer install --prefer-dist --no-progress
+        run: |
+          composer install --prefer-dist --no-progress
+          composer dump-env prod
 
       - name: run phpstan checks
         id: phpstan-checks
