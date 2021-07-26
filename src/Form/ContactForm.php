@@ -25,7 +25,7 @@ class ContactForm extends AbstractType {
                 new Length(['min' => 3]),
             ],
         ])->add('email', EmailType::class, [
-            'label_format' => 'E-Mail-Adresse',
+            'label_format' => 'Ihre E-Mail-Adresse',
             'label_attr' => ['class' => 'formRequired'],
             'constraints' => [
                 new NotBlank(),

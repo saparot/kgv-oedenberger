@@ -57,7 +57,7 @@ class RegisterController extends AbstractController {
         return $this->redirectToRoute('landingPage'); //disallow registration
 
         $registerForm = $this->createFormBuilder()->add('userName', TextType::class, ['label' => 'Benutzername', 'required' => true,])->add('eMail', EmailType::class, [
-            'label' => 'E-Mail-Adresse',
+            'label' => 'Ihre E-Mail-Adresse',
             'required' => true,
         ])->add('password', RepeatedType::class, [
             'type' => PasswordType::class,

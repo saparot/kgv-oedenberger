@@ -2,6 +2,10 @@
 
 .navbar-brand {
   @include hyphenate();
+
+  @include screenSize(medium) {
+    white-space: nowrap;
+  }
 }
 
 .header__teaser {
