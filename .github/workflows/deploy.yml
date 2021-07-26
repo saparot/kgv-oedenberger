@@ -44,24 +44,34 @@ jobs:
           CONTACT_FORM_FROM: ${{ secrets.CONTACT_FORM_FROM }}
         run: composer install --prefer-dist --no-progress
 
-      - name: run phpstan checks
-        id: phpstan-checks
-        run: ./vendor/bin/phpstan analyse src --level 3
+      #      - name: run phpstan checks
+      #        id: phpstan-checks
+      #        run: ./vendor/bin/phpstan analyse src --level 3
 
       #    - name: cache warmup
       #      run: ./bin/console cache:clear
 
-#      - name: install npm packages
-#        id: npm-clean-install
-#        run: npm ci
-#
-#      - name: build assets with encore
-#        run: ./node_modules/.bin/encore production
+      #      - name: install npm packages
+      #        id: npm-clean-install
+      #        run: npm ci
+      #
+      #      - name: build assets with encore
+      #        run: ./node_modules/.bin/encore production
+
+      - name: Install SSH Key
+        id: ssh-key-install
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_HOST_PORT }} >> ~/.ssh/known_hosts
 
       - name: push to production
-        run: rsync -chavzP -e 'ssh -p 2244'  --stats . webdniw8j_q5cxrj@webdniw8j.wh.hosting.zone:/home/webdniw8j/v2
+        run: rsync -chavzP -e 'ssh -p ${{ secrets.SSH_HOST_PORT }}'  --stats . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/webdniw8j/v2
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+      # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     # - name: Run test suite
