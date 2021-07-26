@@ -80,10 +80,9 @@ jobs:
           --exclude=node_modules
           --exclude=package.json
           --exclude=package-lock.json
-          --exclude=.idea
-          --exclude=.idea
-          --exclude=.git
-          --exclude=.github
+          --exclude='.idea/'
+          --exclude='.git/'
+          --exclude='.github/'
           --delete
           . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/webdniw8j/v2
 
