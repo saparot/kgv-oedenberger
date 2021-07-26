@@ -24,7 +24,7 @@ class GardenTerminationController extends AbstractController {
     }
 
     function getKgvUrls (): ?KgvUrls {
-        return null;
+        return $this->kgvUrls;
     }
 
     function getCategory (): ?string {

@@ -33,7 +33,7 @@ class DownloadFileController extends AbstractController {
     }
 
     function getKgvUrls (): ?KgvUrls {
-        return null;
+        return $this->kgvUrls;
     }
 
     function getPageTitle (): ?string {

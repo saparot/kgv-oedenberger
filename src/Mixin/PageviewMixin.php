@@ -86,7 +86,8 @@ trait PageviewMixin {
     }
 
     private function generateSidebarUrlList (): ?UrlContainer {
-        if ($this->getKgvUrls() && $this->getKgvUrls()->exists($this->getCategory())) {
+        $kgUrls = $this->getKgvUrls();
+        if ($kgUrls && $kgUrls->exists($this->getCategory())) {
             try {
                 return $this->getKgvUrls()->get($this->getCategory());
             } catch (Exception $e) {

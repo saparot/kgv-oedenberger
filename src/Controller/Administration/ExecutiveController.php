@@ -29,7 +29,7 @@ class ExecutiveController extends AbstractController {
     }
 
     function getKgvUrls (): ?KgvUrls {
-        return null;
+        return $this->kgvUrls;
     }
 
     function getBreadCrumbChain (): ?BreadCrumbsChain {

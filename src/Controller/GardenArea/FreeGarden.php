@@ -23,7 +23,7 @@ class FreeGarden extends AbstractController {
     }
 
     function getKgvUrls (): ?KgvUrls {
-        return null;
+        return $this->kgvUrls;
     }
 
     /**
