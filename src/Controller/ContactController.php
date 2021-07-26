@@ -65,7 +65,7 @@ class ContactController extends AbstractController {
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->send($form, $mailer);
-            $this->addFlash('success', 'Ihre Anfrage wurde erfolgreich gesendet');
+            $this->addFlash('success', 'Ihre Anfrage wurde erfolgreich gesendet!');
 
             return $this->redirectToRoute('landingPage');
         }

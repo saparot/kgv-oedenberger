@@ -1,5 +1,9 @@
 @import "variables";
 
+.navbar-brand {
+  @include hyphenate();
+}
+
 .header__teaser {
   display: flex;
   background-color: $white;

@@ -4,6 +4,10 @@
 
   &__headline {
     @include hyphenate();
+
+    &--error {
+      color: $danger;
+    }
   }
 
   margin-bottom: 2rem;

@@ -1,0 +1,20 @@
+{% set pageIdentifierClasses = 'kgv-content-error' %}
+{% set teaserVariant= 'header__teaser--variant2' %}
+{% extends 'base-big.twig' %}
+
+{% block body %}
+
+    {% include 'layout/partials/kgv-intro.twig' with {introData : {
+        icon: 'tree-colored',
+        title:'uups!! diese Seite gibt es nicht',
+        additionalClassesTitle:'kgv-intro__headline--error',
+        text:'404 - diese Seite gibt es auf den Internetseiten des <strong>Kleingartenvereines Oedenberger Straße e.V Nürnberg</strong> leider nicht :('
+    }, pageIdent: 'error'} %}
+
+
+    <div class="row">
+        <a class="btn btn-primary" href="{{ path('landingPage') }}">zur Startseite</a>
+    </div>
+
+
+{% endblock %}

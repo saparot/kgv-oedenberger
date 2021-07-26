@@ -3,7 +3,7 @@
         {% if data.icon is defined %}
             <div class="kgv-intro__icon">{% include 'layout/icons/garden.twig' with {iconName: data.icon, additionalIconClass: additionalIconClass} %}</div>
         {% endif %}
-        <h1 class="kgv-intro__headline">{{ data.title }}</h1>
+        <h1 class="kgv-intro__headline {{ data.additionalClassesTitle ?? '' }}">{{ data.title }}</h1>
         {% if data.text is defined %}
             <div>{{ data.text |raw }}</div>
         {% endif %}

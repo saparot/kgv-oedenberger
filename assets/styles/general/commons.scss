@@ -32,6 +32,10 @@
   @include screenSize(landscape) {
     flex-direction: row;
   }
+
+  &-error {
+    height: 50vh;
+  }
 }
 
 .kgv-content-block {
