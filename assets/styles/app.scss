@@ -3,6 +3,9 @@
 @import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);
 @import "./general/variables";
 @import "~bootstrap/scss/bootstrap";
+//html, body, * {
+//    font-family: $font-family-base;
+//}
 @import "./general/index";
 @import "./administration/index";
 @import "./news/index";
