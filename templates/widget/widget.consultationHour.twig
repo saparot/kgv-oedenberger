@@ -1,0 +1,23 @@
+{% embed 'widget.base.twig' with { additionalClass: 'consultation-hour' } %}
+
+    {% block widgetTitle %}
+        <div class="kgv-consultation-hour__header">
+            {% include 'layout/icons/garden.twig' with {iconName: 'telephone', additionalIconClass: 'kgv-consultation-hour__visual'} %}
+            <div>
+                Sprechstunde
+            </div>
+        </div>
+
+
+    {% endblock %}
+
+    {% block widgetContent %}
+        <p class="kgv-consultation-hour__content">
+            <span class="text-highlight">im September und Oktober 2021</span> bieten wir
+            Ihnen <span class="text-highlight">jeden Samstag zwischen 10 und 11 Uhr</span>
+            eine Telefonsprechstunde an!<br><br>
+            <i class="fas fa-mobile-alt"></i> 01573 - 22 890 49
+        </p>
+
+    {% endblock %}
+{% endembed %}

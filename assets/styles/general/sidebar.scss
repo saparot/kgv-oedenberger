@@ -51,9 +51,23 @@
       text-decoration: underline;
     }
 
+
     &__body {
 
     }
+  }
+}
+
+.kgv-consultation-hour {
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__visual {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 12px;
   }
 }
 
