@@ -53,7 +53,7 @@ class FreeGarden extends AbstractController {
         return [
             'title' => 'Freie Gärten',
             'icon' => 'secateurs',
-            'text' => 'Wenn Sie Interesse an einem Kleingarten haben, sind Sie hier richtig. Es gibt es eine Warteliste auf der Sie sich eintragen lassen können, und die in chronologischer Reihenfolge "bedient" wird.',
+            'text' => 'Wenn Sie Interesse an einem Kleingarten haben, sind Sie hier richtig. Es gibt eine Warteliste auf der Sie sich eintragen lassen können, und die in chronologischer Reihenfolge "bedient" wird.',
         ];
     }
 }

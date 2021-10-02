@@ -63,7 +63,7 @@ class ListController extends AbstractController {
         return [
             'title' => 'News & Ankündigungen',
             'icon' => 'fence',
-            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Neuigkeit zu verpassen!',
+            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine. Besuchen Sie diese Seite regelmäßig um keine Neuigkeit zu verpassen!',
         ];
     }
 

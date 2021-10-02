@@ -54,7 +54,7 @@ class KgvUrls {
             ->addSeparator()
             ->add('Satzung', 'clubRules')
             ->addSeparator()
-            ->add('Garten Ordnung', 'clubGardenRules')
+            ->add('Gartenordnung', 'clubGardenRules')
             ->addSeparator()
             ->add('Geschichte', 'clubHistory')
             ->addSeparator()

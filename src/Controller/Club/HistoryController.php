@@ -47,7 +47,7 @@ class HistoryController extends AbstractController {
         return [
             'title' => 'Vereinsgeschichte',
             'icon' => 'fruit-tree',
-            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine für das An- und Abstellen des Wassers. Besuchen Sie diese Seite regelmäßig um keine Ankündigung zu verpassen!',
+            'text' => 'Unser Verein besteht bereits sein 1919. Wichtige Meilensteine und Ereignisse haben wir auf dieser Seite zusammenfasst.',
         ];
     }
 
