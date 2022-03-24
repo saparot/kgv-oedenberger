@@ -4,7 +4,7 @@ website for kleingarten Verein Oedenberger Strasse, Nuernberg.
 
 
 ## development
-1. yarn install
+1. npm install
 2. composer install
 3. start symfony webserver `symfony server:start`
 4. start npm with webpack: `npm run watch`  
