@@ -16,8 +16,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegisterController extends AbstractController {
 
@@ -52,7 +52,7 @@ class RegisterController extends AbstractController {
     /**
      * @Route("/register", name="register")
      */
-    function index (Request $request, UserPasswordEncoderInterface $userPasswordEncoder): Response {
+    function index (Request $request, UserPasswordHasherInterface $userPasswordEncoder): Response {
 
         return $this->redirectToRoute('landingPage'); //disallow registration
 
@@ -72,7 +72,7 @@ class RegisterController extends AbstractController {
             $data = $registerForm->getData();
 
             $user = new User();
-            $user->setUserName($data['userName'])->setPassword($userPasswordEncoder->encodePassword($user, $data['password']))->setEmail($data['eMail']);
+            $user->setUserName($data['userName'])->setPassword($userPasswordEncoder->hashPassword($user, $data['password']))->setEmail($data['eMail']);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
