@@ -77,7 +77,7 @@ class DownloadFileController extends AbstractController {
             return $this->redirectToRoute('administrationDownloads');
         }
 
-        return $this->render('administration/download_file/new.html.twig', [
+        return $this->render('administration/download_file/new.twig', [
             'download_file' => $downloadFile,
             'form' => $form->createView(),
         ]);
