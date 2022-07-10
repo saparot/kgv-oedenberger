@@ -7,9 +7,9 @@ use App\Form\ExecutiveType;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
-use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use App\Repository\ExecutiveRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,27 +20,24 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class ExecutiveController extends AbstractController {
 
-    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+    use  BreadCrumbMixin, PageviewMixin;
 
-    private KgvUrls $kgvUrls;
-
-    function __construct (KgvUrls $kgvUrls) {
-        $this->kgvUrls = $kgvUrls;
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
     }
 
-    function getKgvUrls (): ?KgvUrls {
+    public function getKgvUrls (): ?KgvUrls {
         return $this->kgvUrls;
     }
 
-    function getBreadCrumbChain (): ?BreadCrumbsChain {
+    public function getBreadCrumbChain (): ?BreadCrumbsChain {
         return $this->addAdministration(null, null)->add('Vorstand', $this->generateUrl('administrationExecutive'));
     }
 
-    function getPageTitle (): ?string {
+    public function getPageTitle (): ?string {
         return 'Administration Vorstand';
     }
 
-    function getTemplate (): string {
+    public function getTemplate (): string {
         return 'administration/executive/index.twig';
     }
 
@@ -58,7 +55,7 @@ class ExecutiveController extends AbstractController {
      *
      * @return Response
      */
-    function index (ExecutiveRepository $executiveRepository): Response {
+    public function index (ExecutiveRepository $executiveRepository): Response {
         $this->assign('executives', $executiveRepository->findAll());
 
         return $this->renderPageView();
@@ -70,7 +67,7 @@ class ExecutiveController extends AbstractController {
      *
      * @return Response
      */
-    function show (Executive $executive): Response {
+    public function show (Executive $executive): Response {
         return $this->render('administration/executive/show.twig', [
             'executive' => $executive,
         ]);
@@ -83,12 +80,12 @@ class ExecutiveController extends AbstractController {
      *
      * @return Response
      */
-    function edit (Request $request, Executive $executive): Response {
+    public function edit (Request $request, Executive $executive): Response {
         $form = $this->createForm(ExecutiveType::class, $executive);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $this->doctrine->getManager()->flush();
             $this->addFlash('success', 'Änderung erfolgreich gespeichert');
 
             return $this->redirectToRoute('administrationExecutive');

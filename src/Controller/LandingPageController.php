@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
-use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use App\Repository\NewsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LandingPageController extends AbstractController {
 
-    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+    use  BreadCrumbMixin, PageviewMixin;
 
     private KgvUrls $kgvUrls;
 

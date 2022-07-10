@@ -3,15 +3,14 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User implements UserInterface {
+class User implements UserInterface, PasswordAuthenticatedUserInterface {
 
     /**
      * @ORM\Id
@@ -41,10 +40,10 @@ class User implements UserInterface {
      */
     private ?string $email;
 
-    function __construct () {
+    public function __construct () {
     }
 
-    function getId (): ?int {
+    public function getId (): ?int {
         return $this->id;
     }
 
@@ -53,11 +52,15 @@ class User implements UserInterface {
      *
      * @see UserInterface
      */
-    function getUsername (): string {
-        return (string) $this->userName;
+    public function getUsername (): string {
+        return $this->userName;
     }
 
-    function setUserName (string $userName): self {
+    public function getUserIdentifier (): string {
+        return $this->getUsername();
+    }
+
+    public function setUserName (string $userName): self {
         $this->userName = $userName;
 
         return $this;
@@ -66,7 +69,7 @@ class User implements UserInterface {
     /**
      * @see UserInterface
      */
-    function getRoles (): array {
+    public function getRoles (): array {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
@@ -74,7 +77,7 @@ class User implements UserInterface {
         return array_unique($roles);
     }
 
-    function setRoles (array $roles): self {
+    public function setRoles (array $roles): self {
         $this->roles = $roles;
 
         return $this;
@@ -83,11 +86,11 @@ class User implements UserInterface {
     /**
      * @see UserInterface
      */
-    function getPassword (): string {
+    public function getPassword (): string {
         return (string) $this->password;
     }
 
-    function setPassword (string $password): self {
+    public function setPassword (string $password): self {
         $this->password = $password;
 
         return $this;
@@ -99,23 +102,23 @@ class User implements UserInterface {
      *
      * @see UserInterface
      */
-    function getSalt (): ?string {
+    public function getSalt (): ?string {
         return null;
     }
 
     /**
      * @see UserInterface
      */
-    function eraseCredentials () {
+    public function eraseCredentials () {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
 
-    function getEmail (): ?string {
+    public function getEmail (): ?string {
         return $this->email;
     }
 
-    function setEmail (string $email): self {
+    public function setEmail (string $email): self {
         $this->email = $email;
 
         return $this;

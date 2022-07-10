@@ -6,8 +6,8 @@ use App\Entity\User;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
-use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -16,46 +16,44 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class RegisterController extends AbstractController {
 
-    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+    use BreadCrumbMixin, PageviewMixin;
 
-    private KgvUrls $kgvUrls;
-
-    function __construct (KgvUrls $kgvUrls) {
-        $this->kgvUrls = $kgvUrls;
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
     }
 
-    function getKgvUrls (): ?KgvUrls {
+    public function getKgvUrls (): ?KgvUrls {
         return $this->kgvUrls;
     }
 
-    function getBreadCrumbChain (): BreadCrumbsChain {
+    public function getBreadCrumbChain (): BreadCrumbsChain {
         return $this->addHome('Impressum', null);
     }
 
-    function getPageTitle (): ?string {
+    public function getPageTitle (): ?string {
         return 'Registrierung';
     }
 
-    function getTemplate (): string {
+    public function getTemplate (): string {
         return 'register/index.twig';
     }
 
-    function getIntroData (): ?array {
+    public function getIntroData (): ?array {
         return null;
     }
 
     /**
      * @Route("/register", name="register")
      */
-    function index (Request $request, UserPasswordEncoderInterface $userPasswordEncoder): Response {
-
+    public function index (Request $request, UserPasswordHasherInterface $userPasswordEncoder): Response {
         return $this->redirectToRoute('landingPage'); //disallow registration
+    }
 
+    public function indexEnableWhenRequired (Request $request, UserPasswordHasherInterface $userPasswordEncoder): Response {
         $registerForm = $this->createFormBuilder()->add('userName', TextType::class, ['label' => 'Benutzername', 'required' => true,])->add('eMail', EmailType::class, [
             'label' => 'Ihre E-Mail-Adresse',
             'required' => true,
@@ -72,8 +70,8 @@ class RegisterController extends AbstractController {
             $data = $registerForm->getData();
 
             $user = new User();
-            $user->setUserName($data['userName'])->setPassword($userPasswordEncoder->encodePassword($user, $data['password']))->setEmail($data['eMail']);
-            $em = $this->getDoctrine()->getManager();
+            $user->setUserName($data['userName'])->setPassword($userPasswordEncoder->hashPassword($user, $data['password']))->setEmail($data['eMail']);
+            $em = $this->doctrine->getManager();
             $em->persist($user);
             $em->flush();
 
