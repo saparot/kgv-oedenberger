@@ -6,10 +6,10 @@ use App\Entity\DownloadFile;
 use App\Form\DownloadFileUploadFormType;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\KgvUrls;
-use App\Mixin\LinkListMixin;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\PageviewMixin;
 use App\Repository\DownloadFileRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,27 +20,24 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class DownloadFileController extends AbstractController {
 
-    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+    use BreadCrumbMixin, PageviewMixin;
 
-    function getBreadCrumbChain (): ?BreadCrumbsChain {
+    public function getBreadCrumbChain (): ?BreadCrumbsChain {
         return $this->addAdministration(null, null)->add('Downloads', $this->generateUrl('administrationDownloads'));
     }
 
-    private KgvUrls $kgvUrls;
-
-    function __construct (KgvUrls $kgvUrls) {
-        $this->kgvUrls = $kgvUrls;
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
     }
 
-    function getKgvUrls (): ?KgvUrls {
+    public function getKgvUrls (): ?KgvUrls {
         return $this->kgvUrls;
     }
 
-    function getPageTitle (): ?string {
+    public function getPageTitle (): ?string {
         return 'Administration Downloads';
     }
 
-    function getTemplate (): string {
+    public function getTemplate (): string {
         return 'administration/download_file/index.twig';
     }
 
@@ -70,7 +67,7 @@ class DownloadFileController extends AbstractController {
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $this->doctrine->getManager();
             $entityManager->persist($downloadFile);
             $entityManager->flush();
 
@@ -83,15 +80,6 @@ class DownloadFileController extends AbstractController {
         ]);
     }
 
-    ///**
-    // * @Route("/{id}", name="download_file_show", methods={"GET"})
-    // */
-    //public function show (DownloadFile $downloadFile): Response {
-    //    return $this->render('administration/download_file/show.html.twig', [
-    //        'download_file' => $downloadFile,
-    //    ]);
-    //}
-
     /**
      * @Route("/{id}/edit", name="download_file_edit", methods={"GET","POST"})
      */
@@ -100,7 +88,7 @@ class DownloadFileController extends AbstractController {
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $this->doctrine->getManager()->flush();
 
             return $this->redirectToRoute('administrationDownloads');
         }
@@ -115,7 +103,7 @@ class DownloadFileController extends AbstractController {
      * @Route("/{id}/delete", name="download_file_delete", methods={"GET","POST"})
      */
     public function delete (Request $request, DownloadFile $downloadFile): Response {
-        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager = $this->doctrine->getManager();
         $entityManager->remove($downloadFile);
         $entityManager->flush();
 

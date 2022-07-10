@@ -6,16 +6,14 @@ use App\Helper\BreadCrumbsChain;
 use App\Helper\Categories;
 use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
-use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class WalkThroughController extends AbstractController {
 
-    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+    use  BreadCrumbMixin, PageviewMixin;
 
     private KgvUrls $kgvUrls;
 

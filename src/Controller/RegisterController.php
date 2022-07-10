@@ -6,7 +6,6 @@ use App\Entity\User;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
-use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -21,7 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RegisterController extends AbstractController {
 
-    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+    use BreadCrumbMixin, PageviewMixin;
 
     private KgvUrls $kgvUrls;
 
@@ -52,10 +51,11 @@ class RegisterController extends AbstractController {
     /**
      * @Route("/register", name="register")
      */
-    function index (Request $request, UserPasswordHasherInterface $userPasswordEncoder): Response {
-
+    public function index (Request $request, UserPasswordHasherInterface $userPasswordEncoder): Response {
         return $this->redirectToRoute('landingPage'); //disallow registration
+    }
 
+    public function indexEnableWhenRequired (Request $request, UserPasswordHasherInterface $userPasswordEncoder): Response {
         $registerForm = $this->createFormBuilder()->add('userName', TextType::class, ['label' => 'Benutzername', 'required' => true,])->add('eMail', EmailType::class, [
             'label' => 'Ihre E-Mail-Adresse',
             'required' => true,

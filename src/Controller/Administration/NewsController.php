@@ -7,10 +7,11 @@ use App\Form\NewsType;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
-use App\Mixin\LinkListMixin;
 use App\Mixin\PageviewMixin;
 use App\Repository\NewsRepository;
 use DateTime;
+use Doctrine\Persistence\ManagerRegistry;
+use JetBrains\PhpStorm\ArrayShape;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,27 +22,24 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class NewsController extends AbstractController {
 
-    use LinkListMixin, BreadCrumbMixin, PageviewMixin;
+    use BreadCrumbMixin, PageviewMixin;
 
-    private KgvUrls $kgvUrls;
-
-    function __construct (KgvUrls $kgvUrls) {
-        $this->kgvUrls = $kgvUrls;
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
     }
 
-    function getKgvUrls (): ?KgvUrls {
+    public function getKgvUrls (): ?KgvUrls {
         return $this->kgvUrls;
     }
 
-    function getBreadCrumbChain (): ?BreadCrumbsChain {
+    public function getBreadCrumbChain (): ?BreadCrumbsChain {
         return $this->addAdministration(null, null)->add('Neuigkeiten', $this->generateUrl('administrationNews'));
     }
 
-    function getPageTitle (): ?string {
+    public function getPageTitle (): ?string {
         return 'Administration Neuigkeiten';
     }
 
-    function getTemplate (): string {
+    public function getTemplate (): string {
         return 'administration/news/index.twig';
     }
 
@@ -56,7 +54,7 @@ class NewsController extends AbstractController {
     /**
      * @Route("/", name="administrationNews", methods={"GET"})
      */
-    function index (NewsRepository $newsRepository): Response {
+    public function index (NewsRepository $newsRepository): Response {
         $this->assign('news', $newsRepository->findForAdminPage());
 
         return $this->renderPageView();
@@ -65,13 +63,13 @@ class NewsController extends AbstractController {
     /**
      * @Route("/new", name="administration_news_new", methods={"GET","POST"})
      */
-    function new (Request $request): Response {
+    public function new (Request $request): Response {
         $news = new News();
         $form = $this->createForm(NewsType::class, $news);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $this->doctrine->getManager();
             $news->setTimeCreated(new DateTime());
             $news->setTimeUpdated(new DateTime());
             $news->setTimePublish(new DateTime()); //Todo provide by form
@@ -90,14 +88,14 @@ class NewsController extends AbstractController {
     /**
      * @Route("/{id}/edit", name="administration_news_edit", methods={"GET","POST"})
      */
-    function edit (Request $request, News $news): Response {
+    public function edit (Request $request, News $news): Response {
         $form = $this->createForm(NewsType::class, $news);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $this->doctrine->getManager()->flush();
             $news->setTimeUpdated(new DateTime());
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $this->doctrine->getManager();
             $entityManager->persist($news);
             $entityManager->flush();
 
@@ -115,9 +113,9 @@ class NewsController extends AbstractController {
     /**
      * @Route("/{id}", name="administration_news_delete", methods={"POST"})
      */
-    function delete (Request $request, News $news): Response {
+    public function delete (Request $request, News $news): Response {
         if ($this->isCsrfTokenValid('delete' . $news->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $this->doctrine->getManager();
             $entityManager->remove($news);
             $entityManager->flush();
         }
