@@ -46,6 +46,7 @@ jobs:
           ./createEnvFile.php
           composer install --prefer-dist --no-progress
           composer dump-env prod
+          composer --version
 
       - name: run phpstan checks
         id: phpstan-checks
