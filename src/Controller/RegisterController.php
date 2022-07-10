@@ -7,6 +7,7 @@ use App\Helper\BreadCrumbsChain;
 use App\Helper\KgvUrls;
 use App\Mixin\BreadCrumbMixin;
 use App\Mixin\PageviewMixin;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -22,29 +23,26 @@ class RegisterController extends AbstractController {
 
     use BreadCrumbMixin, PageviewMixin;
 
-    private KgvUrls $kgvUrls;
-
-    function __construct (KgvUrls $kgvUrls) {
-        $this->kgvUrls = $kgvUrls;
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
     }
 
-    function getKgvUrls (): ?KgvUrls {
+    public function getKgvUrls (): ?KgvUrls {
         return $this->kgvUrls;
     }
 
-    function getBreadCrumbChain (): BreadCrumbsChain {
+    public function getBreadCrumbChain (): BreadCrumbsChain {
         return $this->addHome('Impressum', null);
     }
 
-    function getPageTitle (): ?string {
+    public function getPageTitle (): ?string {
         return 'Registrierung';
     }
 
-    function getTemplate (): string {
+    public function getTemplate (): string {
         return 'register/index.twig';
     }
 
-    function getIntroData (): ?array {
+    public function getIntroData (): ?array {
         return null;
     }
 
@@ -73,7 +71,7 @@ class RegisterController extends AbstractController {
 
             $user = new User();
             $user->setUserName($data['userName'])->setPassword($userPasswordEncoder->hashPassword($user, $data['password']))->setEmail($data['eMail']);
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->doctrine->getManager();
             $em->persist($user);
             $em->flush();
 
