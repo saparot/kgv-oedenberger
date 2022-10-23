@@ -2,9 +2,10 @@
 
 namespace App\Helper;
 
+use Exception;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class KgvUrls {
 
@@ -22,6 +23,37 @@ class KgvUrls {
     function __construct (UrlGeneratorInterface $urlGenerator, RequestStack $requestStack) {
         $this->urlGenerator = $urlGenerator;
         $this->request = $requestStack->getCurrentRequest();
+    }
+
+    function getEssentials (): UrlContainer {
+        return $this->get(Categories::CATEGORY_ESSENTIALS);
+    }
+
+    function getArea (): UrlContainer {
+        return $this->get(Categories::CATEGORY_AREA);
+    }
+
+    function getClub (): UrlContainer {
+        return $this->get(Categories::CATEGORY_CLUB);
+    }
+
+    function getGarden (): UrlContainer {
+        return $this->get(Categories::CATEGORY_GARDEN);
+    }
+
+    function exists (?string $category): bool {
+        $this->init();
+
+        return isset($this->container[$category]);
+    }
+
+    function get (string $category): UrlContainer {
+        $this->init();
+        if (!isset($this->container[$category])) {
+            throw new Exception("unknown category {$category}");
+        }
+
+        return $this->container[$category];
     }
 
     private function init () {
@@ -82,36 +114,5 @@ class KgvUrls {
         $uc->add('Impressum', 'imprint');
 
         return $uc;
-    }
-
-    function getEssentials (): UrlContainer {
-        return $this->get(Categories::CATEGORY_ESSENTIALS);
-    }
-
-    function getArea (): UrlContainer {
-        return $this->get(Categories::CATEGORY_AREA);
-    }
-
-    function getClub (): UrlContainer {
-        return $this->get(Categories::CATEGORY_CLUB);
-    }
-
-    function getGarden (): UrlContainer {
-        return $this->get(Categories::CATEGORY_GARDEN);
-    }
-
-    function exists (?string $category): bool {
-        $this->init();
-
-        return isset($this->container[$category]);
-    }
-
-    function get (string $category): UrlContainer {
-        $this->init();
-        if (!isset($this->container[$category])) {
-            throw new \Exception("unknown category {$category}");
-        }
-
-        return $this->container[$category];
     }
 }

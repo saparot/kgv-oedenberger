@@ -8,7 +8,6 @@ use App\Mixin\BreadCrumbMixin;
 use App\Mixin\PageviewMixin;
 use App\Repository\NewsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 

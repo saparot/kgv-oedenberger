@@ -42,6 +42,14 @@ class ExecutivesController extends AbstractController {
         return 'club/executives/index.twig';
     }
 
+    protected function getIntroData (): ?array {
+        return [
+            'title' => 'Der Vorstand',
+            'icon' => 'watercan',
+            'text' => 'Damit unser Verein funktioniert, brauchen wir natürlich einen Vorstand. Dieser wird auf unser Mitgliederversammlung gewählt.',
+        ];
+    }
+
     /**
      * @Route("/verein/vorstand", name="clubExecutives")
      * @param ExecutiveRepository $executiveRepository
@@ -52,14 +60,6 @@ class ExecutivesController extends AbstractController {
         $this->prepareTemplateData($executiveRepository);
 
         return $this->renderPageView();
-    }
-
-    protected function getIntroData (): ?array {
-        return [
-            'title' => 'Der Vorstand',
-            'icon' => 'watercan',
-            'text' => 'Damit unser Verein funktioniert, brauchen wir natürlich einen Vorstand. Dieser wird auf unser Mitgliederversammlung gewählt.',
-        ];
     }
 
     private function prepareTemplateData (ExecutiveRepository $executiveRepository) {

@@ -30,4 +30,5 @@ Andreas Urschlechter ist es zu verdanken, das hier eine gesicherte Dauerkleingar
 
 ### Gründung
 
-Die schön im Nordosten der Stadt gelegene Anlage wurde im Jahr 1919 gegründet. Die 165 Gärten mit einer durchschnittlichen Größe von 300 qm sind bei Familien mit Kindern ebenso beliebt wie bei älteren Mitgliedern.
+Die schön im Nordosten der Stadt gelegene Anlage wurde im Jahr 1919 gegründet. Die 165 Gärten mit einer durchschnittlichen Größe von 300 qm sind bei Familien mit Kindern ebenso
+beliebt wie bei älteren Mitgliedern.

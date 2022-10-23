@@ -3,8 +3,8 @@
 namespace App\Helper;
 
 use Generator;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class UrlContainer {
 

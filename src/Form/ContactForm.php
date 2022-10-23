@@ -2,7 +2,6 @@
 
 namespace App\Form;
 
-use App\Entity\Executive;
 use EWZ\Bundle\RecaptchaBundle\Form\Type\EWZRecaptchaType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;

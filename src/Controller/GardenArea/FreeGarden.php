@@ -25,15 +25,8 @@ class FreeGarden extends AbstractController {
         return $this->kgvUrls;
     }
 
-    /**
-     * @Route("/anlage/freie-gaerten", name="gardenAreaFreeGarden")
-     */
-    function index (): Response {
-        return $this->renderPageView();
-    }
-
     function getBreadCrumbChain (): BreadCrumbsChain {
-        return $this->addGarden('Warteliste geschlossen', $this->generateUrl('gardenAreaFreeGarden'));
+        return $this->addGarden('freie Gärten', $this->generateUrl('gardenAreaFreeGarden'));
     }
 
     function getCategory (): ?string {
@@ -41,7 +34,7 @@ class FreeGarden extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Warteliste leider geschlossen';
+        return 'freie Gärten';
     }
 
     function getTemplate (): string {
@@ -54,5 +47,12 @@ class FreeGarden extends AbstractController {
             'icon' => 'secateurs',
             'text' => 'Wenn Sie Interesse an einem Kleingarten haben, sind Sie hier richtig. Es gibt eine Warteliste auf der Sie sich eintragen lassen können, und die in chronologischer Reihenfolge "bedient" wird.',
         ];
+    }
+
+    /**
+     * @Route("/anlage/freie-gaerten", name="gardenAreaFreeGarden")
+     */
+    function index (): Response {
+        return $this->renderPageView();
     }
 }

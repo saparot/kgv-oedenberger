@@ -40,8 +40,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
      */
     private ?string $email;
 
-    public function __construct () {
-    }
+    public function __construct () {}
 
     public function getId (): ?int {
         return $this->id;
@@ -56,14 +55,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
         return $this->userName;
     }
 
-    public function getUserIdentifier (): string {
-        return $this->getUsername();
-    }
-
     public function setUserName (string $userName): self {
         $this->userName = $userName;
 
         return $this;
+    }
+
+    public function getUserIdentifier (): string {
+        return $this->getUsername();
     }
 
     /**
@@ -75,6 +74,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
         $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials () {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function setRoles (array $roles): self {
@@ -104,14 +111,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
      */
     public function getSalt (): ?string {
         return null;
-    }
-
-    /**
-     * @see UserInterface
-     */
-    public function eraseCredentials () {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
     }
 
     public function getEmail (): ?string {

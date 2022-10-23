@@ -4,8 +4,10 @@ namespace App\Entity;
 
 use App\Repository\DownloadFileRepository;
 use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -48,9 +50,9 @@ class DownloadFile {
 
     /**
      * @ORM\Column(type="datetime")
-     * @var \DateTimeInterface|null
+     * @var DateTimeInterface|null
      */
-    private ?\DateTimeInterface $timeUpdated;
+    private ?DateTimeInterface $timeUpdated;
 
     function getFileObjectProperty (): string {
         return self::FILE_OBJECT_PROPERTY;
@@ -66,6 +68,10 @@ class DownloadFile {
         return sprintf("%s.%s", $name, $fileEnding);
     }
 
+    function getFileObject (): ?File {
+        return $this->fileObject;
+    }
+
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -73,7 +79,7 @@ class DownloadFile {
      * must be able to accept an instance of 'File' as the bundle will inject one here
      * during Doctrine hydration.
      *
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $fileObject
+     * @param File|UploadedFile|null $fileObject
      */
     function setFileObject (?File $fileObject = null): void {
         $this->fileObject = $fileObject;
@@ -83,10 +89,6 @@ class DownloadFile {
             // otherwise the event listeners won't be called and the file is lost
             $this->timeUpdated = new DateTime();
         }
-    }
-
-    function getFileObject (): ?File {
-        return $this->fileObject;
     }
 
     public function getId (): ?int {
@@ -123,11 +125,11 @@ class DownloadFile {
         return $this;
     }
 
-    public function getTimeUpdated (): ?\DateTimeInterface {
+    public function getTimeUpdated (): ?DateTimeInterface {
         return $this->timeUpdated;
     }
 
-    public function setTimeUpdated (\DateTimeInterface $timeUpdated): self {
+    public function setTimeUpdated (DateTimeInterface $timeUpdated): self {
         $this->timeUpdated = $timeUpdated;
 
         return $this;

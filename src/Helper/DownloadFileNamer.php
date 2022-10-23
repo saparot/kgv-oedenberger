@@ -5,6 +5,9 @@ namespace App\Helper;
 use Exception;
 use Vich\UploaderBundle\Mapping\PropertyMapping;
 use Vich\UploaderBundle\Naming\NamerInterface;
+
+use function pathinfo;
+
 //use Vich\UploaderBundle\Util\Transliterator;
 
 class DownloadFileNamer implements NamerInterface {
@@ -17,16 +20,16 @@ class DownloadFileNamer implements NamerInterface {
 
     /**
      * @param object $object
-     * @param \Vich\UploaderBundle\Mapping\PropertyMapping $mapping
+     * @param PropertyMapping $mapping
      *
      * @return string
-     * @throws \Exception
+     * @throws Exception
      */
     function name ($object, PropertyMapping $mapping): string {
         $file = $mapping->getFile($object);
         $originalName = $file->getClientOriginalName();
-       // $originalName = $this->transliterate->transliterate($originalName);
-        $originalExtension = strtolower(\pathinfo($originalName, PATHINFO_EXTENSION));
+        // $originalName = $this->transliterate->transliterate($originalName);
+        $originalExtension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
         $originalBasename = pathinfo($originalName, PATHINFO_FILENAME);
         $smartName = sprintf('%s%s', $originalBasename, $originalExtension);
 
@@ -36,4 +39,3 @@ class DownloadFileNamer implements NamerInterface {
         throw new Exception("file name is to long");
     }
 }
-
