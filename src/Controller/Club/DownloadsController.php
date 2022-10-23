@@ -56,8 +56,8 @@ class DownloadsController extends AbstractController {
     /**
      * @Route("/verein/downloads", name="clubDownloads")
      * @param Request $request
-     * @param \App\Repository\DownloadFileRepository $downloadFileRepository
-     * @param \Vich\UploaderBundle\Handler\DownloadHandler $downloadHandler
+     * @param DownloadFileRepository $downloadFileRepository
+     * @param DownloadHandler $downloadHandler
      *
      * @return Response
      */
@@ -70,11 +70,11 @@ class DownloadsController extends AbstractController {
 
     /**
      * @Route("/verein/download/file/{id}", name="clubDownloadFile")
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \App\Repository\DownloadFileRepository $downloadFileRepository
-     * @param \Vich\UploaderBundle\Handler\DownloadHandler $downloadHandler
+     * @param Request $request
+     * @param DownloadFileRepository $downloadFileRepository
+     * @param DownloadHandler $downloadHandler
      *
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     function download (Request $request, DownloadFileRepository $downloadFileRepository, DownloadHandler $downloadHandler): Response {
         $downloadFile = $downloadFileRepository->findForDownload($request->get('id'));

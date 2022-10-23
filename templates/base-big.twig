@@ -5,7 +5,7 @@
 {% include 'layout/navigation.twig' %}
 <main>
     {% include 'layout/top.twig' %}
-    {% if pageIdentifierClasses is not defined  %}
+    {% if pageIdentifierClasses is not defined %}
         {% set pageIdentifierClasses = 'kgv-content-default' %}
     {% endif %}
     <div class="container {{ pageIdentifierClasses }}">

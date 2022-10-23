@@ -22,11 +22,10 @@ class DownloadFileController extends AbstractController {
 
     use BreadCrumbMixin, PageviewMixin;
 
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {}
+
     public function getBreadCrumbChain (): ?BreadCrumbsChain {
         return $this->addAdministration(null, null)->add('Downloads', $this->generateUrl('administrationDownloads'));
-    }
-
-    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
     }
 
     public function getKgvUrls (): ?KgvUrls {

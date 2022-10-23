@@ -23,8 +23,7 @@ class RegisterController extends AbstractController {
 
     use BreadCrumbMixin, PageviewMixin;
 
-    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
-    }
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {}
 
     public function getKgvUrls (): ?KgvUrls {
         return $this->kgvUrls;

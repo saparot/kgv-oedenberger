@@ -33,8 +33,8 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator {
         $request->getSession()->set(Security::LAST_USERNAME, $userName);
 
         return new Passport(new UserBadge($userName), new PasswordCredentials($request->request->get('password', '')), [
-                new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
-            ]);
+            new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
+        ]);
     }
 
     public function onAuthenticationSuccess (Request $request, TokenInterface $token, string $firewallName): ?Response {
@@ -46,7 +46,6 @@ class AppCustomAuthenticator extends AbstractLoginFormAuthenticator {
     }
 
     protected function getLoginUrl (Request $request): string {
-
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }
 }
