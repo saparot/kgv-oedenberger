@@ -11,7 +11,6 @@ use App\Mixin\PageviewMixin;
 use App\Repository\NewsRepository;
 use DateTime;
 use Doctrine\Persistence\ManagerRegistry;
-use JetBrains\PhpStorm\ArrayShape;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,8 +23,7 @@ class NewsController extends AbstractController {
 
     use BreadCrumbMixin, PageviewMixin;
 
-    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {
-    }
+    public function __construct (private KgvUrls $kgvUrls, private ManagerRegistry $doctrine) {}
 
     public function getKgvUrls (): ?KgvUrls {
         return $this->kgvUrls;

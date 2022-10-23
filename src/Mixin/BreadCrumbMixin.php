@@ -18,7 +18,6 @@ trait BreadCrumbMixin {
         return $text ? $breadChain->add($text, $url) : $breadChain;
     }
 
-
     private function addMembers (?string $text, ?string $url): BreadCrumbsChain {
         $breadChain = $this->getBreadCrumbsChain()->add('Vereinsmitglieder', null);
 

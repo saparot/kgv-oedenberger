@@ -2,7 +2,6 @@
 
 namespace App\Controller\News;
 
-use App\Entity\News;
 use App\Helper\BreadCrumbsChain;
 use App\Helper\Categories;
 use App\Helper\KgvUrls;
@@ -44,6 +43,14 @@ class ListController extends AbstractController {
         return 'news/list/index.twig';
     }
 
+    protected function getIntroData (): ?array {
+        return [
+            'title' => 'News & Ankündigungen',
+            'icon' => 'fence',
+            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine. Besuchen Sie diese Seite regelmäßig um keine Neuigkeit zu verpassen!',
+        ];
+    }
+
     /**
      * @Route("/news", name="newsList")
      * @param Request $request
@@ -52,18 +59,9 @@ class ListController extends AbstractController {
      * @return Response
      */
     function index (Request $request, NewsRepository $newsRepository): Response {
-        ;
         $this->addNewsList($newsRepository);
 
         return $this->renderPageView();
-    }
-
-    protected function getIntroData (): ?array {
-        return [
-            'title' => 'News & Ankündigungen',
-            'icon' => 'fence',
-            'text' => 'Auf dieser Seite finden Sie die aktuellen Neuigkeiten rund um den Verein, die Anlage und Gärten, wie z. B. Termine. Besuchen Sie diese Seite regelmäßig um keine Neuigkeit zu verpassen!',
-        ];
     }
 
     private function addNewsList (NewsRepository $newsRepository) {

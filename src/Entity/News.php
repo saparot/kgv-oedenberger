@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\NewsRepository;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,17 +31,17 @@ class News {
     /**
      * @ORM\Column(type="datetime")
      */
-    private ?\DateTimeInterface $timeCreated;
+    private ?DateTimeInterface $timeCreated;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private ?\DateTimeInterface $timeUpdated;
+    private ?DateTimeInterface $timeUpdated;
 
     /**
      * @ORM\Column(type="date")
      */
-    private ?\DateTimeInterface $timePublish;
+    private ?DateTimeInterface $timePublish;
 
     /**
      * @ORM\Column(type="boolean")
@@ -71,31 +72,31 @@ class News {
         return $this;
     }
 
-    function getTimeCreated (): ?\DateTimeInterface {
+    function getTimeCreated (): ?DateTimeInterface {
         return $this->timeCreated;
     }
 
-    function setTimeCreated (\DateTimeInterface $timeCreated): self {
+    function setTimeCreated (DateTimeInterface $timeCreated): self {
         $this->timeCreated = $timeCreated;
 
         return $this;
     }
 
-    function getTimeUpdated (): ?\DateTimeInterface {
+    function getTimeUpdated (): ?DateTimeInterface {
         return $this->timeUpdated;
     }
 
-    function setTimeUpdated (\DateTimeInterface $timeUpdated): self {
+    function setTimeUpdated (DateTimeInterface $timeUpdated): self {
         $this->timeUpdated = $timeUpdated;
 
         return $this;
     }
 
-    function getTimePublish (): ?\DateTimeInterface {
+    function getTimePublish (): ?DateTimeInterface {
         return $this->timePublish;
     }
 
-    function setTimePublish (\DateTimeInterface $timePublish): self {
+    function setTimePublish (DateTimeInterface $timePublish): self {
         $this->timePublish = $timePublish;
 
         return $this;

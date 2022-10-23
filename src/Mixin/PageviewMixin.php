@@ -23,11 +23,11 @@ trait PageviewMixin {
 
     abstract function getKgvUrls (): ?KgvUrls;
 
+    abstract function render (string $view, array $parameters = [], Response $response = null): Response;
+
     function getCategory (): ?string {
         return null;
     }
-
-    abstract function render (string $view, array $parameters = [], Response $response = null): Response;
 
     private function assign (string $name, $value = null): self {
         $this->templateData[$name] = $value;

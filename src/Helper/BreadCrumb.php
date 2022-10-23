@@ -19,23 +19,23 @@ class BreadCrumb {
         $this->url = $url;
     }
 
+    function getTitle (): string {
+        return $this->title;
+    }
+
     function setTitle (string $title): self {
         $this->title = $title;
 
         return $this;
     }
 
+    function getUrl (): ?string {
+        return $this->url;
+    }
+
     function setUrl (string $url): self {
         $this->url = $url;
 
         return $this;
-    }
-
-    function getTitle (): string {
-        return $this->title;
-    }
-
-    function getUrl (): ?string {
-        return $this->url;
     }
 }

@@ -28,19 +28,22 @@ class ExecutiveRepository extends ServiceEntityRepository {
      * @return Executive[]
      */
     function findForImprint () {
-        return array_filter($this->createQueryBuilder('e')
-            ->andWhere('e.sort IN (:val)')
-            ->setParameter('val', [1, 2, 3])
-            ->orderBy('e.sort', 'ASC')
-            ->setMaxResults(3)
-            ->getQuery()
-            ->getResult(), function (Executive $e) {
-            if (trim($e->getName()) === '---') {
-                return false;
-            }
+        return array_filter(
+            $this->createQueryBuilder('e')
+                ->andWhere('e.sort IN (:val)')
+                ->setParameter('val', [1, 2, 3])
+                ->orderBy('e.sort', 'ASC')
+                ->setMaxResults(3)
+                ->getQuery()
+                ->getResult(),
+            function (Executive $e) {
+                if (trim($e->getName()) === '---') {
+                    return false;
+                }
 
-            return true;
-        });
+                return true;
+            }
+        );
     }
 
     // /**
