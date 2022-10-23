@@ -33,7 +33,7 @@ class FreeGarden extends AbstractController {
     }
 
     function getBreadCrumbChain (): BreadCrumbsChain {
-        return $this->addGarden('Warteliste geschlossen', $this->generateUrl('gardenAreaFreeGarden'));
+        return $this->addGarden('freie Gärten', $this->generateUrl('gardenAreaFreeGarden'));
     }
 
     function getCategory (): ?string {
@@ -41,7 +41,7 @@ class FreeGarden extends AbstractController {
     }
 
     function getPageTitle (): ?string {
-        return 'Warteliste leider geschlossen';
+        return 'freie Gärten';
     }
 
     function getTemplate (): string {
