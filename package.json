@@ -2,14 +2,14 @@
     "devDependencies": {
         "@symfony/stimulus-bridge": "^2.1.0",
         "@symfony/webpack-encore": "^1.8.2",
-        "core-js": "^3.23.4",
+        "core-js": "^3.25.5",
         "file-loader": "^6.2.0",
-        "regenerator-runtime": "^0.13.2",
-        "sass": "^1.53.0",
+        "regenerator-runtime": "^0.13.10",
+        "sass": "^1.55.0",
         "sass-loader": "^11.1.1",
         "stimulus": "^2.0.0",
-        "ts-loader": "^9.3.1",
-        "typescript": "^4.7.4",
+        "ts-loader": "^9.4.1",
+        "typescript": "^4.8.4",
         "webpack-notifier": "^1.15.0"
     },
     "license": "UNLICENSED",
@@ -21,10 +21,10 @@
         "build": "encore production --progress"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.3",
-        "bootstrap": "^4.6.1",
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "bootstrap": "^4.6.2",
         "ckeditor": "^4.12.1",
-        "jquery": "^3.6.0",
+        "jquery": "^3.6.1",
         "popper.js": "^1.16.1"
     }
 }
