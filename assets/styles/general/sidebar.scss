@@ -1,38 +1,5 @@
 @import "./variables";
 
-
-.kgv-corona-distance {
-  &__image {
-    width: 200px;
-    height: auto;
-  }
-
-  @include screenSize(medium) {
-    &__image {
-      width: 320px;
-    }
-  }
-
-  @include screenSize(large) {
-    &__image {
-      width: 200px;
-    }
-    &__image:hover {
-      transform: scale(1.4);
-    }
-  }
-
-  @include screenSize(landscape) {
-    &__image {
-      width: 250px;
-    }
-
-    &__image:hover {
-      transform: scale(1.4);
-    }
-  }
-}
-
 .kgv-navigation-bar {
   border-right: 1px solid $gray-200;
   margin-top: 0;
