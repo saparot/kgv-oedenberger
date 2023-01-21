@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  kgvdb:
+    restart: always
+    image: mariadb:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MARIADB_DATABASE: 'kgvdb'
+      MARIADB_USER: 'developer'
+      MARIADB_PASSWORD: 'insecure-dev-pw'
+      MARIADB_RANDOM_ROOT_PASSWORD: true
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./docker/mysql/create-db-oedenberger.sql:/docker-entrypoint-initdb.d/dump.sql
