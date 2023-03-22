@@ -30,10 +30,8 @@ class ExecutiveRepository extends ServiceEntityRepository {
     function findForImprint () {
         return array_filter(
             $this->createQueryBuilder('e')
-                ->andWhere('e.sort IN (:val)')
-                ->setParameter('val', [1, 2, 3])
                 ->orderBy('e.sort', 'ASC')
-                ->setMaxResults(3)
+                ->setMaxResults(4)
                 ->getQuery()
                 ->getResult(),
             function (Executive $e) {
