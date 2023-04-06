@@ -2,7 +2,6 @@
 
 website for kleingarten Verein Oedenberger Strasse, Nuernberg. 
 
-
 ## development
 1. npm install
 2. composer install
