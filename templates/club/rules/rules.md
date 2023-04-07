@@ -111,7 +111,7 @@ Organe des Vereins sind:
 
 #### §9
 
-1. Die Mitgliederversammlung (Jahreshauptversammlung) findet jeweils innerhalb des 1. Vierteljahres eines neuen Geschäftsjahres statt. Sie ist Tagesordnung schriftlich einzuberufen.
+1. Die Mitgliederversammlung (Jahreshauptversammlung) findet jeweils innerhalb des 1. Vierteljahres eines  neuen Geschäftsjahres statt. Sie ist vom Vorstand mindestens 2 Wochen vorher unter Bekanntgabe der Tagesordnung schriftlich einzuberufen.
 
 2. Der Vorstand kann jederzeit weitere Mitgliederversammlungen einberufen. Er ist dazu verpflichtet, wenn mindestens 1/3 seiner Mitglieder dies unter Angabe von Gründen schriftlich beantragt. Dasselbe gilt, wenn der Vorstand des Stadtverbandes die Einberufung einer Mitgliederversammlung unter Angabe der Gründe schriftlich verlangt.
 
