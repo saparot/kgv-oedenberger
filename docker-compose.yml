@@ -11,6 +11,6 @@ services:
       MARIADB_PASSWORD: 'insecure-dev-pw'
       MARIADB_RANDOM_ROOT_PASSWORD: true
     ports:
-      - '3306:3306'
+      - '3307:3306'
     volumes:
       - ./docker/mysql/create-db-oedenberger.sql:/docker-entrypoint-initdb.d/dump.sql

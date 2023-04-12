@@ -88,6 +88,8 @@ class KgvUrls {
             ->addSeparator()
             ->add('Gartenordnung', 'clubGardenRules')
             ->addSeparator()
+            ->add('Was kostet ein Kleingarten', 'clubCosts')
+
             ->add('Geschichte', 'clubHistory')
             ->addSeparator()
             ->add('Formulare + Downloads', 'clubDownloads');
