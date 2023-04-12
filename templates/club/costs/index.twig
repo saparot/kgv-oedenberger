@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+
+    {% include 'layout/partials/kgv-intro.twig' %}
+
+    <div class="kgv-markdown kgv-costs">
+        {{ include('club/costs/costs.md')|markdown_to_html }}
+    </div>
+
+{% endblock %}

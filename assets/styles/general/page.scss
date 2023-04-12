@@ -14,3 +14,15 @@ ul {
     background-color: $gray-dark;
   }
 }
+
+.kgv-costs table tr th:last-child {
+  text-align: right;
+}
+
+.kgv-costs table tr td:first-child {
+  font-weight: bolder;
+}
+
+.kgv-costs table tr td:last-child {
+  text-align: right;
+}
