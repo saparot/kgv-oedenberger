@@ -3,9 +3,24 @@
 @import url(https://use.fontawesome.com/releases/v5.0.10/css/all.css);
 @import "./general/variables";
 @import "~bootstrap/scss/bootstrap";
-//html, body, * {
-//    font-family: $font-family-base;
-//}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  opacity: 0;
+  animation: pageFadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.15s;
+  animation-delay: .1s
+}
+
 @import "./general/index";
 @import "./administration/index";
 @import "./news/index";
