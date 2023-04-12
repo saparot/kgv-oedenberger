@@ -1,20 +1,18 @@
-## Kostenübersicht
-
-### Aufnahmegebühr
+## Aufnahmegebühr
 
 - 60,00 Euro einmalige Aufnahmegebühr (35,00 Euro an den Stadtverband und 25,00 Euro an den Kleingartenverein)
 
-### Jahresbeiträge
+## Jahresbeiträge
 
 - **54,00 €** Jahresbeitrag für Stadtverband Nürnberg der Kleingärtner e.V. inkl. Landes- und Bundesverband. Dieser Beitrag enhält auch den Bezug für das [Kleingarten Magazin](http://www.kleingartenmagazin.de/) (6x jährlich).
 - 30,00 Euro Jahresbeitrag für KGV Oedenberger Straße e.V.
 
 
-### Pacht
+## Pacht
 - 0,77 € / m² (qm) (Unsere Kleingärten sind zwischen 148 - 519 qm groß.)
 
 
-### Weitere Aufwendungen
+## Weitere Aufwendungen
 
 Hinzu kommen Aufwendungen für Versicherungen je nach Bedarf
 - Kollektive Unfallversicherung,
@@ -24,7 +22,7 @@ Hinzu kommen Aufwendungen für Versicherungen je nach Bedarf
 
 ## Beispielrechnung 
 
-Die Beträge stellen einen reine Beispielrechnung dar, alle Angaben ohne Gewähr. Bei Fragen können Sie sich gerne an unseren Vorstand wenden.
+Die Beträge stellen einen reine Beispielrechnung dar und wurden in Anlehnung an die Kosten für einen Garten im Jahr 2022 erstellt, alle Angaben ohne Gewähr. Bei Fragen steht Ihnen unser Vorstand gerne zur Verfügung.
 
 
 | Was                            | Betrag   |
