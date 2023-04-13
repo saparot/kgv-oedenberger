@@ -1,4 +1,15 @@
 <footer class="footer bg-dark text-white mt-5">
+    <style>
+
+        .saparot-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+        }
+
+    </style>
+
     <div class="container pt-3">
         <div class="row">
             {% include 'layout/footer/footerBlock.twig' with {iconName: 'plant-pot', urlList:urlList.getClub.iterate, blockName:'Verein'} %}
@@ -7,7 +18,19 @@
             {% include 'layout/footer/footerBlock.twig' with {iconName: 'plant-pot', urlList:urlList.getEssentials.iterate, blockName:'Essentials'} %}
         </div>
     </div>
-    <div class="container pt-5">
-        <p class="small text-right">Made with <span class="footer__heart">❤</span> by <a href="https://saparot.io" target="_blank">saparot.io</a> (Garten 99), © 2021 - {{ 'now' | date('Y') }}</p>
+    <div class="container pt-5 saparot-box">
+        <div class="saparot-box">
+            <span class="small text-right">Made with</span>
+            <span class="footer__heart">❤</span>
+            <span>by</span>
+            <a href="https://saparot.io" target="_blank">
+                <img src="{{ asset('build/img/footer/saparot-io.svg') }}" alt="saparot.io" width="24px"/>
+                <span>saparot.io</span>
+            </a>
+            <span>(Garten 99), © 2021 - {{ 'now' | date('Y') }}</span>
+
+        </div>
+
     </div>
+
 </footer>
