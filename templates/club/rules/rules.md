@@ -137,6 +137,9 @@ bereits bestehenden Kleingartenverein (Anschluß) innerhalb des Stadtverbandes N
   - Stimmengleichheit gilt als Ablehnung. 
   - Einer Beschlussfassung über die Auflösung des Vereins bedarf es nicht, wenn die Kündigung des Pachtlandes des Kleingartenvereins erfolgt ist. In diesem Fall gilt der Verein mit Abschluss des Kündigungsverfahrens als aufgelöst. 
   - Die Mitgliedschaft beim Stadtverband Nürnberg der Kleingärtner e.V. bleibt davon unberührt.
+- h) nicht vorhanden
+- i) Zur Deckung außerplanmäßigen Finanzbedarfs über die gewöhnliche Geschäftstätigkeit hinaus kann die Mitglieder versammlung die Erhebung von Umlagen beschließen. Diese Umlagen können jährlich bis zum Zweifachen des
+  Mitgliedsbeitrags betragen.
 
 #### §11
 
