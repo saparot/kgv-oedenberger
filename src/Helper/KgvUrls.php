@@ -114,7 +114,7 @@ class KgvUrls {
 
         $uc->add('Kontakt', 'contact');
         $uc->add('Impressum', 'imprint');
-        $uc->add('Datenschutzhinweise', 'privacy');
+        $uc->add('Datenschutzerklärung', 'privacy');
 
         return $uc;
     }
