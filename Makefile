@@ -1,9 +1,9 @@
 
 symfony-proxy:
-	symfony prox:start
+	symfony proxy:start
 
 server-start:
 	symfony server:start
 
-docker-build:
-	 docker build . -t kgvdb
+docker-run-db:
+	 docker run kgvdb
