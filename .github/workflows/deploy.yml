@@ -83,7 +83,7 @@ jobs:
           --exclude='.git/'
           --exclude='.github/'
           --delete
-          . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/webdniw8j/html/v3
+          . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/hp/bk/ad/zk/www/oedenberger_de          
 
       # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
