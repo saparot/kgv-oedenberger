@@ -19,3 +19,4 @@ website for kleingarten Verein Oedenberger Strasse, Nuernberg.
 4. install node packages: `npm ci`
 5. build with encore prod asset bundle: 
 `./node_modules/.bin/encore production`
+.
