@@ -1,12 +1,35 @@
 @import "variables";
 
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+  margin-right: .5rem;
+}
+
+
+
 .navbar-brand {
+  font-size: .75rem;
   @include hyphenate();
 
   @include screenSize(medium) {
     white-space: nowrap;
   }
 }
+
+@media screen and (min-width: 576px) {
+  .logo {
+    width: 4rem;
+    height: 4rem;
+    margin-right: .5em;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+
 
 .header__teaser {
   display: flex;
