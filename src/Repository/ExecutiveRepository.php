@@ -31,7 +31,7 @@ class ExecutiveRepository extends ServiceEntityRepository {
         return array_filter(
             $this->createQueryBuilder('e')
                 ->orderBy('e.sort', 'ASC')
-                ->setMaxResults(4)
+                ->setMaxResults(5)
                 ->getQuery()
                 ->getResult(),
             function (Executive $e) {
