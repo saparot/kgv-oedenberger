@@ -111,7 +111,7 @@ class ContactController extends AbstractController {
     }
 
     private function getSubject (FormInterface $form): string {
-        return 'Anfrage: Test';
+        return 'Anfrage über Homepage';
     }
 
     private function getBody (FormInterface $form): string {
