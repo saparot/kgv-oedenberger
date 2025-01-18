@@ -59,16 +59,16 @@ class ContactController extends AbstractController {
      * @return Response
      */
     function index (Request $request, MailerInterface $mailer): Response {
-        $form = $this->createForm(ContactForm::class);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->send($form, $mailer);
-            $this->addFlash('success', 'Ihre Anfrage wurde erfolgreich gesendet!');
-
-            return $this->redirectToRoute('landingPage');
-        }
-        $this->assign('form', $form->createView());
+//        $form = $this->createForm(ContactForm::class);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $this->send($form, $mailer);
+//            $this->addFlash('success', 'Ihre Anfrage wurde erfolgreich gesendet!');
+//
+//            return $this->redirectToRoute('landingPage');
+//        }
+//        $this->assign('form', $form->createView());
 
         return $this->renderPageView();
     }
