@@ -4,7 +4,7 @@
 
 ## Jahresbeiträge
 
-- **54,00 €** Jahresbeitrag für Stadtverband Nürnberg der Kleingärtner e.V. inkl. Landes- und Bundesverband. Dieser Beitrag enhält auch den Bezug für das [Kleingarten Magazin](http://www.kleingartenmagazin.de/) (4x jährlich).
+- **68,00 €** Jahresbeitrag für Stadtverband Nürnberg der Kleingärtner e.V. inkl. Landes- und Bundesverband. Dieser Beitrag enhält auch den Bezug für das [Kleingarten Magazin](http://www.kleingartenmagazin.de/) (4x jährlich).
 - **40,00** Euro Jahresbeitrag für KGV Oedenberger Straße e.V.
 
 
@@ -25,15 +25,15 @@ Hinzu kommen Aufwendungen für Versicherungen je nach Bedarf
 Die Beträge stellen einen reine Beispielrechnung dar und wurden in Anlehnung an die Kosten für einen Garten im Jahr 2024 erstellt, alle Angaben ohne Gewähr. Bei Fragen steht Ihnen unser Vorstand gerne zur Verfügung.
 
 
-| Was                                 | Betrag   |
-|-------------------------------------|----------|
-| Aufnahmegebühr (¹)                  | 60,00 €  |
-| Jahresbeitrag Stadtverband          | 54,00 €  |
-| Jahresbeitrag Oedenberger Str. e.V. | 40,00 €  |
+| Was                                 | Betrag  |
+|-------------------------------------|---------|
+| Aufnahmegebühr (¹)                  | 60,00 € |
+| Jahresbeitrag Stadtverband          | 68,00 € |
+| Jahresbeitrag Oedenberger Str. e.V. | 40,00 € |
 | Pacht Garten mit 250 m²             | 192,50 € |
-| Wasserabrechnung 43 m³              | 102,50 € |
-| Gartenversicherung (²)              | 54,00 €  |
-| Summe:                              | 493,00 € |
+| Wasserabrechnung 35 m³              | 102,50 € |
+| Gartenversicherung (²)              | 54,00 € |
+| Summe:                              | 517,00 € |
 
 (¹) einmalig im ersten Jahr (Beitrittsjahr Verein)
 
