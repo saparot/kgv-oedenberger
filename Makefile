@@ -7,3 +7,6 @@ server-start:
 
 docker-run-db:
 	 docker run kgvdb
+
+web-assets:
+	npm run dev
