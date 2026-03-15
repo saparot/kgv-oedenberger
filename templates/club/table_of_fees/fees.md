@@ -116,7 +116,7 @@ Hinweis: Die Einnahmen sind zweckgebunden ausschließlich für Unterhalt und Pfl
 
 **Erläuterung zur Gemeinschaftsarbeit:**
 
-Die Pflicht zur Leistung von Gemeinschaftsarbeit sowie der zeitliche Umfang von derzeit 4 Stunden pro Jahr ergeben sich aus der Gartenordnung des Stadtverbandes Nürnberg der Kleingärtner e. V. Die Höhe der Pflichtstunden sowie der Ersatzbetrag je nicht geleisteter Stunde werden durch Beschluss der Vertreterversammlung des Stadtverbandes Nürnberg der Kleingärtner e. V. festgelegt und vom Kleingartenverein verbindlich angewendet. Der **Stundensatz** für nicht geleisteten Gemeinschaftsdienst wurde auf der Verbandsausschusssitzung am 21.11.2024 **a****uf 25 € je Stunde festgesetzt**. In unserem Kleingartenverein sind 4 Stunden Gemeinschaftsarbeit im Jahr zu leisten.
+Die Pflicht zur Leistung von Gemeinschaftsarbeit sowie der zeitliche Umfang von derzeit 4 Stunden pro Jahr ergeben sich aus der Gartenordnung des Stadtverbandes Nürnberg der Kleingärtner e. V. Die Höhe der Pflichtstunden sowie der Ersatzbetrag je nicht geleisteter Stunde werden durch Beschluss der Vertreterversammlung des Stadtverbandes Nürnberg der Kleingärtner e. V. festgelegt und vom Kleingartenverein verbindlich angewendet. Der **Stundensatz** für nicht geleisteten Gemeinschaftsdienst wurde auf der Verbandsausschusssitzung am 21.11.2024 **auf 25 € je Stunde festgesetzt**. In unserem Kleingartenverein sind 4 Stunden Gemeinschaftsarbeit im Jahr zu leisten.
 
 
 
