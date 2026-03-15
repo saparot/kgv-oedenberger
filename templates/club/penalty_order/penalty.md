@@ -1,6 +1,5 @@
 # Ordnungsgeldverordnung
 
----
 
 ## §1 Zweck und Rechtsgrundlage
 
@@ -17,9 +16,6 @@ Rechtsgrundlage dieser Verordnung sind die **Satzung des Vereins**, die **Garten
 (2) Sie richtet sich insbesondere an die **Pächter von Kleingartenparzellen** und damit an die aktiven Mitglieder des Vereins, die aus dem Unterpachtverhältnis heraus besondere Pflichten hinsichtlich Nutzung, Ordnung und Mitwirkung treffen.
 
 (3) Maßgeblich ist die Mitgliedschaft im Verein in Verbindung mit einem bestehenden Unterpachtverhältnis. Ordnungsgelder können unabhängig davon erhoben werden, ob ein Verstoß persönlich durch den Pächter oder durch von ihm zu vertretende Personen begangen wurde.
-
-_(Für wen gilt die Verordnung? Mitglieder, Pächter, Nutzer? Bezug zu Satzung, Gartenordnung, Unterpachtvertrag.)_
-
 
 
 ## §3 Arten von Verstößen
@@ -125,4 +121,4 @@ Die nachfolgenden Erläuterungen konkretisieren die in Absatz **(1)** aufgeführ
 
 ## §9 Inkrafttreten
 
-Diese Ordnungsgeldverordnung tritt mit Beschluss der Jahreshauptversammlung vom **09.03.2026** in Kraft.s
+Diese Ordnungsgeldverordnung tritt mit Beschluss der Jahreshauptversammlung vom **09.03.2026** in Kraft.
